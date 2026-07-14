@@ -1,0 +1,60 @@
+vintage_id,winery_name,wine_name,vintage_year,abv_percent,bottle_volume_ml,aging_regime,production_cases,release_price_usd,valuation_index_usd,source_url
+5,Joseph Phelps Vineyards,Insignia,2015,14.5,750,"24 months, 100% new French oak",13500,275.0,,https://josephphelps.com/wines/insignia/2015
+4,Joseph Phelps Vineyards,Insignia,2016,14.5,750,"24 months, 100% new French oak",16500,295.0,,https://josephphelps.com/wines/insignia/2016
+3,Joseph Phelps Vineyards,Insignia,2017,14.5,750,"24 months, 100% new French oak",15000,300.0,,https://josephphelps.com/wines/insignia/2017
+2,Joseph Phelps Vineyards,Insignia,2018,14.5,750,"24 months, 100% new French oak",17000,300.0,,https://josephphelps.com/wines/insignia/2018
+1,Joseph Phelps Vineyards,Insignia,2019,14.5,750,"24 months, 100% new French oak",14500,315.0,315.0,https://auction1.com/lot101
+10,Ridge Vineyards,Monte Bello,2015,13.5,750,"18 months, 100% new American oak",3800,220.0,,https://www.ridgewine.com/wines/2015-monte-bello/
+9,Ridge Vineyards,Monte Bello,2016,13.7,750,"18 months, 100% new American oak",4500,225.0,,https://www.ridgewine.com/wines/2016-monte-bello/
+8,Ridge Vineyards,Monte Bello,2017,13.5,750,"18 months, 100% new American oak",4000,230.0,,https://www.ridgewine.com/wines/2017-monte-bello/
+7,Ridge Vineyards,Monte Bello,2018,13.7,750,"17 months, 100% new American oak",4800,235.0,,https://www.ridgewine.com/wines/2018-monte-bello/
+6,Ridge Vineyards,Monte Bello,2019,13.7,750,"17 months, 100% new American oak",4200,245.0,,https://www.ridgewine.com/wines/2019-monte-bello/
+15,Opus One Winery,Opus One,2015,14.0,750,"18 months, 100% new French oak",20000,350.0,,https://www.opusonewinery.com/wines/2015/
+14,Opus One Winery,Opus One,2016,14.0,750,"18 months, 100% new French oak",25000,365.0,,https://www.opusonewinery.com/wines/2016/
+13,Opus One Winery,Opus One,2017,14.0,750,"18 months, 100% new French oak",22000,365.0,,https://www.opusonewinery.com/wines/2017/
+12,Opus One Winery,Opus One,2018,14.0,750,"18 months, 100% new French oak",26000,375.0,,https://www.opusonewinery.com/wines/2018/
+11,Opus One Winery,Opus One,2019,14.0,750,"19 months, 100% new French oak",25000,385.0,,https://www.opusonewinery.com/wines/2019/
+19,Dominus Estate,Dominus,2015,14.5,750,"18 months, 40% new French oak",3800,290.0,,https://www.dominusestate.com/wines/dominus-2015/
+18,Dominus Estate,Dominus,2016,14.5,750,"18 months, 40% new French oak",4200,295.0,,https://www.dominusestate.com/wines/dominus-2016/
+17,Dominus Estate,Dominus,2018,14.5,750,"18 months, 40% new French oak",4800,310.0,,https://www.dominusestate.com/wines/dominus-2018/
+16,Dominus Estate,Dominus,2019,14.5,750,"18 months, 40% new French oak",4500,330.0,,https://www.dominusestate.com/wines/dominus-2019/
+23,Tenuta San Guido,Sassicaia,2016,14.0,750,"24 months, 40% new French oak",18000,275.0,,https://www.tenutasanguido.com/en/sassicaia-2016
+22,Tenuta San Guido,Sassicaia,2017,14.0,750,"24 months, 40% new French oak",15000,250.0,,https://www.tenutasanguido.com/en/sassicaia-2017
+21,Tenuta San Guido,Sassicaia,2018,13.5,750,"24 months, 40% new French oak",17000,265.0,,https://www.tenutasanguido.com/en/sassicaia-2018
+20,Tenuta San Guido,Sassicaia,2019,14.0,750,"24 months, 40% new French oak",16000,285.0,,https://www.tenutasanguido.com/en/sassicaia-2019
+26,Marchesi Antinori,Tignanello,2016,14.0,750,"14 months, French and Hungarian oak",32000,140.0,,https://www.antinori.it/en/wine/tignanello-2016/
+25,Marchesi Antinori,Tignanello,2018,14.0,750,"14 months, French and Hungarian oak",30000,135.0,,https://www.antinori.it/en/wine/tignanello-2018/
+24,Marchesi Antinori,Tignanello,2019,14.0,750,"14 months, French and Hungarian oak",28000,145.0,,https://www.antinori.it/en/wine/tignanello-2019/
+29,Penfolds,Grange,2016,14.5,750,"18 months, 100% new American oak",7200,640.0,,https://www.penfolds.com/en-us/wines/grange/2016
+28,Penfolds,Grange,2017,14.5,750,"18 months, 100% new American oak",6800,620.0,,https://www.penfolds.com/en-us/wines/grange/2017
+27,Penfolds,Grange,2018,14.5,750,"18 months, 100% new American oak",7000,650.0,,https://www.penfolds.com/en-us/wines/grange/2018
+32,Chateau Margaux,Chateau Margaux,2016,13.5,750,"22 months, 100% new French oak",11000,670.0,,https://www.chateau-margaux.com/en/vintages/2016
+31,Chateau Margaux,Chateau Margaux,2018,14.0,750,"22 months, 100% new French oak",9500,650.0,,https://www.chateau-margaux.com/en/vintages/2018
+30,Chateau Margaux,Chateau Margaux,2019,13.5,750,"22 months, 100% new French oak",10000,680.0,,https://www.chateau-margaux.com/en/vintages/2019
+35,Chateau Latour,Grand Vin de Chateau Latour,2012,13.5,750,"22 months, 100% new French oak",9000,600.0,,https://www.chateau-latour.com/en/vintages/2012
+34,Chateau Latour,Grand Vin de Chateau Latour,2014,13.5,750,"22 months, 100% new French oak",8500,620.0,,https://www.chateau-latour.com/en/vintages/2014
+33,Chateau Latour,Grand Vin de Chateau Latour,2015,13.5,750,"22 months, 100% new French oak",8000,750.0,,https://www.chateau-latour.com/en/vintages/2015
+37,Domaine de la Romanee-Conti,Romanee-Conti Grand Cru,2018,13.5,750,"18 months, 100% new French oak",480,17500.0,,https://www.romanee-conti.fr/vintages/2018
+36,Domaine de la Romanee-Conti,Romanee-Conti Grand Cru,2019,13.5,750,"18 months, 100% new French oak",450,18000.0,,https://www.romanee-conti.fr/vintages/2019
+39,Domaine de la Romanee-Conti,La Tache Grand Cru,2018,13.5,750,"18 months, 100% new French oak",1500,4500.0,,https://www.romanee-conti.fr/vintages/2018-la-tache
+38,Domaine de la Romanee-Conti,La Tache Grand Cru,2019,13.5,750,"18 months, 100% new French oak",1400,4800.0,,https://www.romanee-conti.fr/vintages/2019-la-tache
+42,Almaviva Winery,Almaviva,2018,14.5,750,"20 months, 73% new French oak",17000,150.0,,https://www.almavivawinery.com/vintages/2018
+41,Almaviva Winery,Almaviva,2019,14.5,750,"20 months, 73% new French oak",16500,155.0,,https://www.almavivawinery.com/vintages/2019
+40,Almaviva Winery,Almaviva,2020,14.5,750,"20 months, 73% new French oak",16000,160.0,,https://www.almavivawinery.com/vintages/2020
+44,Screaming Eagle,Screaming Eagle Cabernet Sauvignon,2018,14.8,750,"20 months, 65% new French oak",650,2900.0,,https://www.screamingeagle.com/vintages/2018
+43,Screaming Eagle,Screaming Eagle Cabernet Sauvignon,2019,14.8,750,"20 months, 65% new French oak",600,3000.0,,https://www.screamingeagle.com/vintages/2019
+45,Harlan Estate,Harlan Estate,2018,14.5,750,"24 months, 100% new French oak",1800,1200.0,,https://www.harlanestate.com/vintages/2018
+46,Shafer Vineyards,Hillside Select Cabernet Sauvignon,2018,15.5,750,"32 months, 100% new French oak",2400,310.0,,https://www.shafervineyards.com/wines/hillside-select-2018
+47,Caymus Vineyards,Special Selection Cabernet Sauvignon,2018,14.8,750,"18 months, new French and American oak",12000,225.0,,https://www.caymus.com/wines/special-selection-2018
+48,Silver Oak Cellars,Napa Valley Cabernet Sauvignon,2018,14.4,750,"24 months, 85% new American oak",28000,150.0,,https://silveroak.com/wines/2018-napa-valley-cabernet/
+49,E. Guigal,Cote Rotie La Landonne,2018,14.0,750,"42 months, 100% new French oak",1000,450.0,,https://www.guigal.com/en/wines/la-landonne-2018
+50,M. Chapoutier,Ermitage Le Pavillon,2018,14.5,750,"18 months, 30% new French oak",600,380.0,,https://www.chapoutier.com/en/wines/le-pavillon-2018
+52,Chateau d'Yquem,Chateau d'Yquem,2018,14.0,750,"30 months, 100% new French oak",3800,400.0,,https://www.chateau-yquem.fr/en/vintages/2018
+51,Chateau d'Yquem,Chateau d'Yquem,2019,14.0,750,"30 months, 100% new French oak",4000,420.0,,https://www.chateau-yquem.fr/en/vintages/2019
+53,Champagne Salon,Salon Le Mesnil Blanc de Blancs,2013,12.0,750,120 months on lees,5000,1200.0,,https://www.salondelamotte.com/salon-2013
+54,Champagne Krug,Krug Vintage,2008,12.5,750,144 months on lees,15000,480.0,,https://www.krug.com/krug-id/2008
+55,Bodegas Vega Sicilia,Unico,2013,14.5,750,"72 months in wood, 36 months in bottle",8000,450.0,,https://www.vega-sicilia.com/wines/unico-2013
+56,Dominio de Pingus,Pingus,2019,14.5,750,"22 months, new French oak",500,1100.0,,https://www.pingus.es/wines/2019
+57,Torbreck Vintners,RunRig,2018,15.0,750,"30 months, 50% new French oak",1200,260.0,,https://www.torbreck.com/wines/runrig-2018
+58,Henschke,Hill of Grace Shiraz,2017,14.5,750,"18 months, 86% French and 14% American oak",800,850.0,,https://www.henschke.com.au/wines/hill-of-grace-2017
+59,Catena Zapata,Adrianna Vineyard Mundus Bacillus Terrae Malbec,2019,13.9,750,"18 months, French oak",350,290.0,,https://catenazapata.com/adrianna-mundus-2019

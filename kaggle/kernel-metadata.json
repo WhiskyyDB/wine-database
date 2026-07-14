@@ -1,0 +1,13 @@
+{
+  "id": "ahtiticheamine/winedb-fine-wines-starter-notebook",
+  "title": "WineDB Fine Wines — Starter Notebook",
+  "code_file": "starter_notebook.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": false,
+  "enable_internet": false,
+  "dataset_sources": ["ahtiticheamine/winedb-fine-wines-and-vintages"],
+  "competition_sources": [],
+  "kernel_sources": []
+}

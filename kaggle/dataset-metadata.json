@@ -1,0 +1,222 @@
+{
+  "title": "WineDB: Fine Wine Vintages & Blends (Sample)",
+  "subtitle": "Wineries, vintages, exact varietal blend percentages, and tasting descriptors",
+  "id": "ahtiticheamine/winedb-fine-wines-and-vintages",
+  "licenses": [
+    {
+      "name": "CC BY 4.0"
+    }
+  ],
+  "keywords": [
+    "alcohol",
+    "food",
+    "business",
+    "data analytics",
+    "beginner"
+  ],
+  "description": "# 🍷 WineDB — Fine Wine & Vintages Sample Dataset\n\nA curated **free sample** of the WineDB dataset: highly normalized relational tables tracking fine wine producers, cuvees, exact vintage varietal blend percentages (`SUM <= 100.001`, enforced by SQLite triggers), alcohol content (ABV %), organoleptic tasting descriptors, and secondary market valuation indices. Prefer SQLite? The same sample ships as a relational `winedb.sqlite` (foreign keys + blend-sum triggers) on [the WineDB site](https://wine-database.pages.dev/) and [GitHub](https://github.com/WhiskyyDB/wine-database/blob/main/samples/winedb.sqlite).\n\n## What's in this sample\n\n| File | Rows | What it shows |\n| :--- | ---: | :--- |\n| `wineries.csv` | 26 | Producer registry with country, region, founded year + source URL |\n| `wines.csv` | 27 | Canonical wine cuvees with type and appellation |\n| `vintages.csv` | 59 | Year-specific releases: ABV, bottle specs, aging regime, release price, valuation index |\n| `blends.csv` | 171 | Exact varietal composition percentages per vintage |\n| `tasting_profiles.csv` | 236 | Organoleptic aromatic and palate descriptors |\n| `appellations.csv` | 27 | Controlled geographical indication taxonomy |\n\n## The full dataset\n\n- **3,675 vintages** across **106 iconic wineries** and 57 appellations\n- Laboratory chemistry (`residual_sugar`, `acidity`, `pH`) from SAQ & LCBO listings\n- Liv-ex style auction valuation medians under a strict `>= 3 observations` rule\n- US TTB COLA label registry links & OCR text payloads\n- Master 11,960-row `data_sources` provenance registry — every record resolves to a source ledger entry\n- 3NF relational `winedb.sqlite` + 7 normalized CSV exports, refreshed monthly\n\n**→ Get it at [wine-database.pages.dev](https://wine-database.pages.dev/)** · [GitHub: WhiskyyDB/wine-database](https://github.com/WhiskyyDB/wine-database) · [Data dictionary](https://github.com/WhiskyyDB/wine-database/blob/main/DATA_DICTIONARY.md) · [Sources & licenses](https://github.com/WhiskyyDB/wine-database/blob/main/SOURCES.md)\n\n## Use cases\n\n- Wine list & hospitality software (clean producer/cuvee/vintage names, ABV, bottle specs)\n- Varietal-blend analytics and recommendation engines (exact percentages, not just labels)\n- Valuation and vintage-quality models on release price vs. secondary market index\n- Teaching relational schema design: six cleanly normalized, join-ready tables\n- ML / RAG corpora over a provenance-tracked wine knowledge base\n\n## License\n\nSample: **CC-BY-4.0** — free for any use including commercial, with attribution.\n\nQuestions, corrections, or full-dataset access: **winedb.obedient560@aleeas.com**",
+  "resources": [
+    {
+      "path": "wineries.csv",
+      "description": "26 fine-wine producers: winery_id, name, country, region, founded_year, source_url.",
+      "schema": {
+        "fields": [
+          {
+            "name": "winery_id",
+            "description": "Stable integer primary key."
+          },
+          {
+            "name": "name",
+            "description": "Producer name (e.g. Chateau Margaux, Opus One Winery)."
+          },
+          {
+            "name": "country",
+            "description": "Country of the producer."
+          },
+          {
+            "name": "region",
+            "description": "Wine region / sub-region (e.g. Napa Valley, Pauillac)."
+          },
+          {
+            "name": "founded_year",
+            "description": "Year the winery was founded; empty when not published."
+          },
+          {
+            "name": "source_url",
+            "description": "Provenance: source URL the record was derived from."
+          }
+        ]
+      }
+    },
+    {
+      "path": "wines.csv",
+      "description": "27 canonical cuvees: wine_id, winery_name, name, wine_type, appellation_name.",
+      "schema": {
+        "fields": [
+          {
+            "name": "wine_id",
+            "description": "Stable integer primary key."
+          },
+          {
+            "name": "winery_name",
+            "description": "Producer name (denormalized join key to wineries)."
+          },
+          {
+            "name": "name",
+            "description": "Canonical cuvee name (e.g. Insignia, Monte Bello)."
+          },
+          {
+            "name": "wine_type",
+            "description": "Style classification: Red, White, Sparkling, Sweet/Fortified."
+          },
+          {
+            "name": "appellation_name",
+            "description": "Controlled geographical indication the wine belongs to."
+          }
+        ]
+      }
+    },
+    {
+      "path": "vintages.csv",
+      "description": "59 vintage releases: vintage_year, abv_percent, bottle_volume_ml, aging_regime, production_cases, release_price_usd, valuation_index_usd, source_url.",
+      "schema": {
+        "fields": [
+          {
+            "name": "vintage_id",
+            "description": "Stable integer primary key."
+          },
+          {
+            "name": "winery_name",
+            "description": "Producer name (denormalized)."
+          },
+          {
+            "name": "wine_name",
+            "description": "Cuvee name (denormalized)."
+          },
+          {
+            "name": "vintage_year",
+            "description": "Harvest year of the release."
+          },
+          {
+            "name": "abv_percent",
+            "description": "Alcohol by volume (%), typically 8.0-16.5."
+          },
+          {
+            "name": "bottle_volume_ml",
+            "description": "Bottle volume in milliliters (750 standard)."
+          },
+          {
+            "name": "aging_regime",
+            "description": "Oak/aging program as published by the producer; empty when unstated."
+          },
+          {
+            "name": "production_cases",
+            "description": "Cases produced; empty when not disclosed."
+          },
+          {
+            "name": "release_price_usd",
+            "description": "Release price in USD; empty when not published."
+          },
+          {
+            "name": "valuation_index_usd",
+            "description": "Median secondary-market valuation (USD); NULL unless >= 3 independent observations in a 12-month window."
+          },
+          {
+            "name": "source_url",
+            "description": "Provenance: source URL the record was derived from."
+          }
+        ]
+      }
+    },
+    {
+      "path": "blends.csv",
+      "description": "171 varietal blend rows: exact percent per variety per vintage (sums to <= 100.001 per vintage).",
+      "schema": {
+        "fields": [
+          {
+            "name": "vintage_id",
+            "description": "Foreign key to vintages."
+          },
+          {
+            "name": "winery_name",
+            "description": "Producer name (denormalized)."
+          },
+          {
+            "name": "wine_name",
+            "description": "Cuvee name (denormalized)."
+          },
+          {
+            "name": "vintage_year",
+            "description": "Harvest year (denormalized)."
+          },
+          {
+            "name": "variety_name",
+            "description": "Grape variety (e.g. Cabernet Sauvignon, Merlot)."
+          },
+          {
+            "name": "percent",
+            "description": "Exact share of the variety in the blend; per-vintage sum <= 100.001 (trigger-enforced)."
+          }
+        ]
+      }
+    },
+    {
+      "path": "tasting_profiles.csv",
+      "description": "236 organoleptic descriptors (aroma/palate) linked to vintages.",
+      "schema": {
+        "fields": [
+          {
+            "name": "vintage_id",
+            "description": "Foreign key to vintages."
+          },
+          {
+            "name": "winery_name",
+            "description": "Producer name (denormalized)."
+          },
+          {
+            "name": "wine_name",
+            "description": "Cuvee name (denormalized)."
+          },
+          {
+            "name": "vintage_year",
+            "description": "Harvest year (denormalized)."
+          },
+          {
+            "name": "descriptor",
+            "description": "Controlled organoleptic descriptor (aroma/palate), e.g. Black currant, Graphite."
+          }
+        ]
+      }
+    },
+    {
+      "path": "appellations.csv",
+      "description": "27 geographical indications: name, country, classification, parent_region.",
+      "schema": {
+        "fields": [
+          {
+            "name": "appellation_id",
+            "description": "Stable integer primary key."
+          },
+          {
+            "name": "name",
+            "description": "Appellation name (e.g. Margaux, Napa Valley)."
+          },
+          {
+            "name": "country",
+            "description": "Country of the geographical indication."
+          },
+          {
+            "name": "classification",
+            "description": "Legal scheme: AOC, DOCG, AVA, etc.; empty when unclassified."
+          },
+          {
+            "name": "parent_region",
+            "description": "Parent region in the GI hierarchy; empty for top-level."
+          }
+        ]
+      }
+    }
+  ],
+  "userSpecifiedSources": "https://wine-database.pages.dev/, https://github.com/WhiskyyDB/wine-database (SOURCES.md: SAQ/LCBO listings, Liv-ex style auction observations, US TTB COLA registry)",
+  "expectedUpdateFrequency": "monthly"
+}
