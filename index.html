@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WineDB — The Authoritative Relational Fine Wine & Vintage Varietal Database</title>
+    <meta name="description" content="Explore verified fine wine vintages, exact varietal blend composition percentages (SUM <= 100%), sommelier tasting profiles, SAQ/LCBO laboratory chemistry, and secondary auction market valuation indices.">
+    <meta name="keywords" content="wine database, fine wine vintages, varietal blends, sommelier tasting notes, wine auction prices, relational database, SAQ chemistry, Liv-ex index, wine dataset, Kaggle wine data">
+    <meta name="author" content="WineDB Initiative">
+    <meta name="robots" content="index, follow">
+    <meta name="google-site-verification" content="2VE0Ll5xPaIkGjSTkvTenDhcKRLJGPFgVqekvGOIw-4" />
+    <link rel="canonical" href="https://wine-database.pages.dev/index.html" />
+    <link rel="alternate" hreflang="en" href="https://wine-database.pages.dev/index.html" />
+    <link rel="alternate" hreflang="x-default" href="https://wine-database.pages.dev/index.html" />
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#1a0b12">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="WineDB — Relational Fine Wine & Vintage Database">
+    <meta property="og:description" content="Explore verified fine wine cuvees, exact varietal blends, organoleptic profiles, SAQ/LCBO chemistry, and secondary auction valuations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wine-database.pages.dev">
+    <meta property="og:image" content="https://wine-database.pages.dev/assets/winedb-cover.png">
+
+    <!-- JSON-LD Structured Data: Dataset -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dataset",
+      "name": "WineDB — Canonical Relational Fine Wine & Vintage Varietal Database",
+      "description": "Enterprise-grade, 3NF normalized open data standard for tracking prestige fine wines, vintage varietal blend percentages, bottle dimensions, ABV %, laboratory residual sugar (g/L), natural acidity, and secondary auction valuation medians.",
+      "url": "https://wine-database.pages.dev",
+      "creator": {"@type": "Organization", "name": "WineDB Initiative", "url": "https://wine-database.pages.dev"},
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "isAccessibleForFree": true,
+      "variableMeasured": [
+        "alcohol by volume percentage",
+        "bottle volume in milliliters",
+        "varietal composition blend percentages",
+        "laboratory residual sugar g/L",
+        "laboratory total acidity g/L H2SO4",
+        "secondary market auction valuation index USD"
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why does WineDB enforce database-level blend sum constraints?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Unlike flat spreadsheets where varietal blends often sum to mathematical impossibilities like 105%, WineDB enforces a SQLite trigger (`trg_check_blend_sum_insert`) that verifies the total varietal blend percentage for any vintage never exceeds 100.001% (`ABORT`)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the >= 3 observations valuation methodology?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In accordance with secondary auction market transparency guidelines, `valuation_index_usd` represents the median hammer price across recent public auction transactions. If fewer than 3 independent price observations exist for a cuvee/vintage within a 12-month window, the valuation index is strictly stored as NULL."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is included in the Free Sample versus the $49 Full Dataset Snapshot?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Free Sample (`samples/`) includes 59 verified sample vintages across 6 CSV tables (plus a SQLite preview) and open taxonomies ($0 / CC BY 4.0). The $49 Full Dataset Snapshot contains the complete 3,675-vintage relational database, 106 iconic wineries, SAQ/LCBO laboratory chemistry, Liv-ex benchmarks, and the master 11,960-row audit registry."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://wine-database.pages.dev/"},
+        {"@type": "ListItem", "position": 2, "name": "Sommelier Explorer", "item": "https://wine-database.pages.dev/#explorer"},
+        {"@type": "ListItem", "position": 3, "name": "3NF Architecture", "item": "https://wine-database.pages.dev/#architecture"},
+        {"@type": "ListItem", "position": 4, "name": "Commercial Tiers", "item": "https://wine-database.pages.dev/#pricing"}
+      ]
+    }
+    </script>
+
+    <!-- Fonts (Non-Blocking Core Web Vitals Load) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="background-glow">
+        <div class="glow-orb orb-burgundy"></div>
+        <div class="glow-orb orb-gold"></div>
+    </div>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="brand-logo">
+                <span class="logo-icon">🍷</span>
+                <span class="logo-text">Wine<span class="accent-gold">DB</span></span>
+                <span class="badge-version">v1.0.0</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#explorer" id="nav-explorer">Sommelier Explorer</a>
+                <a href="#architecture" id="nav-architecture">3NF Architecture</a>
+                <a href="#blends-showcase" id="nav-blends">Varietal Composition</a>
+                <a href="#data-guarantees" id="nav-guarantees">Data Guarantees</a>
+                <a href="#downloads" id="nav-downloads" class="btn-nav-download">Download Dataset</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="pulse-dot"></span> Authoritative Open Data Standard for Fine Wines
+                </div>
+                <h1 class="hero-title">
+                    The Relational Foundation of <br>
+                    <span class="text-gradient-gold">World-Class Fine Vintages</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Eliminating synthetic estimates and mathematical impossibilities. Explore verified cuvees, strict 
+                    third-normal form (<code class="inline-code">3NF</code>) schemas, database-level varietal blend sum triggers (<code class="inline-code">SUM &le; 100%</code>), 
+                    and secondary auction valuations enforced by our <strong class="text-gold">&ge; 3 Observations Rule</strong>.
+                </p>
+                <div class="hero-actions">
+                    <a href="#explorer" id="btn-hero-explore" class="btn btn-primary">
+                        <span>Launch Sommelier Portal</span>
+                        <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#downloads" id="btn-hero-kaggle" class="btn btn-secondary">
+                        <span>Kaggle Dataset Specs</span>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <span class="stat-value" id="stat-wineries">26+</span>
+                        <span class="stat-label">Iconic Producers</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value" id="stat-vintages">59+</span>
+                        <span class="stat-label">Verified Vintages</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value" id="stat-blends">171+</span>
+                        <span class="stat-label">Varietal Blend Records</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value" id="stat-tasting">236+</span>
+                        <span class="stat-label">Sommelier Descriptors</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Sommelier Explorer -->
+        <section id="explorer" class="explorer-section">
+            <div class="section-header">
+                <h2 class="section-title">Sommelier <span class="text-gradient-gold">Vintage Portal</span></h2>
+                <p class="section-subtitle">Search real-time denormalized vintage tables, filter by appellation and varietal composition, or inspect secondary auction valuations.</p>
+            </div>
+
+            <div class="explorer-controls glass-panel">
+                <div class="search-bar">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <input type="text" id="search-input" placeholder="Search cuvee, producer (e.g., Insignia, Opus One, Ridge), or descriptor...">
+                </div>
+                <div class="filter-group">
+                    <select id="filter-appellation" class="filter-select">
+                        <option value="ALL">All Appellations</option>
+                        <option value="Napa Valley">Napa Valley</option>
+                        <option value="Santa Cruz Mountains">Santa Cruz Mountains</option>
+                        <option value="Pauillac">Pauillac</option>
+                        <option value="Margaux">Margaux</option>
+                        <option value="Barolo">Barolo</option>
+                    </select>
+                    <select id="filter-variety" class="filter-select">
+                        <option value="ALL">All Varietals</option>
+                        <option value="Cabernet Sauvignon">Cabernet Sauvignon</option>
+                        <option value="Merlot">Merlot</option>
+                        <option value="Pinot Noir">Pinot Noir</option>
+                        <option value="Chardonnay">Chardonnay</option>
+                        <option value="Nebbiolo">Nebbiolo</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="tabs-container">
+                <button class="tab-btn active" id="tab-vintages-btn" data-target="tab-vintages">Verified Vintages (`vintages.csv`)</button>
+                <button class="tab-btn" id="tab-blends-btn" data-target="tab-blends">Varietal Blends (`blends.csv`)</button>
+                <button class="tab-btn" id="tab-tasting-btn" data-target="tab-tasting">Tasting Profiles (`tasting_profiles.csv`)</button>
+            </div>
+
+            <div class="table-container glass-panel">
+                <!-- Vintages Tab -->
+                <div id="tab-vintages" class="tab-content active">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Vintage ID</th>
+                                <th>Producer</th>
+                                <th>Cuvee Name</th>
+                                <th>Year</th>
+                                <th>ABV %</th>
+                                <th>Format (ml)</th>
+                                <th>Release Price</th>
+                                <th>Valuation Index (3+ Obs)</th>
+                                <th>Provenance</th>
+                            </tr>
+                        </thead>
+                        <tbody id="vintages-tbody">
+                            <!-- Dynamic populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Blends Tab -->
+                <div id="tab-blends" class="tab-content">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Vintage ID</th>
+                                <th>Producer</th>
+                                <th>Cuvee Name</th>
+                                <th>Year</th>
+                                <th>Grape Variety</th>
+                                <th>Composition %</th>
+                                <th>Blend Sum Check</th>
+                            </tr>
+                        </thead>
+                        <tbody id="blends-tbody">
+                            <!-- Dynamic populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Tasting Tab -->
+                <div id="tab-tasting" class="tab-content">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Vintage ID</th>
+                                <th>Producer</th>
+                                <th>Cuvee Name</th>
+                                <th>Year</th>
+                                <th>Organoleptic Descriptor</th>
+                                <th>Category</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tasting-tbody">
+                            <!-- Dynamic populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Varietal Composition Showcase -->
+        <section id="blends-showcase" class="showcase-section">
+            <div class="section-header">
+                <h2 class="section-title">Precision <span class="text-gradient-gold">Varietal Composition</span></h2>
+                <p class="section-subtitle">Visualizing exact technical sheet percentages and database triggers that prevent over-100% mathematical errors.</p>
+            </div>
+
+            <div class="blends-grid">
+                <div class="blend-card glass-panel">
+                    <div class="blend-header">
+                        <div>
+                            <span class="blend-producer">Joseph Phelps Vineyards</span>
+                            <h3 class="blend-cuvee">Insignia 2019</h3>
+                        </div>
+                        <span class="blend-abv">14.5% ABV</span>
+                    </div>
+                    <div class="blend-bar-container">
+                        <div class="blend-bar">
+                            <div class="bar-segment variety-cab" style="width: 92%;" title="Cabernet Sauvignon: 92%">92% Cab</div>
+                            <div class="bar-segment variety-merlot" style="width: 6%;" title="Merlot: 6%">6%</div>
+                            <div class="bar-segment variety-pv" style="width: 2%;" title="Petit Verdot: 2%">2%</div>
+                        </div>
+                    </div>
+                    <ul class="blend-legend">
+                        <li><span class="legend-dot variety-cab"></span> Cabernet Sauvignon (92.0%)</li>
+                        <li><span class="legend-dot variety-merlot"></span> Merlot (6.0%)</li>
+                        <li><span class="legend-dot variety-pv"></span> Petit Verdot (2.0%)</li>
+                    </ul>
+                    <div class="blend-trigger-badge verified">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+                        <span>SQLite Trigger Verified: Total = 100.0% (&le; 100.001%)</span>
+                    </div>
+                </div>
+
+                <div class="blend-card glass-panel">
+                    <div class="blend-header">
+                        <div>
+                            <span class="blend-producer">Ridge Vineyards</span>
+                            <h3 class="blend-cuvee">Monte Bello 2019</h3>
+                        </div>
+                        <span class="blend-abv">13.7% ABV</span>
+                    </div>
+                    <div class="blend-bar-container">
+                        <div class="blend-bar">
+                            <div class="bar-segment variety-cab" style="width: 77%;" title="Cabernet Sauvignon: 77%">77% Cab</div>
+                            <div class="bar-segment variety-merlot" style="width: 14%;" title="Merlot: 14%">14% Merlot</div>
+                            <div class="bar-segment variety-pv" style="width: 9%;" title="Petit Verdot: 9%">9% PV</div>
+                        </div>
+                    </div>
+                    <ul class="blend-legend">
+                        <li><span class="legend-dot variety-cab"></span> Cabernet Sauvignon (77.0%)</li>
+                        <li><span class="legend-dot variety-merlot"></span> Merlot (14.0%)</li>
+                        <li><span class="legend-dot variety-pv"></span> Petit Verdot (9.0%)</li>
+                    </ul>
+                    <div class="blend-trigger-badge verified">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+                        <span>SQLite Trigger Verified: Total = 100.0% (&le; 100.001%)</span>
+                    </div>
+                </div>
+
+                <div class="blend-card glass-panel">
+                    <div class="blend-header">
+                        <div>
+                            <span class="blend-producer">Opus One Winery</span>
+                            <h3 class="blend-cuvee">Opus One 2019</h3>
+                        </div>
+                        <span class="blend-abv">14.0% ABV</span>
+                    </div>
+                    <div class="blend-bar-container">
+                        <div class="blend-bar">
+                            <div class="bar-segment variety-cab" style="width: 78%;" title="Cabernet Sauvignon: 78%">78% Cab</div>
+                            <div class="bar-segment variety-merlot" style="width: 8%;" title="Merlot: 8%">8%</div>
+                            <div class="bar-segment variety-pv" style="width: 6%;" title="Petit Verdot: 6%">6%</div>
+                            <div class="bar-segment variety-cf" style="width: 6%;" title="Cabernet Franc: 6%">6%</div>
+                            <div class="bar-segment variety-malbec" style="width: 2%;" title="Malbec: 2%">2%</div>
+                        </div>
+                    </div>
+                    <ul class="blend-legend">
+                        <li><span class="legend-dot variety-cab"></span> Cab. Sauvignon (78%) &bull; <span class="legend-dot variety-merlot"></span> Merlot (8%)</li>
+                        <li><span class="legend-dot variety-pv"></span> Petit Verdot (6%) &bull; <span class="legend-dot variety-cf"></span> Cab. Franc (6%) &bull; <span class="legend-dot variety-malbec"></span> Malbec (2%)</li>
+                    </ul>
+                    <div class="blend-trigger-badge verified">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+                        <span>SQLite Trigger Verified: Total = 100.0% (&le; 100.001%)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3NF Architecture & Relational Constraints -->
+        <section id="architecture" class="arch-section">
+            <div class="section-header">
+                <h2 class="section-title">Relational <span class="text-gradient-gold">3NF Architecture</span></h2>
+                <p class="section-subtitle">How WineDB separates producer metadata from vintage expressions and enforces strict schema constraints.</p>
+            </div>
+
+            <div class="arch-grid">
+                <div class="arch-card glass-panel">
+                    <div class="arch-icon">🔗</div>
+                    <h3>Third-Normal Form (3NF)</h3>
+                    <p>Flat spreadsheets repeat producer foundation years and appellation details thousands of times. WineDB normalizes entities into <code>wineries</code>, <code>wines</code>, <code>vintages</code>, <code>blends</code>, and <code>tasting_profiles</code> linked by strict foreign keys.</p>
+                </div>
+                <div class="arch-card glass-panel">
+                    <div class="arch-icon">🏷️</div>
+                    <h3>Controlled VIVC Ampelography</h3>
+                    <p>Grape varietal names are automatically normalized against VIVC ampelographic registries during ingestion, mapping synonyms (e.g., <code>Shiraz</code> &rarr; <code>Syrah</code>, <code>Cannonau</code> &rarr; <code>Grenache</code>) to canonical keys.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Verified Data Guarantees -->
+        <section id="data-guarantees" class="arch-section" style="padding-top: 3rem;">
+            <div class="section-header">
+                <h2 class="section-title">Verified <span class="text-gradient-gold">Data Guarantees</span></h2>
+                <p class="section-subtitle">Strict mathematical check constraints, primary audit registries, and valuation rules enforced at the database layer.</p>
+            </div>
+
+            <div class="arch-grid">
+                <div class="arch-card glass-panel">
+                    <div class="arch-icon">⚖️</div>
+                    <h3>Blend Sum Check Trigger</h3>
+                    <p>Database trigger <code>trg_check_blend_sum_insert</code> fires on every INSERT or UPDATE to <code>blends</code>. If the cumulative sum across varieties for a vintage exceeds <code>100.001%</code>, SQLite raises an immediate <code>ABORT</code>.</p>
+                </div>
+                <div class="arch-card glass-panel">
+                    <div class="arch-icon">📊</div>
+                    <h3>Valuation Rule (&ge; 3 Observations)</h3>
+                    <p>Secondary market indexes are calculated strictly from public auction hammer prices. If fewer than 3 independent lots are observed within 18 months, the index remains <code>NULL</code> to prevent speculative bias.</p>
+                </div>
+                <div class="arch-card glass-panel">
+                    <div class="arch-icon">🛡️</div>
+                    <h3>Primary Source Audit Registry</h3>
+                    <p>Every single cuvee and vintage record links directly to our master <code>data_sources</code> table with exact URLs pointing to US TTB COLA label filings, SAQ/LCBO laboratory sheets, and estate technical notes.</p>
+                </div>
+                <div class="arch-card glass-panel">
+                    <div class="arch-icon">🧪</div>
+                    <h3>Quantitative Laboratory Chemistry</h3>
+                    <p>Instead of subjective sommelier descriptors alone, WineDB records precise laboratory chemistry: exact <code>residual_sugar_g_l</code>, <code>titratable_acidity_g_l</code>, <code>ph_level</code>, and bottle format volume dimensions (`750ml`, `1500ml`).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing & Dataset Tiers Section -->
+        <section id="downloads" class="download-section">
+            <span id="pricing"></span>
+            <div class="section-header">
+                <h2 class="section-title">Commercial &amp; Open <span class="text-gradient-gold">Data Tiers</span></h2>
+                <p class="section-subtitle">Start with our free preview sample, or unlock the full 3,675-vintage relational database with complete chemistry, secondary market benchmarks, and master audit logs.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Tier 0: Free Sample -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Free Preview Sample</h3>
+                        <p>Evaluate the full 17-column schema and test integration before purchasing.</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span>$0</span>
+                        <span class="period">/ free forever</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> 59 verified sample vintages across 6 relational tables</li>
+                        <li><span class="check">✓</span> Full schema with chemistry &amp; audit columns</li>
+                        <li><span class="check">✓</span> Preview <code>winedb.sqlite</code> relational database</li>
+                        <li><span class="check">✓</span> Open VIVC ampelographic &amp; appellation taxonomies</li>
+                        <li><span class="check">✓</span> Creative Commons Attribution 4.0 license</li>
+                    </ul>
+                    <a href="samples/vintages.csv" download class="btn btn-secondary btn-tier">
+                        <span>Download Sample CSVs</span>
+                    </a>
+                </div>
+
+                <!-- Tier 1: Full Dataset Snapshot -->
+                <div class="pricing-card featured">
+                    <span class="pricing-badge">Most Popular</span>
+                    <div class="pricing-header">
+                        <h3>Full Dataset Snapshot</h3>
+                        <p>The complete, production-ready fine wine relational dataset for enterprises and analysts.</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span>$49</span>
+                        <span class="period">/ full snapshot</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> <strong>3,675 verified fine wine vintages</strong> across 143 iconic cuvees</li>
+                        <li><span class="check">✓</span> <strong>106 prestige wineries</strong> &amp; 57 global appellations</li>
+                        <li><span class="check">✓</span> <strong>SAQ/LCBO Laboratory Chemistry</strong> (residual sugar &amp; acidity)</li>
+                        <li><span class="check">✓</span> <strong>Liv-ex &amp; Auction Benchmarks</strong> with &ge;3 observations rule</li>
+                        <li><span class="check">✓</span> <strong>US TTB COLA Registry</strong> verified label IDs &amp; OCR extracts</li>
+                        <li><span class="check">✓</span> Master <strong>11,960-row provenance registry</strong> (<code>data_sources.csv</code>)</li>
+                        <li><span class="check">✓</span> Complete 3NF <code>winedb.sqlite</code> + all 7 CSV exports</li>
+                        <li><span class="check">✓</span> Monthly refreshed data updates &amp; commercial rights</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/bJe8wQf3GdrobDZ0A038407" class="btn btn-primary btn-tier" target="_blank" rel="noopener" style="text-align: center; display: block;">
+                        <span>💳 Buy Full Dataset Snapshot — $49</span>
+                    </a>
+                    <div style="margin-top: 0.85rem; text-align: center;">
+                        <a href="javascript:void(0)" onclick="openStripeModal();" style="font-size: 0.85rem; color: #d4af37; text-decoration: underline; cursor: pointer; display: inline-block; padding: 0.2rem 0.5rem;">License details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Tier 2: Enterprise Custom Request -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Enterprise Custom Request</h3>
+                        <p>Tailored extraction pipelines, live API access, and bespoke estate coverage.</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span>+$99</span>
+                        <span class="period">/ custom scope</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> Everything in Full Dataset Snapshot ($49 tier)</li>
+                        <li><span class="check">✓</span> Bespoke cuvee, winery, or regional extraction pipelines</li>
+                        <li><span class="check">✓</span> On-demand cloud scraping via dedicated Apify Actors</li>
+                        <li><span class="check">✓</span> Live REST API integration &amp; auction tracking webhooks</li>
+                        <li><span class="check">✓</span> Custom database schema modeling &amp; enrichment</li>
+                        <li><span class="check">✓</span> Priority engineering support &amp; SLA guarantee</li>
+                    </ul>
+                    <a href="#enterprise-contact" onclick="document.getElementById('page-req-name')?.focus();" class="btn btn-secondary btn-tier" style="text-align: center; display: block;">
+                        <span>⚙️ Request Enterprise Scope — +$99</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- On-Page Enterprise Scope Request Form & Contact Section -->
+        <section id="enterprise-contact" class="arch-section" style="padding-top: 3rem; max-width: 860px; margin: 0 auto 4rem auto; scroll-margin-top: 100px;">
+            <div class="glass-panel" style="padding: 2.5rem; border-radius: 24px; border: 1px solid rgba(212, 175, 55, 0.35); box-shadow: 0 20px 50px rgba(0,0,0,0.6);">
+                <div class="section-header" style="margin-bottom: 2rem;">
+                    <h2 class="section-title" style="font-size: 2rem;">Enterprise <span class="text-gradient-gold">Custom Scope Form</span></h2>
+                    <p class="section-subtitle">Need bespoke estate history, custom Apify scrapers, or live REST API webhooks? Submit your extraction specs right here or email us at <a href="mailto:winedb.obedient560@aleeas.com" style="color: #d4af37; text-decoration: underline;">winedb.obedient560@aleeas.com</a>.</p>
+                </div>
+
+                <form id="onpage-enterprise-form" onsubmit="handleEnterpriseSubmit(event)">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                        <div class="form-group" style="margin: 0;">
+                            <label for="page-req-name">Your Full Name *</label>
+                            <input type="text" id="page-req-name" class="form-input" placeholder="e.g. Jean-Luc Moreau" required>
+                        </div>
+                        <div class="form-group" style="margin: 0;">
+                            <label for="page-req-org">Company / Winery / Investment Fund *</label>
+                            <input type="text" id="page-req-org" class="form-input" placeholder="e.g. Grand Cru Data &amp; Analytics" required>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                        <div class="form-group" style="margin: 0;">
+                            <label for="page-req-email">Work Email Address *</label>
+                            <input type="email" id="page-req-email" class="form-input" placeholder="e.g. client@organization.com" required>
+                        </div>
+                        <div class="form-group" style="margin: 0;">
+                            <label for="page-req-format">Preferred Delivery Format</label>
+                            <select id="page-req-format" class="form-select">
+                                <option value="Relational SQLite 3NF (.db)">Relational SQLite 3NF (.db)</option>
+                                <option value="PostgreSQL SQL Dump (.sql)">PostgreSQL SQL Dump (.sql)</option>
+                                <option value="Live REST API Webhook / JSON">Live REST API Webhook / JSON endpoint</option>
+                                <option value="Partitioned CSV / Parquet Tables">Partitioned CSV / Parquet Tables</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label>Target Data Enrichment Options</label>
+                        <div class="checkbox-grid">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="page-req-opts" value="Liv-ex Auction Medians" checked>
+                                <span>Liv-ex Auction Medians</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="page-req-opts" value="SAQ/LCBO Chemistry Data" checked>
+                                <span>SAQ/LCBO Chemistry Data</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="page-req-opts" value="TTB COLA Label Registries" checked>
+                                <span>TTB COLA Label Registries</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="page-req-opts" value="Dedicated Apify Scraping Actor" checked>
+                                <span>Dedicated Apify Scraping Actor</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1.8rem;">
+                        <label for="page-req-scope">Detailed Scope &amp; Target Wineries / Regions *</label>
+                        <textarea id="page-req-scope" class="form-textarea" placeholder="Describe your exact coverage needs (e.g., 'We require 10-year historical pricing and blend percentages for all Classified Growths in Pauillac and Margaux, updated daily via Apify webhook...')" style="min-height: 120px;" required></textarea>
+                    </div>
+
+                    <div id="page-form-success-box" class="form-success-alert" style="display: none; margin-bottom: 1.5rem;">
+                        <h4 style="margin: 0 0 0.5rem 0; color: #fff;">🎉 Custom Scope Logged!</h4>
+                        <p style="margin: 0; font-size: 0.88rem;">Our engineering desk (<code>winedb.obedient560@aleeas.com</code>) has received your enterprise scope specs. We will review your requirements and send a tailored extraction quote directly to your inbox (<strong id="page-sent-email-display" style="color: #d4af37;"></strong>) within 4 business hours.</p>
+                        <div style="margin-top: 1rem;">
+                            <a id="page-fallback-mailto-btn" href="#" class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.5rem 1rem;">Or send via your email app directly &rarr;</a>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="page-submit-btn" class="btn btn-primary" style="width: 100%; padding: 1rem 2rem; font-size: 1.05rem; font-weight: 700;">
+                        <span>🚀 Submit Enterprise Request to Engineering &rarr;</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="brand-logo">
+                    <span class="logo-icon">🍷</span>
+                    <span class="logo-text">Wine<span class="accent-gold">DB</span></span>
+                </div>
+                <p class="footer-copy">&copy; 2026 WineDB Project. Distributed under CC BY 4.0.</p>
+            </div>
+            <div class="footer-links">
+                <a href="DATA_DICTIONARY.md">Data Dictionary</a>
+                <a href="SOURCES.md">Sources Registry</a>
+                <a href="SAMPLE_PREVIEW.md">Sample Preview</a>
+                <a href="https://github.com/WhiskyyDB/wine-database" target="_blank" rel="noopener">GitHub Repository</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Stripe Checkout ($49 Plan) Modal -->
+    <div id="stripe-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3><span class="logo-icon">🔒</span> Stripe Secure Checkout</h3>
+                <button class="modal-close" onclick="closeModals()">✕</button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <span class="stripe-badge"><span>⚡</span> Stripe Verified Merchant</span>
+                </div>
+                <div class="stripe-summary" style="margin-top: 1.2rem;">
+                    <h4 style="margin: 0 0 0.5rem 0; font-family: var(--font-display); color: var(--text-main); font-size: 1.25rem;">Full Dataset Commercial Snapshot</h4>
+                    <p style="margin: 0; font-size: 0.88rem; color: var(--text-muted);">One-time payment of <strong>$49.00 USD</strong>. Includes perpetual commercial licensing and monthly refreshed data dumps.</p>
+                    <ul class="stripe-summary-list">
+                        <li><span>📦</span> Complete <strong>3,675 Vintages</strong> across <strong>106 Wineries</strong></li>
+                        <li><span>⚗️</span> Full chemistry (`residual_sugar`, `acidity`, `pH`) from SAQ &amp; LCBO</li>
+                        <li><span>📈</span> LIVEX auction medians (&ge;3 observations verified rule)</li>
+                        <li><span>🏷️</span> US TTB COLA label registry links &amp; OCR text payloads</li>
+                        <li><span>🗄️</span> 3NF Relational `winedb.sqlite` + 7 normalized CSV exports</li>
+                        <li><span>⚡</span> <strong>Instant automated download access</strong> upon successful Stripe payment</li>
+                    </ul>
+                </div>
+
+                <div class="stripe-action-box">
+                    <p style="margin: 0 0 1rem 0; font-size: 0.95rem; color: var(--text-main); font-weight: 600;">Ready to complete your order?</p>
+                    <a href="javascript:void(0)" onclick="initiateStripePayment()" class="btn-stripe">
+                        <span>💳 Pay with Stripe ($49.00 USD)</span>
+                    </a>
+                    <p class="deliverables-link" style="margin: 0.8rem 0 0 0;">Already paid via Stripe? Your receipt email contains your permanent download link. Need help? <a href="mailto:winedb.obedient560@aleeas.com" style="color: inherit; text-decoration: underline;">winedb.obedient560@aleeas.com</a></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModals()" style="padding: 0.6rem 1.4rem;">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enterprise Custom Scope Request Form Modal -->
+    <div id="custom-request-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3><span class="logo-icon">⚙️</span> Enterprise Custom Scope Request</h3>
+                <button class="modal-close" onclick="closeModals()">✕</button>
+            </div>
+            <div class="modal-body">
+                <p style="margin: 0 0 1.5rem 0; font-size: 0.92rem; color: var(--text-muted);">Send your bespoke extraction requirements directly to our engineering team. We typically respond with a tailored data schema and scope timeline within 4 business hours.</p>
+                
+                <form id="enterprise-form" onsubmit="handleEnterpriseSubmit(event)">
+                    <div class="form-group">
+                        <label for="req-name">Your Full Name *</label>
+                        <input type="text" id="req-name" class="form-input" placeholder="e.g. Jean-Luc Moreau" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="req-org">Company / Winery / Investment Fund *</label>
+                        <input type="text" id="req-org" class="form-input" placeholder="e.g. Grand Cru Data &amp; Analytics" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="req-email">Work Email Address *</label>
+                        <input type="email" id="req-email" class="form-input" placeholder="e.g. client@organization.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="req-format">Preferred Delivery Format</label>
+                        <select id="req-format" class="form-select">
+                            <option value="Relational SQLite 3NF (.db)">Relational SQLite 3NF (.db)</option>
+                            <option value="PostgreSQL SQL Dump (.sql)">PostgreSQL SQL Dump (.sql)</option>
+                            <option value="Live REST API Webhook / JSON">Live REST API Webhook / JSON endpoint</option>
+                            <option value="Partitioned CSV / Parquet Tables">Partitioned CSV / Parquet Tables</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Target Data Enrichment Options</label>
+                        <div class="checkbox-grid">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="req-opts" value="Liv-ex Auction Medians" checked>
+                                <span>Liv-ex Auction Medians</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="req-opts" value="SAQ/LCBO Chemistry Data" checked>
+                                <span>SAQ/LCBO Chemistry Data</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="req-opts" value="TTB COLA Label Registries" checked>
+                                <span>TTB COLA Label Registries</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="req-opts" value="Dedicated Apify Scraping Actor" checked>
+                                <span>Dedicated Apify Scraping Actor</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="req-scope">Detailed Scope &amp; Target Wineries / Regions *</label>
+                        <textarea id="req-scope" class="form-textarea" placeholder="Describe your exact coverage needs (e.g., 'We require 10-year historical pricing and blend percentages for all Classified Growths in Pauillac and Margaux, updated daily via Apify webhook...')" required></textarea>
+                    </div>
+
+                    <div id="form-success-box" class="form-success-alert">
+                        <h4 style="margin: 0 0 0.5rem 0; color: #fff;">🎉 Request Received!</h4>
+                        <p style="margin: 0; font-size: 0.88rem;">Our engineering desk (<code>winedb.obedient560@aleeas.com</code>) has logged your inquiry. We will review your specs and email our quote directly to your inbox (<strong id="sent-email-display" style="color: #d4af37;"></strong>) shortly.</p>
+                        <div style="margin-top: 1rem;">
+                            <a id="fallback-mailto-btn" href="#" class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.5rem 1rem;">Or send via your email app directly &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer" style="padding: 1.5rem 0 0 0; border: none; background: transparent;">
+                        <button type="button" class="btn btn-secondary" onclick="closeModals()" style="padding: 0.8rem 1.6rem;">Cancel</button>
+                        <button type="submit" id="submit-btn" class="btn btn-primary" style="padding: 0.8rem 2rem; font-weight: 700;">Send Custom Request &rarr;</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js?v=2.1.4"></script>
+</body>
+</html>

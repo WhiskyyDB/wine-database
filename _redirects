@@ -1,0 +1,4 @@
+# The one-time /success page was removed: fulfillment is handled by the
+# Stripe-verified delivery worker, never by a static page on this site.
+/success / 301
+/success.html / 301
