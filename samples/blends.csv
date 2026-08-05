@@ -1,0 +1,172 @@
+vintage_id,winery_name,wine_name,vintage_year,variety_name,percent
+1,Joseph Phelps Vineyards,Insignia,2019,Cabernet Sauvignon,92.0
+1,Joseph Phelps Vineyards,Insignia,2019,Merlot,6.0
+1,Joseph Phelps Vineyards,Insignia,2019,Petit Verdot,2.0
+2,Joseph Phelps Vineyards,Insignia,2018,Cabernet Sauvignon,87.0
+2,Joseph Phelps Vineyards,Insignia,2018,Petit Verdot,8.0
+2,Joseph Phelps Vineyards,Insignia,2018,Malbec,3.0
+2,Joseph Phelps Vineyards,Insignia,2018,Merlot,2.0
+3,Joseph Phelps Vineyards,Insignia,2017,Cabernet Sauvignon,94.0
+3,Joseph Phelps Vineyards,Insignia,2017,Malbec,4.0
+3,Joseph Phelps Vineyards,Insignia,2017,Cabernet Franc,2.0
+4,Joseph Phelps Vineyards,Insignia,2016,Cabernet Sauvignon,84.0
+4,Joseph Phelps Vineyards,Insignia,2016,Petit Verdot,10.0
+4,Joseph Phelps Vineyards,Insignia,2016,Malbec,3.0
+4,Joseph Phelps Vineyards,Insignia,2016,Cabernet Franc,3.0
+5,Joseph Phelps Vineyards,Insignia,2015,Cabernet Sauvignon,80.0
+5,Joseph Phelps Vineyards,Insignia,2015,Petit Verdot,15.0
+5,Joseph Phelps Vineyards,Insignia,2015,Malbec,3.0
+5,Joseph Phelps Vineyards,Insignia,2015,Merlot,2.0
+6,Ridge Vineyards,Monte Bello,2019,Cabernet Sauvignon,82.0
+6,Ridge Vineyards,Monte Bello,2019,Merlot,9.0
+6,Ridge Vineyards,Monte Bello,2019,Petit Verdot,8.0
+6,Ridge Vineyards,Monte Bello,2019,Cabernet Franc,1.0
+7,Ridge Vineyards,Monte Bello,2018,Cabernet Sauvignon,68.0
+7,Ridge Vineyards,Monte Bello,2018,Merlot,16.0
+7,Ridge Vineyards,Monte Bello,2018,Petit Verdot,12.0
+7,Ridge Vineyards,Monte Bello,2018,Cabernet Franc,4.0
+8,Ridge Vineyards,Monte Bello,2017,Cabernet Sauvignon,72.0
+8,Ridge Vineyards,Monte Bello,2017,Merlot,16.0
+8,Ridge Vineyards,Monte Bello,2017,Petit Verdot,8.0
+8,Ridge Vineyards,Monte Bello,2017,Cabernet Franc,4.0
+9,Ridge Vineyards,Monte Bello,2016,Cabernet Sauvignon,72.0
+9,Ridge Vineyards,Monte Bello,2016,Merlot,17.0
+9,Ridge Vineyards,Monte Bello,2016,Petit Verdot,8.0
+9,Ridge Vineyards,Monte Bello,2016,Cabernet Franc,3.0
+10,Ridge Vineyards,Monte Bello,2015,Cabernet Sauvignon,77.0
+10,Ridge Vineyards,Monte Bello,2015,Merlot,11.0
+10,Ridge Vineyards,Monte Bello,2015,Petit Verdot,8.0
+10,Ridge Vineyards,Monte Bello,2015,Cabernet Franc,4.0
+11,Opus One Winery,Opus One,2019,Cabernet Sauvignon,78.0
+11,Opus One Winery,Opus One,2019,Merlot,8.0
+11,Opus One Winery,Opus One,2019,Petit Verdot,6.0
+11,Opus One Winery,Opus One,2019,Cabernet Franc,6.0
+11,Opus One Winery,Opus One,2019,Malbec,2.0
+12,Opus One Winery,Opus One,2018,Cabernet Sauvignon,84.0
+12,Opus One Winery,Opus One,2018,Petit Verdot,6.0
+12,Opus One Winery,Opus One,2018,Merlot,5.0
+12,Opus One Winery,Opus One,2018,Cabernet Franc,4.0
+12,Opus One Winery,Opus One,2018,Malbec,1.0
+13,Opus One Winery,Opus One,2017,Cabernet Sauvignon,80.0
+13,Opus One Winery,Opus One,2017,Petit Verdot,9.0
+13,Opus One Winery,Opus One,2017,Merlot,5.0
+13,Opus One Winery,Opus One,2017,Cabernet Franc,5.0
+13,Opus One Winery,Opus One,2017,Malbec,1.0
+14,Opus One Winery,Opus One,2016,Cabernet Sauvignon,77.0
+14,Opus One Winery,Opus One,2016,Merlot,8.0
+14,Opus One Winery,Opus One,2016,Petit Verdot,8.0
+14,Opus One Winery,Opus One,2016,Cabernet Franc,5.0
+14,Opus One Winery,Opus One,2016,Malbec,2.0
+15,Opus One Winery,Opus One,2015,Cabernet Sauvignon,81.0
+15,Opus One Winery,Opus One,2015,Cabernet Franc,7.0
+15,Opus One Winery,Opus One,2015,Merlot,6.0
+15,Opus One Winery,Opus One,2015,Petit Verdot,4.0
+15,Opus One Winery,Opus One,2015,Malbec,2.0
+16,Dominus Estate,Dominus,2019,Cabernet Sauvignon,90.0
+16,Dominus Estate,Dominus,2019,Petit Verdot,6.0
+16,Dominus Estate,Dominus,2019,Cabernet Franc,4.0
+17,Dominus Estate,Dominus,2018,Cabernet Sauvignon,89.0
+17,Dominus Estate,Dominus,2018,Cabernet Franc,6.0
+17,Dominus Estate,Dominus,2018,Petit Verdot,5.0
+18,Dominus Estate,Dominus,2016,Cabernet Sauvignon,84.0
+18,Dominus Estate,Dominus,2016,Petit Verdot,8.0
+18,Dominus Estate,Dominus,2016,Cabernet Franc,8.0
+19,Dominus Estate,Dominus,2015,Cabernet Sauvignon,86.0
+19,Dominus Estate,Dominus,2015,Petit Verdot,9.0
+19,Dominus Estate,Dominus,2015,Cabernet Franc,5.0
+20,Tenuta San Guido,Sassicaia,2019,Cabernet Sauvignon,85.0
+20,Tenuta San Guido,Sassicaia,2019,Cabernet Franc,15.0
+21,Tenuta San Guido,Sassicaia,2018,Cabernet Sauvignon,85.0
+21,Tenuta San Guido,Sassicaia,2018,Cabernet Franc,15.0
+22,Tenuta San Guido,Sassicaia,2017,Cabernet Sauvignon,85.0
+22,Tenuta San Guido,Sassicaia,2017,Cabernet Franc,15.0
+23,Tenuta San Guido,Sassicaia,2016,Cabernet Sauvignon,85.0
+23,Tenuta San Guido,Sassicaia,2016,Cabernet Franc,15.0
+24,Marchesi Antinori,Tignanello,2019,Sangiovese,80.0
+24,Marchesi Antinori,Tignanello,2019,Cabernet Sauvignon,15.0
+24,Marchesi Antinori,Tignanello,2019,Cabernet Franc,5.0
+25,Marchesi Antinori,Tignanello,2018,Sangiovese,80.0
+25,Marchesi Antinori,Tignanello,2018,Cabernet Sauvignon,15.0
+25,Marchesi Antinori,Tignanello,2018,Cabernet Franc,5.0
+26,Marchesi Antinori,Tignanello,2016,Sangiovese,80.0
+26,Marchesi Antinori,Tignanello,2016,Cabernet Sauvignon,15.0
+26,Marchesi Antinori,Tignanello,2016,Cabernet Franc,5.0
+27,Penfolds,Grange,2018,Syrah,97.0
+27,Penfolds,Grange,2018,Cabernet Sauvignon,3.0
+28,Penfolds,Grange,2017,Syrah,100.0
+29,Penfolds,Grange,2016,Syrah,97.0
+29,Penfolds,Grange,2016,Cabernet Sauvignon,3.0
+30,Chateau Margaux,Chateau Margaux,2019,Cabernet Sauvignon,90.0
+30,Chateau Margaux,Chateau Margaux,2019,Merlot,7.0
+30,Chateau Margaux,Chateau Margaux,2019,Cabernet Franc,2.0
+30,Chateau Margaux,Chateau Margaux,2019,Petit Verdot,1.0
+31,Chateau Margaux,Chateau Margaux,2018,Cabernet Sauvignon,90.0
+31,Chateau Margaux,Chateau Margaux,2018,Merlot,4.0
+31,Chateau Margaux,Chateau Margaux,2018,Cabernet Franc,4.0
+31,Chateau Margaux,Chateau Margaux,2018,Petit Verdot,2.0
+32,Chateau Margaux,Chateau Margaux,2016,Cabernet Sauvignon,94.0
+32,Chateau Margaux,Chateau Margaux,2016,Cabernet Franc,3.0
+32,Chateau Margaux,Chateau Margaux,2016,Merlot,2.0
+32,Chateau Margaux,Chateau Margaux,2016,Petit Verdot,1.0
+33,Chateau Latour,Grand Vin de Chateau Latour,2015,Cabernet Sauvignon,92.2
+33,Chateau Latour,Grand Vin de Chateau Latour,2015,Merlot,7.4
+33,Chateau Latour,Grand Vin de Chateau Latour,2015,Petit Verdot,0.4
+34,Chateau Latour,Grand Vin de Chateau Latour,2014,Cabernet Sauvignon,89.9
+34,Chateau Latour,Grand Vin de Chateau Latour,2014,Merlot,9.2
+34,Chateau Latour,Grand Vin de Chateau Latour,2014,Cabernet Franc,0.6
+34,Chateau Latour,Grand Vin de Chateau Latour,2014,Petit Verdot,0.3
+35,Chateau Latour,Grand Vin de Chateau Latour,2012,Cabernet Sauvignon,90.2
+35,Chateau Latour,Grand Vin de Chateau Latour,2012,Merlot,9.6
+35,Chateau Latour,Grand Vin de Chateau Latour,2012,Petit Verdot,0.2
+36,Domaine de la Romanee-Conti,Romanee-Conti Grand Cru,2019,Pinot Noir,100.0
+37,Domaine de la Romanee-Conti,Romanee-Conti Grand Cru,2018,Pinot Noir,100.0
+38,Domaine de la Romanee-Conti,La Tache Grand Cru,2019,Pinot Noir,100.0
+39,Domaine de la Romanee-Conti,La Tache Grand Cru,2018,Pinot Noir,100.0
+40,Almaviva Winery,Almaviva,2020,Cabernet Sauvignon,68.0
+40,Almaviva Winery,Almaviva,2020,Carmenere,24.0
+40,Almaviva Winery,Almaviva,2020,Cabernet Franc,6.0
+40,Almaviva Winery,Almaviva,2020,Petit Verdot,2.0
+41,Almaviva Winery,Almaviva,2019,Cabernet Sauvignon,68.0
+41,Almaviva Winery,Almaviva,2019,Carmenere,23.0
+41,Almaviva Winery,Almaviva,2019,Cabernet Franc,5.0
+41,Almaviva Winery,Almaviva,2019,Petit Verdot,3.0
+41,Almaviva Winery,Almaviva,2019,Merlot,1.0
+42,Almaviva Winery,Almaviva,2018,Cabernet Sauvignon,68.0
+42,Almaviva Winery,Almaviva,2018,Carmenere,23.0
+42,Almaviva Winery,Almaviva,2018,Cabernet Franc,5.0
+42,Almaviva Winery,Almaviva,2018,Petit Verdot,3.0
+42,Almaviva Winery,Almaviva,2018,Merlot,1.0
+43,Screaming Eagle,Screaming Eagle Cabernet Sauvignon,2019,Cabernet Sauvignon,78.0
+43,Screaming Eagle,Screaming Eagle Cabernet Sauvignon,2019,Merlot,14.0
+43,Screaming Eagle,Screaming Eagle Cabernet Sauvignon,2019,Cabernet Franc,8.0
+44,Screaming Eagle,Screaming Eagle Cabernet Sauvignon,2018,Cabernet Sauvignon,76.0
+44,Screaming Eagle,Screaming Eagle Cabernet Sauvignon,2018,Merlot,16.0
+44,Screaming Eagle,Screaming Eagle Cabernet Sauvignon,2018,Cabernet Franc,8.0
+45,Harlan Estate,Harlan Estate,2018,Cabernet Sauvignon,85.0
+45,Harlan Estate,Harlan Estate,2018,Merlot,8.0
+45,Harlan Estate,Harlan Estate,2018,Cabernet Franc,5.0
+45,Harlan Estate,Harlan Estate,2018,Petit Verdot,2.0
+46,Shafer Vineyards,Hillside Select Cabernet Sauvignon,2018,Cabernet Sauvignon,100.0
+47,Caymus Vineyards,Special Selection Cabernet Sauvignon,2018,Cabernet Sauvignon,100.0
+48,Silver Oak Cellars,Napa Valley Cabernet Sauvignon,2018,Cabernet Sauvignon,76.0
+48,Silver Oak Cellars,Napa Valley Cabernet Sauvignon,2018,Merlot,15.2
+48,Silver Oak Cellars,Napa Valley Cabernet Sauvignon,2018,Petit Verdot,4.4
+48,Silver Oak Cellars,Napa Valley Cabernet Sauvignon,2018,Cabernet Franc,4.0
+48,Silver Oak Cellars,Napa Valley Cabernet Sauvignon,2018,Malbec,0.4
+49,E. Guigal,Cote Rotie La Landonne,2018,Syrah,100.0
+50,M. Chapoutier,Ermitage Le Pavillon,2018,Syrah,100.0
+51,Chateau d'Yquem,Chateau d'Yquem,2019,Semillon,85.0
+51,Chateau d'Yquem,Chateau d'Yquem,2019,Sauvignon Blanc,15.0
+52,Chateau d'Yquem,Chateau d'Yquem,2018,Semillon,85.0
+52,Chateau d'Yquem,Chateau d'Yquem,2018,Sauvignon Blanc,15.0
+53,Champagne Salon,Salon Le Mesnil Blanc de Blancs,2013,Chardonnay,100.0
+54,Champagne Krug,Krug Vintage,2008,Pinot Noir,53.0
+54,Champagne Krug,Krug Vintage,2008,Chardonnay,25.0
+54,Champagne Krug,Krug Vintage,2008,Pinot Meunier,22.0
+55,Bodegas Vega Sicilia,Unico,2013,Tempranillo,97.0
+55,Bodegas Vega Sicilia,Unico,2013,Cabernet Sauvignon,3.0
+56,Dominio de Pingus,Pingus,2019,Tempranillo,100.0
+57,Torbreck Vintners,RunRig,2018,Syrah,98.0
+57,Torbreck Vintners,RunRig,2018,Viognier,2.0
+58,Henschke,Hill of Grace Shiraz,2017,Syrah,100.0
+59,Catena Zapata,Adrianna Vineyard Mundus Bacillus Terrae Malbec,2019,Malbec,100.0

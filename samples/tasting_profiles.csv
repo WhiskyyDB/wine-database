@@ -1,0 +1,237 @@
+vintage_id,winery_name,wine_name,vintage_year,descriptor
+1,Joseph Phelps Vineyards,Insignia,2019,blackcurrant
+1,Joseph Phelps Vineyards,Insignia,2019,cedar
+1,Joseph Phelps Vineyards,Insignia,2019,graphite
+1,Joseph Phelps Vineyards,Insignia,2019,vanilla
+2,Joseph Phelps Vineyards,Insignia,2018,blackcurrant
+2,Joseph Phelps Vineyards,Insignia,2018,cedar
+2,Joseph Phelps Vineyards,Insignia,2018,cocoa
+2,Joseph Phelps Vineyards,Insignia,2018,tobacco
+3,Joseph Phelps Vineyards,Insignia,2017,blackcurrant
+3,Joseph Phelps Vineyards,Insignia,2017,plum
+3,Joseph Phelps Vineyards,Insignia,2017,toast
+3,Joseph Phelps Vineyards,Insignia,2017,vanilla
+4,Joseph Phelps Vineyards,Insignia,2016,cassis
+4,Joseph Phelps Vineyards,Insignia,2016,cedar
+4,Joseph Phelps Vineyards,Insignia,2016,graphite
+4,Joseph Phelps Vineyards,Insignia,2016,smoke
+5,Joseph Phelps Vineyards,Insignia,2015,blackcurrant
+5,Joseph Phelps Vineyards,Insignia,2015,cocoa
+5,Joseph Phelps Vineyards,Insignia,2015,licorice
+5,Joseph Phelps Vineyards,Insignia,2015,vanilla
+6,Ridge Vineyards,Monte Bello,2019,blackcurrant
+6,Ridge Vineyards,Monte Bello,2019,cedar
+6,Ridge Vineyards,Monte Bello,2019,mineral
+6,Ridge Vineyards,Monte Bello,2019,tobacco
+7,Ridge Vineyards,Monte Bello,2018,cassis
+7,Ridge Vineyards,Monte Bello,2018,earth
+7,Ridge Vineyards,Monte Bello,2018,spice
+7,Ridge Vineyards,Monte Bello,2018,vanilla
+8,Ridge Vineyards,Monte Bello,2017,blackcurrant
+8,Ridge Vineyards,Monte Bello,2017,graphite
+8,Ridge Vineyards,Monte Bello,2017,leather
+8,Ridge Vineyards,Monte Bello,2017,toast
+9,Ridge Vineyards,Monte Bello,2016,cedar
+9,Ridge Vineyards,Monte Bello,2016,cocoa
+9,Ridge Vineyards,Monte Bello,2016,plum
+9,Ridge Vineyards,Monte Bello,2016,smoke
+10,Ridge Vineyards,Monte Bello,2015,blackcurrant
+10,Ridge Vineyards,Monte Bello,2015,flint
+10,Ridge Vineyards,Monte Bello,2015,tobacco
+10,Ridge Vineyards,Monte Bello,2015,vanilla
+11,Opus One Winery,Opus One,2019,cassis
+11,Opus One Winery,Opus One,2019,cocoa
+11,Opus One Winery,Opus One,2019,graphite
+11,Opus One Winery,Opus One,2019,violet
+12,Opus One Winery,Opus One,2018,blackcurrant
+12,Opus One Winery,Opus One,2018,cedar
+12,Opus One Winery,Opus One,2018,spice
+12,Opus One Winery,Opus One,2018,vanilla
+13,Opus One Winery,Opus One,2017,cocoa
+13,Opus One Winery,Opus One,2017,earth
+13,Opus One Winery,Opus One,2017,leather
+13,Opus One Winery,Opus One,2017,plum
+14,Opus One Winery,Opus One,2016,cassis
+14,Opus One Winery,Opus One,2016,graphite
+14,Opus One Winery,Opus One,2016,smoke
+14,Opus One Winery,Opus One,2016,tobacco
+15,Opus One Winery,Opus One,2015,blackcurrant
+15,Opus One Winery,Opus One,2015,cedar
+15,Opus One Winery,Opus One,2015,licorice
+15,Opus One Winery,Opus One,2015,vanilla
+16,Dominus Estate,Dominus,2019,blackcurrant
+16,Dominus Estate,Dominus,2019,earth
+16,Dominus Estate,Dominus,2019,graphite
+16,Dominus Estate,Dominus,2019,tobacco
+17,Dominus Estate,Dominus,2018,cassis
+17,Dominus Estate,Dominus,2018,cedar
+17,Dominus Estate,Dominus,2018,mineral
+17,Dominus Estate,Dominus,2018,plum
+18,Dominus Estate,Dominus,2016,blackcurrant
+18,Dominus Estate,Dominus,2016,cocoa
+18,Dominus Estate,Dominus,2016,flint
+18,Dominus Estate,Dominus,2016,leather
+19,Dominus Estate,Dominus,2015,earth
+19,Dominus Estate,Dominus,2015,plum
+19,Dominus Estate,Dominus,2015,spice
+19,Dominus Estate,Dominus,2015,vanilla
+20,Tenuta San Guido,Sassicaia,2019,cassis
+20,Tenuta San Guido,Sassicaia,2019,cedar
+20,Tenuta San Guido,Sassicaia,2019,mineral
+20,Tenuta San Guido,Sassicaia,2019,tobacco
+21,Tenuta San Guido,Sassicaia,2018,blackcurrant
+21,Tenuta San Guido,Sassicaia,2018,graphite
+21,Tenuta San Guido,Sassicaia,2018,leather
+21,Tenuta San Guido,Sassicaia,2018,violet
+22,Tenuta San Guido,Sassicaia,2017,cocoa
+22,Tenuta San Guido,Sassicaia,2017,earth
+22,Tenuta San Guido,Sassicaia,2017,plum
+22,Tenuta San Guido,Sassicaia,2017,vanilla
+23,Tenuta San Guido,Sassicaia,2016,cassis
+23,Tenuta San Guido,Sassicaia,2016,cedar
+23,Tenuta San Guido,Sassicaia,2016,smoke
+23,Tenuta San Guido,Sassicaia,2016,spice
+24,Marchesi Antinori,Tignanello,2019,cherry
+24,Marchesi Antinori,Tignanello,2019,plum
+24,Marchesi Antinori,Tignanello,2019,tobacco
+24,Marchesi Antinori,Tignanello,2019,vanilla
+25,Marchesi Antinori,Tignanello,2018,cherry
+25,Marchesi Antinori,Tignanello,2018,earth
+25,Marchesi Antinori,Tignanello,2018,leather
+25,Marchesi Antinori,Tignanello,2018,spice
+26,Marchesi Antinori,Tignanello,2016,blackcurrant
+26,Marchesi Antinori,Tignanello,2016,cedar
+26,Marchesi Antinori,Tignanello,2016,cocoa
+26,Marchesi Antinori,Tignanello,2016,violet
+27,Penfolds,Grange,2018,blackcurrant
+27,Penfolds,Grange,2018,cocoa
+27,Penfolds,Grange,2018,spice
+27,Penfolds,Grange,2018,vanilla
+28,Penfolds,Grange,2017,licorice
+28,Penfolds,Grange,2017,plum
+28,Penfolds,Grange,2017,smoke
+28,Penfolds,Grange,2017,toast
+29,Penfolds,Grange,2016,cassis
+29,Penfolds,Grange,2016,leather
+29,Penfolds,Grange,2016,pepper
+29,Penfolds,Grange,2016,vanilla
+30,Chateau Margaux,Chateau Margaux,2019,cassis
+30,Chateau Margaux,Chateau Margaux,2019,cedar
+30,Chateau Margaux,Chateau Margaux,2019,graphite
+30,Chateau Margaux,Chateau Margaux,2019,violet
+31,Chateau Margaux,Chateau Margaux,2018,blackcurrant
+31,Chateau Margaux,Chateau Margaux,2018,mineral
+31,Chateau Margaux,Chateau Margaux,2018,tobacco
+31,Chateau Margaux,Chateau Margaux,2018,vanilla
+32,Chateau Margaux,Chateau Margaux,2016,cassis
+32,Chateau Margaux,Chateau Margaux,2016,cedar
+32,Chateau Margaux,Chateau Margaux,2016,flint
+32,Chateau Margaux,Chateau Margaux,2016,leather
+33,Chateau Latour,Grand Vin de Chateau Latour,2015,blackcurrant
+33,Chateau Latour,Grand Vin de Chateau Latour,2015,earth
+33,Chateau Latour,Grand Vin de Chateau Latour,2015,graphite
+33,Chateau Latour,Grand Vin de Chateau Latour,2015,tobacco
+34,Chateau Latour,Grand Vin de Chateau Latour,2014,cassis
+34,Chateau Latour,Grand Vin de Chateau Latour,2014,cedar
+34,Chateau Latour,Grand Vin de Chateau Latour,2014,mineral
+34,Chateau Latour,Grand Vin de Chateau Latour,2014,spice
+35,Chateau Latour,Grand Vin de Chateau Latour,2012,graphite
+35,Chateau Latour,Grand Vin de Chateau Latour,2012,leather
+35,Chateau Latour,Grand Vin de Chateau Latour,2012,plum
+35,Chateau Latour,Grand Vin de Chateau Latour,2012,truffle
+36,Domaine de la Romanee-Conti,Romanee-Conti Grand Cru,2019,cherry
+36,Domaine de la Romanee-Conti,Romanee-Conti Grand Cru,2019,earth
+36,Domaine de la Romanee-Conti,Romanee-Conti Grand Cru,2019,truffle
+36,Domaine de la Romanee-Conti,Romanee-Conti Grand Cru,2019,violet
+37,Domaine de la Romanee-Conti,Romanee-Conti Grand Cru,2018,cherry
+37,Domaine de la Romanee-Conti,Romanee-Conti Grand Cru,2018,leather
+37,Domaine de la Romanee-Conti,Romanee-Conti Grand Cru,2018,plum
+37,Domaine de la Romanee-Conti,Romanee-Conti Grand Cru,2018,spice
+38,Domaine de la Romanee-Conti,La Tache Grand Cru,2019,cherry
+38,Domaine de la Romanee-Conti,La Tache Grand Cru,2019,earth
+38,Domaine de la Romanee-Conti,La Tache Grand Cru,2019,pepper
+38,Domaine de la Romanee-Conti,La Tache Grand Cru,2019,smoke
+39,Domaine de la Romanee-Conti,La Tache Grand Cru,2018,plum
+39,Domaine de la Romanee-Conti,La Tache Grand Cru,2018,truffle
+39,Domaine de la Romanee-Conti,La Tache Grand Cru,2018,vanilla
+39,Domaine de la Romanee-Conti,La Tache Grand Cru,2018,violet
+40,Almaviva Winery,Almaviva,2020,blackcurrant
+40,Almaviva Winery,Almaviva,2020,cocoa
+40,Almaviva Winery,Almaviva,2020,spice
+40,Almaviva Winery,Almaviva,2020,vanilla
+41,Almaviva Winery,Almaviva,2019,cassis
+41,Almaviva Winery,Almaviva,2019,cedar
+41,Almaviva Winery,Almaviva,2019,mineral
+41,Almaviva Winery,Almaviva,2019,tobacco
+42,Almaviva Winery,Almaviva,2018,graphite
+42,Almaviva Winery,Almaviva,2018,leather
+42,Almaviva Winery,Almaviva,2018,plum
+42,Almaviva Winery,Almaviva,2018,smoke
+43,Screaming Eagle,Screaming Eagle Cabernet Sauvignon,2019,blackcurrant
+43,Screaming Eagle,Screaming Eagle Cabernet Sauvignon,2019,cocoa
+43,Screaming Eagle,Screaming Eagle Cabernet Sauvignon,2019,graphite
+43,Screaming Eagle,Screaming Eagle Cabernet Sauvignon,2019,violet
+44,Screaming Eagle,Screaming Eagle Cabernet Sauvignon,2018,cassis
+44,Screaming Eagle,Screaming Eagle Cabernet Sauvignon,2018,cedar
+44,Screaming Eagle,Screaming Eagle Cabernet Sauvignon,2018,licorice
+44,Screaming Eagle,Screaming Eagle Cabernet Sauvignon,2018,vanilla
+45,Harlan Estate,Harlan Estate,2018,blackcurrant
+45,Harlan Estate,Harlan Estate,2018,smoke
+45,Harlan Estate,Harlan Estate,2018,tobacco
+45,Harlan Estate,Harlan Estate,2018,truffle
+46,Shafer Vineyards,Hillside Select Cabernet Sauvignon,2018,cassis
+46,Shafer Vineyards,Hillside Select Cabernet Sauvignon,2018,cocoa
+46,Shafer Vineyards,Hillside Select Cabernet Sauvignon,2018,pepper
+46,Shafer Vineyards,Hillside Select Cabernet Sauvignon,2018,vanilla
+47,Caymus Vineyards,Special Selection Cabernet Sauvignon,2018,cocoa
+47,Caymus Vineyards,Special Selection Cabernet Sauvignon,2018,plum
+47,Caymus Vineyards,Special Selection Cabernet Sauvignon,2018,toast
+47,Caymus Vineyards,Special Selection Cabernet Sauvignon,2018,vanilla
+48,Silver Oak Cellars,Napa Valley Cabernet Sauvignon,2018,cassis
+48,Silver Oak Cellars,Napa Valley Cabernet Sauvignon,2018,cedar
+48,Silver Oak Cellars,Napa Valley Cabernet Sauvignon,2018,spice
+48,Silver Oak Cellars,Napa Valley Cabernet Sauvignon,2018,vanilla
+49,E. Guigal,Cote Rotie La Landonne,2018,blackcurrant
+49,E. Guigal,Cote Rotie La Landonne,2018,leather
+49,E. Guigal,Cote Rotie La Landonne,2018,pepper
+49,E. Guigal,Cote Rotie La Landonne,2018,smoke
+50,M. Chapoutier,Ermitage Le Pavillon,2018,graphite
+50,M. Chapoutier,Ermitage Le Pavillon,2018,pepper
+50,M. Chapoutier,Ermitage Le Pavillon,2018,plum
+50,M. Chapoutier,Ermitage Le Pavillon,2018,smoke
+51,Chateau d'Yquem,Chateau d'Yquem,2019,apricot
+51,Chateau d'Yquem,Chateau d'Yquem,2019,honey
+51,Chateau d'Yquem,Chateau d'Yquem,2019,peach
+51,Chateau d'Yquem,Chateau d'Yquem,2019,vanilla
+52,Chateau d'Yquem,Chateau d'Yquem,2018,almond
+52,Chateau d'Yquem,Chateau d'Yquem,2018,honey
+52,Chateau d'Yquem,Chateau d'Yquem,2018,lemon
+52,Chateau d'Yquem,Chateau d'Yquem,2018,toast
+53,Champagne Salon,Salon Le Mesnil Blanc de Blancs,2013,brioche
+53,Champagne Salon,Salon Le Mesnil Blanc de Blancs,2013,flint
+53,Champagne Salon,Salon Le Mesnil Blanc de Blancs,2013,honey
+53,Champagne Salon,Salon Le Mesnil Blanc de Blancs,2013,lemon
+54,Champagne Krug,Krug Vintage,2008,apple
+54,Champagne Krug,Krug Vintage,2008,brioche
+54,Champagne Krug,Krug Vintage,2008,hazelnut
+54,Champagne Krug,Krug Vintage,2008,toast
+55,Bodegas Vega Sicilia,Unico,2013,cherry
+55,Bodegas Vega Sicilia,Unico,2013,leather
+55,Bodegas Vega Sicilia,Unico,2013,mineral
+55,Bodegas Vega Sicilia,Unico,2013,tobacco
+56,Dominio de Pingus,Pingus,2019,cocoa
+56,Dominio de Pingus,Pingus,2019,mineral
+56,Dominio de Pingus,Pingus,2019,plum
+56,Dominio de Pingus,Pingus,2019,spice
+57,Torbreck Vintners,RunRig,2018,blackcurrant
+57,Torbreck Vintners,RunRig,2018,pepper
+57,Torbreck Vintners,RunRig,2018,smoke
+57,Torbreck Vintners,RunRig,2018,violet
+58,Henschke,Hill of Grace Shiraz,2017,earth
+58,Henschke,Hill of Grace Shiraz,2017,pepper
+58,Henschke,Hill of Grace Shiraz,2017,plum
+58,Henschke,Hill of Grace Shiraz,2017,spice
+59,Catena Zapata,Adrianna Vineyard Mundus Bacillus Terrae Malbec,2019,cassis
+59,Catena Zapata,Adrianna Vineyard Mundus Bacillus Terrae Malbec,2019,mineral
+59,Catena Zapata,Adrianna Vineyard Mundus Bacillus Terrae Malbec,2019,plum
+59,Catena Zapata,Adrianna Vineyard Mundus Bacillus Terrae Malbec,2019,violet

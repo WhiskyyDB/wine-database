@@ -1,0 +1,28 @@
+appellation_id,name,country,classification,parent_region
+20,Barbaresco,Italy,DOCG,Piedmont
+19,Barolo,Italy,DOCG,Piedmont
+25,Barossa Valley,Australia,GI,South Australia
+22,Bolgheri,Italy,DOC,Tuscany
+21,Brunello di Montalcino,Italy,DOCG,Tuscany
+15,Chablis,France,AOC,Burgundy
+18,Champagne,France,AOC,Champagne
+17,Chateauneuf-du-Pape,France,AOC,Rhone Valley
+13,Gevrey-Chambertin,France,AOC,Burgundy
+16,Hermitage,France,AOC,Rhone Valley
+5,Howell Mountain,USA,AVA,Napa Valley
+26,Maipo Valley,Chile,DO,Central Valley
+7,Margaux,France,AOC,Bordeaux
+27,Mendoza,Argentina,GI,Mendoza
+1,Napa Valley,USA,AVA,California
+2,Oakville,USA,AVA,Napa Valley
+6,Pauillac,France,AOC,Bordeaux
+9,Pessac-Leognan,France,AOC,Bordeaux
+10,Pomerol,France,AOC,Bordeaux
+14,Puligny-Montrachet,France,AOC,Burgundy
+24,Ribera del Duero,Spain,DO,Castilla y Leon
+23,Rioja,Spain,DOCa,Rioja
+4,Rutherford,USA,AVA,Napa Valley
+11,Saint-Emilion Grand Cru,France,AOC,Bordeaux
+8,Saint-Julien,France,AOC,Bordeaux
+3,Stags Leap District,USA,AVA,Napa Valley
+12,Vosne-Romanee,France,AOC,Burgundy
