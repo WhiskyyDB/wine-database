@@ -3,11 +3,11 @@
 > WineDB is an enterprise-grade, 3NF-normalized relational dataset of 3,675 curated fine wine vintages across 106 prestige wineries, 143 cuvees, and 57 global appellations, with exact varietal blend percentages (database-enforced `SUM <= 100.001%`), quantitative laboratory chemistry (residual sugar `g/L`, titratable acidity, pH), and secondary auction valuation indices (median hammer price under a `>= 3 observations` rule). Every record links to a primary document in an 11,960-row provenance audit registry (`data_sources`), grounded on producer technical sheets, US TTB COLA label filings, SAQ/LCBO laboratory analyses, and Liv-ex / public auction house results.
 
 ## Key Links & Documentation
-- [Landing Page](https://wine-database.pages.dev/)
+- [Landing Page](https://winedb.dataengineered.io/)
 - [GitHub Repository](https://github.com/WhiskyyDB/wine-database)
-- [Data Dictionary & Field Definitions](https://wine-database.pages.dev/DATA_DICTIONARY.md)
-- [Sources & Provenance Registry](https://wine-database.pages.dev/SOURCES.md)
-- [Free Sample CSVs](https://wine-database.pages.dev/samples/vintages.csv)
+- [Data Dictionary & Field Definitions](https://winedb.dataengineered.io/DATA_DICTIONARY.md)
+- [Sources & Provenance Registry](https://winedb.dataengineered.io/SOURCES.md)
+- [Free Sample CSVs](https://winedb.dataengineered.io/samples/vintages.csv)
 
 ## Core Capabilities & Specs
 - **Data Formats:** Full snapshot ships as a 3NF SQLite relational database (`winedb.sqlite`) plus 7 normalized CSV exports; the free sample ships as a SQLite preview plus 6 CSVs.
@@ -16,4 +16,4 @@
 - **Licensing Tiers:**
   - Free Preview Sample — $0 / free forever (CC BY 4.0)
   - Full Dataset Snapshot — $49 one-time — https://buy.stripe.com/bJe8wQf3GdrobDZ0A038407
-  - Enterprise Custom Scope — +$99 / custom scope — https://wine-database.pages.dev/#pricing
+  - Enterprise Custom Scope — +$99 / custom scope — https://winedb.dataengineered.io/#pricing

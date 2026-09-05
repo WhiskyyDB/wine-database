@@ -11,7 +11,7 @@
  * Cache Name: winedb-public-cache-v2026.07.5
  */
 
-const CACHE_NAME = 'winedb-public-cache-v2026.07.5';
+const CACHE_NAME = 'winedb-public-cache-v2026.09.1';
 const CORE_ASSETS = [
   '/',
   '/index.css',

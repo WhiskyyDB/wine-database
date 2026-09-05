@@ -7,13 +7,13 @@
 **3,675 curated fine wine vintages · quantitative SAQ/LCBO chemistry · 3NF relational design · exact varietal blend constraint (`SUM <= 100.001%`) · Liv-ex auction medians (`>=3 obs`) · 11,960-row provenance registry**
 
 [![Free Sample: 34 vintages](https://img.shields.io/badge/Free%20Sample-34%20vintages-brightgreen.svg)](samples/)
-[![Live Sommelier Portal](https://img.shields.io/badge/%F0%9F%8D%B7%20Sommelier%20Portal-live%20explorer-ffd21e.svg)](https://wine-database.pages.dev)
+[![Live Sommelier Portal](https://img.shields.io/badge/%F0%9F%8D%B7%20Sommelier%20Portal-live%20explorer-ffd21e.svg)](https://winedb.dataengineered.io)
 [![Data Integrity: 3NF](https://img.shields.io/badge/Data%20Integrity-3NF%20%2B%20Triggers-800020.svg)](#architecture--relational-schema)
 [![Valuation: Liv--ex](https://img.shields.io/badge/Valuation-3%2B%20Observations-d4af37.svg)](#provenance--auditability)
 [![Snapshot: 2026.07](https://img.shields.io/badge/Snapshot-2026.07-blue.svg)](SOURCES.md)
-[![Get the data](https://img.shields.io/badge/Get%20the%20data-winedb-86a862.svg)](https://wine-database.pages.dev)
+[![Get the data](https://img.shields.io/badge/Get%20the%20data-winedb-86a862.svg)](https://winedb.dataengineered.io)
 
-**[→ Get the full dataset snapshot at WineDB Portal](https://wine-database.pages.dev)**
+**[→ Get the full dataset snapshot at WineDB Portal](https://winedb.dataengineered.io)**
 
 </div>
 
@@ -36,7 +36,7 @@ This is a **curated fine wine + data-integrity** dataset — designed from the g
 | Official geographical appellations (`appellations`) | **57** | 27 |
 | Formats distributed | SQLite (`winedb.sqlite`) · 7 normalized CSVs | SQLite preview · 6 CSVs |
 
-The free [`samples/`](samples/) directory contains 59 verified sample vintages across 26 iconic producers (`Insignia`, `Opus One`, `Monte Bello`, etc.) — a complete functional preview of our exact 3NF schema and validation constraints. Explore the interactive frontend in our **[Sommelier Portal](https://wine-database.pages.dev)**, or inspect the normalized tables directly in your local environment. The full commercial snapshot (`3,675 vintages`) is available instantly via verified Stripe checkout at **[WineDB Portal](https://wine-database.pages.dev)**.
+The free [`samples/`](samples/) directory contains 59 verified sample vintages across 26 iconic producers (`Insignia`, `Opus One`, `Monte Bello`, etc.) — a complete functional preview of our exact 3NF schema and validation constraints. Explore the interactive frontend in our **[Sommelier Portal](https://winedb.dataengineered.io)**, or inspect the normalized tables directly in your local environment. The full commercial snapshot (`3,675 vintages`) is available instantly via verified Stripe checkout at **[WineDB Portal](https://winedb.dataengineered.io)**.
 
 ## Field coverage (the honest numbers)
 
@@ -119,7 +119,7 @@ We offer our dataset in two commercial tiers alongside our free open-source samp
 | **Full Dataset Snapshot** | Complete **3,675-vintage** relational database · **106 wineries** · SAQ/LCBO chemistry (`sugar`, `acidity`, `pH`) · Liv-ex medians (`>=3 obs`) · TTB COLA records · master `data_sources` audit registry · SQLite + 7 CSVs · monthly updates | **$49 one-time** |
 | **Enterprise Custom Scope** | Everything in Full Snapshot · custom extraction & scraping pipelines (`Apify Actors`) · live REST API & webhook alerts · bespoke estate expansion · priority engineering SLA | **+$99 / scope** |
 
-**[→ Instant Download via Stripe at WineDB Portal](https://wine-database.pages.dev)** · or email **[winedb.obedient560@aleeas.com](mailto:winedb.obedient560@aleeas.com?subject=WineDB%20Enterprise%20Inquiry)** for custom schema modeling.
+**[→ Instant Download via Stripe at WineDB Portal](https://winedb.dataengineered.io)** · or email **[winedb.obedient560@aleeas.com](mailto:winedb.obedient560@aleeas.com?subject=WineDB%20Enterprise%20Inquiry)** for custom schema modeling.
 
 ## Use cases
 
