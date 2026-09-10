@@ -455,21 +455,21 @@ async function handleEnterpriseSubmit(event) {
         `Enrichment Options: ${checkedOpts.join(", ")}\n\n` +
         `Detailed Scope Spec:\n${scope}\n\n` +
         `Please send us our schema proposal and pricing quote.\n\nBest regards,\n${name}`;
-    const fallbackUrl = `mailto:winedb@dataengineered.io?subject=${encodeURIComponent(plainSubject)}&body=${encodeURIComponent(plainBody)}`;
 
     const sentDisplay = document.getElementById(`${prefix}sent-email-display`) || document.getElementById("sent-email-display");
     if (sentDisplay) sentDisplay.textContent = email;
 
     const mailtoBtn = document.getElementById(`${prefix}fallback-mailto-btn`) || document.getElementById("fallback-mailto-btn");
     if (mailtoBtn) {
-        mailtoBtn.href = fallbackUrl;
+        mailtoBtn.href = "#";
         // mailto does nothing on machines without a default mail app, so also
         // copy the composed request to the clipboard as a guaranteed path.
-        mailtoBtn.onclick = () => {
+        mailtoBtn.onclick = (ev) => {
+            ev.preventDefault();
             const text = `To: winedb@dataengineered.io\nSubject: ${plainSubject}\n\n${plainBody}`;
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(text).then(() => {
-                    mailtoBtn.textContent = "Copied! If no email app opened, paste it into any email to winedb@dataengineered.io";
+                    mailtoBtn.textContent = "Copied — paste it into an email to winedb@dataengineered.io";
                 }).catch(() => {});
             }
         };

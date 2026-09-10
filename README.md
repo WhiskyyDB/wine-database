@@ -6,7 +6,7 @@
 
 **3,675 curated fine wine vintages · quantitative SAQ/LCBO chemistry · 3NF relational design · exact varietal blend constraint (`SUM <= 100.001%`) · Liv-ex auction medians (`>=3 obs`) · 11,960-row provenance registry**
 
-[![Free Sample: 34 vintages](https://img.shields.io/badge/Free%20Sample-34%20vintages-brightgreen.svg)](samples/)
+[![Free Sample: 59 vintages](https://img.shields.io/badge/Free%20Sample-59%20vintages-brightgreen.svg)](samples/)
 [![Live Sommelier Portal](https://img.shields.io/badge/%F0%9F%8D%B7%20Sommelier%20Portal-live%20explorer-ffd21e.svg)](https://winedb.dataengineered.io)
 [![Data Integrity: 3NF](https://img.shields.io/badge/Data%20Integrity-3NF%20%2B%20Triggers-800020.svg)](#architecture--relational-schema)
 [![Valuation: Liv--ex](https://img.shields.io/badge/Valuation-3%2B%20Observations-d4af37.svg)](#provenance--auditability)
@@ -27,7 +27,7 @@ This is a **curated fine wine + data-integrity** dataset — designed from the g
 
 | | Full dataset (`$49 Tier`) | Free sample (`samples/`) |
 | :--- | ---: | ---: |
-| Curated fine wine vintages | **3,675** | 34 |
+| Curated fine wine vintages | **3,675** | 59 |
 | Canonical wineries & producers | **106** | 26 |
 | Distinct cuvees & bottlings | **143** | 27 |
 | Varietal blend records (`blends.csv`) | **7,746** | 171 |
@@ -119,7 +119,7 @@ We offer our dataset in two commercial tiers alongside our free open-source samp
 | **Full Dataset Snapshot** | Complete **3,675-vintage** relational database · **106 wineries** · SAQ/LCBO chemistry (`sugar`, `acidity`, `pH`) · Liv-ex medians (`>=3 obs`) · TTB COLA records · master `data_sources` audit registry · SQLite + 7 CSVs · monthly updates | **$49 one-time** |
 | **Enterprise Custom Scope** | Everything in Full Snapshot · custom extraction & scraping pipelines (`Apify Actors`) · live REST API & webhook alerts · bespoke estate expansion · priority engineering SLA | **+$99 / scope** |
 
-**[→ Instant Download via Stripe at WineDB Portal](https://winedb.dataengineered.io)** · or email **[winedb@dataengineered.io](mailto:winedb@dataengineered.io?subject=WineDB%20Enterprise%20Inquiry)** for custom schema modeling.
+**[→ Instant Download via Stripe at WineDB Portal](https://winedb.dataengineered.io)** · or use the [enterprise scope form](https://winedb.dataengineered.io/#enterprise-contact) (winedb@dataengineered.io) for custom schema modeling.
 
 ## Use cases
 
@@ -172,4 +172,4 @@ print(df.head(6))
 - **Full Commercial Snapshot (`$49` and `+$99` tiers):** Distributed under our **Commercial Database License** with perpetual commercial rights and monthly refreshed updates.
 - **Enological note:** Chemical metrics (`residual_sugar_g_l`, `ph_level`) are extracted from official government testing boards (`SAQ`, `LCBO`). Variations may occur between individual bottling runs or lot numbers.
 
-Want a specific estate or classified growth prioritized in our next monthly ingestion run? Email **[winedb@dataengineered.io](mailto:winedb@dataengineered.io?subject=WineDB%20Ingestion%20Request)**.
+Want a specific estate or classified growth prioritized in a future edition? Use the [enterprise scope form](https://winedb.dataengineered.io/#enterprise-contact) or write to winedb@dataengineered.io.
