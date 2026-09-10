@@ -15,6 +15,8 @@
 
 **[→ Get the full dataset snapshot at WineDB Portal](https://winedb.dataengineered.io)**
 
+**Same sample on [Hugging Face](https://huggingface.co/datasets/Ichlibitiche/winedb-fine-wines-and-vintages)** · **[Kaggle](https://www.kaggle.com/datasets/ahtiticheamine/winedb-fine-wines-and-vintages)**
+
 </div>
 
 ---
