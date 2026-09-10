@@ -455,7 +455,7 @@ async function handleEnterpriseSubmit(event) {
         `Enrichment Options: ${checkedOpts.join(", ")}\n\n` +
         `Detailed Scope Spec:\n${scope}\n\n` +
         `Please send us our schema proposal and pricing quote.\n\nBest regards,\n${name}`;
-    const fallbackUrl = `mailto:winedb.obedient560@aleeas.com?subject=${encodeURIComponent(plainSubject)}&body=${encodeURIComponent(plainBody)}`;
+    const fallbackUrl = `mailto:winedb@dataengineered.io?subject=${encodeURIComponent(plainSubject)}&body=${encodeURIComponent(plainBody)}`;
 
     const sentDisplay = document.getElementById(`${prefix}sent-email-display`) || document.getElementById("sent-email-display");
     if (sentDisplay) sentDisplay.textContent = email;
@@ -466,10 +466,10 @@ async function handleEnterpriseSubmit(event) {
         // mailto does nothing on machines without a default mail app, so also
         // copy the composed request to the clipboard as a guaranteed path.
         mailtoBtn.onclick = () => {
-            const text = `To: winedb.obedient560@aleeas.com\nSubject: ${plainSubject}\n\n${plainBody}`;
+            const text = `To: winedb@dataengineered.io\nSubject: ${plainSubject}\n\n${plainBody}`;
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(text).then(() => {
-                    mailtoBtn.textContent = "Copied! If no email app opened, paste it into any email to winedb.obedient560@aleeas.com";
+                    mailtoBtn.textContent = "Copied! If no email app opened, paste it into any email to winedb@dataengineered.io";
                 }).catch(() => {});
             }
         };
@@ -500,7 +500,7 @@ async function handleEnterpriseSubmit(event) {
             const heading = successBox.querySelector("h4");
             const para = successBox.querySelector("p");
             if (heading) heading.textContent = "⚠️ Your request was not sent";
-            if (para) para.innerHTML = "Our form service is unreachable right now. Use the button below to send the same request from your email app — it is pre-filled and goes straight to <code>winedb.obedient560@aleeas.com</code>.";
+            if (para) para.innerHTML = "Our form service is unreachable right now. Use the button below to send the same request from your email app — it is pre-filled and goes straight to <code>winedb@dataengineered.io</code>.";
             successBox.style.background = "rgba(191, 54, 12, 0.18)";
             successBox.style.borderColor = "#e64a19";
             successBox.style.color = "#ffab91";

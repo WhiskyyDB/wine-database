@@ -119,7 +119,7 @@ We offer our dataset in two commercial tiers alongside our free open-source samp
 | **Full Dataset Snapshot** | Complete **3,675-vintage** relational database · **106 wineries** · SAQ/LCBO chemistry (`sugar`, `acidity`, `pH`) · Liv-ex medians (`>=3 obs`) · TTB COLA records · master `data_sources` audit registry · SQLite + 7 CSVs · monthly updates | **$49 one-time** |
 | **Enterprise Custom Scope** | Everything in Full Snapshot · custom extraction & scraping pipelines (`Apify Actors`) · live REST API & webhook alerts · bespoke estate expansion · priority engineering SLA | **+$99 / scope** |
 
-**[→ Instant Download via Stripe at WineDB Portal](https://winedb.dataengineered.io)** · or email **[winedb.obedient560@aleeas.com](mailto:winedb.obedient560@aleeas.com?subject=WineDB%20Enterprise%20Inquiry)** for custom schema modeling.
+**[→ Instant Download via Stripe at WineDB Portal](https://winedb.dataengineered.io)** · or email **[winedb@dataengineered.io](mailto:winedb@dataengineered.io?subject=WineDB%20Enterprise%20Inquiry)** for custom schema modeling.
 
 ## Use cases
 
@@ -172,4 +172,4 @@ print(df.head(6))
 - **Full Commercial Snapshot (`$49` and `+$99` tiers):** Distributed under our **Commercial Database License** with perpetual commercial rights and monthly refreshed updates.
 - **Enological note:** Chemical metrics (`residual_sugar_g_l`, `ph_level`) are extracted from official government testing boards (`SAQ`, `LCBO`). Variations may occur between individual bottling runs or lot numbers.
 
-Want a specific estate or classified growth prioritized in our next monthly ingestion run? Email **[winedb.obedient560@aleeas.com](mailto:winedb.obedient560@aleeas.com?subject=WineDB%20Ingestion%20Request)**.
+Want a specific estate or classified growth prioritized in our next monthly ingestion run? Email **[winedb@dataengineered.io](mailto:winedb@dataengineered.io?subject=WineDB%20Ingestion%20Request)**.
