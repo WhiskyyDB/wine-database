@@ -119,7 +119,7 @@ We offer our dataset in two commercial tiers alongside our free open-source samp
 | :--- | :--- | :--- |
 | **Free Sample (`samples/`)** | 59 verified sample vintages · 6 normalized CSV tables · `winedb.sqlite` preview · open taxonomies | **$0 / Free** |
 | **Full Dataset Snapshot** | Complete **3,675-vintage** relational database · **106 wineries** · SAQ/LCBO chemistry (`sugar`, `acidity`, `pH`) · Liv-ex medians (`>=3 obs`) · TTB COLA records · master `data_sources` audit registry · SQLite + 7 CSVs · monthly updates | **$49 one-time** |
-| **Enterprise Custom Scope** | Everything in Full Snapshot · custom extraction & scraping pipelines (`Apify Actors`) · live REST API & webhook alerts · bespoke estate expansion · priority engineering SLA | **+$99 / scope** |
+| **Custom work** | Subsets, extraction pipelines, schema mapping — quoted per engagement | from $99, via the [enterprise scope form](https://winedb.dataengineered.io/#enterprise-contact) |
 
 **[→ Instant Download via Stripe at WineDB Portal](https://winedb.dataengineered.io)** · or use the [enterprise scope form](https://winedb.dataengineered.io/#enterprise-contact) (winedb@dataengineered.io) for custom schema modeling.
 
@@ -171,7 +171,7 @@ print(df.head(6))
 ## License & Support
 
 - **Sample data & docs inside `samples/`:** Creative Commons Attribution 4.0 International (**CC BY 4.0**) — free to use and adapt with attribution (see [`LICENSE`](LICENSE)).
-- **Full Commercial Snapshot (`$49` and `+$99` tiers):** Distributed under our **Commercial Database License** with perpetual commercial rights and monthly refreshed updates.
+- **Full Commercial Snapshot (`$49`):** Distributed under our **Commercial Database License** with perpetual commercial rights and monthly refreshed updates.
 - **Enological note:** Chemical metrics (`residual_sugar_g_l`, `ph_level`) are extracted from official government testing boards (`SAQ`, `LCBO`). Variations may occur between individual bottling runs or lot numbers.
 
 Want a specific estate or classified growth prioritized in a future edition? Use the [enterprise scope form](https://winedb.dataengineered.io/#enterprise-contact) or write to winedb@dataengineered.io.

@@ -16,4 +16,4 @@
 - **Licensing Tiers:**
   - Free Preview Sample — $0 / free forever (CC BY 4.0)
   - Full Dataset Snapshot — $49 one-time — https://buy.stripe.com/bJe8wQf3GdrobDZ0A038407
-  - Enterprise Custom Scope — +$99 / custom scope — https://winedb.dataengineered.io/#pricing
+  - Custom work (subsets, extraction pipelines, schema mapping): from $99, quoted per engagement — https://winedb.dataengineered.io/#enterprise-contact
