@@ -139,7 +139,12 @@ def vintage_profile(winery, wine, year, abv, vol, aging, cases, rel_price, val,
     p1 = f"The {_esc(year)} {_esc(wine)} from {_esc(winery)} is a {_esc(typ)}"
     if loc:
         p1 += f" from {_esc(loc)}"
-    p1 += f", bottled at {_esc(abv)}% ABV in a {_esc(vol)} mL format."
+    if abv and vol:
+        p1 += f", bottled at {_esc(abv)}% ABV in a {_esc(vol)} mL format."
+    elif abv:
+        p1 += f", bottled at {_esc(abv)}% ABV."
+    elif vol:
+        p1 += f", bottled in a {_esc(vol)} mL format."
     if blend_txt:
         p1 += f" Its varietal composition is {blend_txt}."
     if aging:
@@ -405,8 +410,8 @@ def main():
         winery = rec['winery']
         wine = rec['wine']
         year = rec['year']
-        abv = v.get('abv_percent', '14.0').strip()
-        vol = v.get('bottle_volume_ml', '750').strip()
+        abv = (v.get('abv_percent') or '').strip()
+        vol = (v.get('bottle_volume_ml') or '').strip()
         val = v.get('valuation_index_usd', '').strip()
         source = v.get('source_name', 'WineDB Verified Ledger').strip()
 
@@ -441,7 +446,10 @@ def main():
         title = vintage_titles[rec['vid']]
 
         variety_clause = f" ({rec['variety']} blend)" if rec['variety'] else ""
-        desc_raw = f"{year} {wine} from {winery}{variety_clause}: {abv}% ABV, {vol} mL bottle."
+        abv_vol_bits = [x for x in [f"{abv}% ABV" if abv else None,
+                                     f"{vol} mL bottle" if vol else None] if x]
+        abv_vol_clause = f": {', '.join(abv_vol_bits)}." if abv_vol_bits else "."
+        desc_raw = f"{year} {wine} from {winery}{variety_clause}{abv_vol_clause}"
         desc_bits = []
         if aging:
             desc_bits.append(f"Aged {aging}.")
@@ -455,6 +463,21 @@ def main():
 
         related_html = seo.related_block(vintage_related(rec), heading="Related", limit=6)
 
+        og_parts = [x for x in [f"Exact ABV ({abv}%)" if abv else None,
+                                 f"bottle format ({vol} mL)" if vol else None] if x]
+        og_parts += ["varietal blend", "tasting descriptors", "secondary auction market index"]
+        og_desc = _oxford(og_parts) + "."
+
+        ld_parts = [x for x in [f"{abv}% ABV" if abv else None,
+                                 f"{vol}ml format" if vol else None] if x]
+        ld_parts += ["varietal blend composition", "tasting descriptors", "aging regime", "secondary auction index"]
+        ld_desc = f"Normalized vintage metrics for {winery} {wine} {year}: " + _oxford(ld_parts) + "."
+
+        abv_card = (f'<div class="metric-card"><div class="metric-label">Alcohol by Volume</div>'
+                    f'<div class="metric-val">{abv}%</div></div>') if abv else ''
+        vol_card = (f'<div class="metric-card"><div class="metric-label">Bottle Format</div>'
+                    f'<div class="metric-val">{vol} mL</div></div>') if vol else ''
+
         html_content = f"""<!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
@@ -466,7 +489,7 @@ def main():
   <link rel="canonical" href="{page_url}" />
 
   <meta property="og:title" content="{winery} {wine} ({year}) Vintage Record — WineDB" />
-  <meta property="og:description" content="Exact ABV ({abv}%), bottle format ({vol} mL), varietal blend, tasting descriptors, and secondary auction market index." />
+  <meta property="og:description" content="{og_desc}" />
   <meta property="og:url" content="{page_url}" />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="https://winedb.dataengineered.io/assets/winedb-cover.png" />
@@ -476,7 +499,7 @@ def main():
     "@context": "https://schema.org",
     "@type": "Dataset",
     "name": "{winery} {wine} ({year}) Structured Vintage Record",
-    "description": "Normalized vintage metrics for {winery} {wine} {year}: {abv}% ABV, {vol}ml format, varietal blend composition, tasting descriptors, aging regime, and secondary auction index.",
+    "description": "{ld_desc}",
     "url": "{page_url}",
     "creator": {{"@type": "Organization", "name": "WineDB Initiative", "url": "https://winedb.dataengineered.io"}},
     "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -525,8 +548,8 @@ def main():
     </div>
     <div class="grid-metrics">
       <div class="metric-card"><div class="metric-label">Harvest Vintage</div><div class="metric-val">{year}</div></div>
-      <div class="metric-card"><div class="metric-label">Alcohol by Volume</div><div class="metric-val">{abv}%</div></div>
-      <div class="metric-card"><div class="metric-label">Bottle Format</div><div class="metric-val">{vol} mL</div></div>
+      {abv_card}
+      {vol_card}
       <div class="metric-card"><div class="metric-label">Appellation</div><div class="metric-val" style="font-size: 1rem;">{appellation_disp}</div></div>
       <div class="metric-card"><div class="metric-label">Production</div><div class="metric-val" style="font-size: 1rem;">{production_disp}</div></div>
       <div class="metric-card"><div class="metric-label">Valuation Index</div><div class="metric-val" style="font-size: 1rem;">{val_display}</div></div>
