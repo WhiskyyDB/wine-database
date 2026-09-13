@@ -2,539 +2,529 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://winedb.dataengineered.io/</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/samples/vintages.csv</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/samples/wineries.csv</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/joseph-phelps-vineyards-insignia-2015</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/joseph-phelps-vineyards-insignia-2016</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/joseph-phelps-vineyards-insignia-2017</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/joseph-phelps-vineyards-insignia-2018</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/joseph-phelps-vineyards-insignia-2019</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/ridge-vineyards-monte-bello-2015</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/ridge-vineyards-monte-bello-2016</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/ridge-vineyards-monte-bello-2017</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/ridge-vineyards-monte-bello-2018</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/ridge-vineyards-monte-bello-2019</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/opus-one-winery-opus-one-2015</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/opus-one-winery-opus-one-2016</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/opus-one-winery-opus-one-2017</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/opus-one-winery-opus-one-2018</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/opus-one-winery-opus-one-2019</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/dominus-estate-dominus-2015</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/dominus-estate-dominus-2016</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/dominus-estate-dominus-2018</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/dominus-estate-dominus-2019</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/tenuta-san-guido-sassicaia-2016</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/tenuta-san-guido-sassicaia-2017</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/tenuta-san-guido-sassicaia-2018</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/tenuta-san-guido-sassicaia-2019</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/marchesi-antinori-tignanello-2016</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/marchesi-antinori-tignanello-2018</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/marchesi-antinori-tignanello-2019</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/penfolds-grange-2016</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/penfolds-grange-2017</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/penfolds-grange-2018</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/chateau-margaux-chateau-margaux-2016</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/chateau-margaux-chateau-margaux-2018</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/chateau-margaux-chateau-margaux-2019</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/chateau-latour-grand-vin-de-chateau-latour-2012</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/chateau-latour-grand-vin-de-chateau-latour-2014</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/chateau-latour-grand-vin-de-chateau-latour-2015</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/domaine-de-la-romanee-conti-romanee-conti-grand-cru-2018</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/domaine-de-la-romanee-conti-romanee-conti-grand-cru-2019</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/domaine-de-la-romanee-conti-la-tache-grand-cru-2018</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/domaine-de-la-romanee-conti-la-tache-grand-cru-2019</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://winedb.dataengineered.io/vintages/</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://winedb.dataengineered.io/vintages/almaviva-winery-almaviva-2018</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://winedb.dataengineered.io/vintages/almaviva-winery-almaviva-2019</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://winedb.dataengineered.io/vintages/almaviva-winery-almaviva-2020</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/screaming-eagle-screaming-eagle-cabernet-sauvignon-2018</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/screaming-eagle-screaming-eagle-cabernet-sauvignon-2019</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/harlan-estate-harlan-estate-2018</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/shafer-vineyards-hillside-select-cabernet-sauvignon-2018</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/caymus-vineyards-special-selection-cabernet-sauvignon-2018</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/silver-oak-cellars-napa-valley-cabernet-sauvignon-2018</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/e-guigal-cote-rotie-la-landonne-2018</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/m-chapoutier-ermitage-le-pavillon-2018</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/chateau-d-yquem-chateau-d-yquem-2018</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/chateau-d-yquem-chateau-d-yquem-2019</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/champagne-salon-salon-le-mesnil-blanc-de-blancs-2013</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/champagne-krug-krug-vintage-2008</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://winedb.dataengineered.io/vintages/bodegas-vega-sicilia-unico-2013</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/dominio-de-pingus-pingus-2019</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/torbreck-vintners-runrig-2018</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://winedb.dataengineered.io/vintages/henschke-hill-of-grace-shiraz-2017</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://winedb.dataengineered.io/vintages/catena-zapata-adrianna-vineyard-mundus-bacillus-terrae-malbec-2019</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/almaviva-winery</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/caymus-vineyards-special-selection-cabernet-sauvignon-2018</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/bodegas-vega-sicilia</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/champagne-krug-krug-vintage-2008</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/catena-zapata</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/champagne-salon-salon-le-mesnil-blanc-de-blancs-2013</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/caymus-vineyards</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/chateau-d-yquem-chateau-d-yquem-2018</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/champagne-krug</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/chateau-d-yquem-chateau-d-yquem-2019</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/champagne-salon</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/chateau-latour-grand-vin-de-chateau-latour-2012</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/chateau-latour</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/chateau-latour-grand-vin-de-chateau-latour-2014</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/chateau-margaux</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/chateau-latour-grand-vin-de-chateau-latour-2015</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/chateau-d-yquem</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/chateau-margaux-chateau-margaux-2016</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/domaine-de-la-romanee-conti</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/chateau-margaux-chateau-margaux-2018</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/dominio-de-pingus</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/chateau-margaux-chateau-margaux-2019</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/dominus-estate</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/domaine-de-la-romanee-conti-la-tache-grand-cru-2018</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/e-guigal</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/domaine-de-la-romanee-conti-la-tache-grand-cru-2019</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/harlan-estate</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/domaine-de-la-romanee-conti-romanee-conti-grand-cru-2018</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/henschke</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/domaine-de-la-romanee-conti-romanee-conti-grand-cru-2019</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/joseph-phelps-vineyards</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/dominio-de-pingus-pingus-2019</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/m-chapoutier</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/dominus-estate-dominus-2015</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/marchesi-antinori</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/dominus-estate-dominus-2016</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/opus-one-winery</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/dominus-estate-dominus-2018</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/penfolds</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/dominus-estate-dominus-2019</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/ridge-vineyards</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/e-guigal-cote-rotie-la-landonne-2018</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/screaming-eagle</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/harlan-estate-harlan-estate-2018</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/shafer-vineyards</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/henschke-hill-of-grace-shiraz-2017</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/silver-oak-cellars</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/joseph-phelps-vineyards-insignia-2015</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/tenuta-san-guido</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/joseph-phelps-vineyards-insignia-2016</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/wineries/torbreck-vintners</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://winedb.dataengineered.io/vintages/joseph-phelps-vineyards-insignia-2017</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://winedb.dataengineered.io/vintages/</loc>
+    <loc>https://winedb.dataengineered.io/vintages/joseph-phelps-vineyards-insignia-2018</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/joseph-phelps-vineyards-insignia-2019</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/m-chapoutier-ermitage-le-pavillon-2018</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/marchesi-antinori-tignanello-2016</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/marchesi-antinori-tignanello-2018</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/marchesi-antinori-tignanello-2019</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/opus-one-winery-opus-one-2015</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/opus-one-winery-opus-one-2016</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/opus-one-winery-opus-one-2017</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/opus-one-winery-opus-one-2018</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/opus-one-winery-opus-one-2019</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/penfolds-grange-2016</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/penfolds-grange-2017</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/penfolds-grange-2018</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/ridge-vineyards-monte-bello-2015</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/ridge-vineyards-monte-bello-2016</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/ridge-vineyards-monte-bello-2017</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/ridge-vineyards-monte-bello-2018</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/ridge-vineyards-monte-bello-2019</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/screaming-eagle-screaming-eagle-cabernet-sauvignon-2018</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/screaming-eagle-screaming-eagle-cabernet-sauvignon-2019</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/shafer-vineyards-hillside-select-cabernet-sauvignon-2018</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/silver-oak-cellars-napa-valley-cabernet-sauvignon-2018</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/tenuta-san-guido-sassicaia-2016</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/tenuta-san-guido-sassicaia-2017</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/tenuta-san-guido-sassicaia-2018</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/tenuta-san-guido-sassicaia-2019</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/vintages/torbreck-vintners-runrig-2018</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://winedb.dataengineered.io/wineries/</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/almaviva-winery</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/bodegas-vega-sicilia</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/catena-zapata</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/caymus-vineyards</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/champagne-krug</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/champagne-salon</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/chateau-d-yquem</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/chateau-latour</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/chateau-margaux</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/domaine-de-la-romanee-conti</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/dominio-de-pingus</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/dominus-estate</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/e-guigal</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/harlan-estate</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/henschke</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/joseph-phelps-vineyards</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/m-chapoutier</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/marchesi-antinori</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/opus-one-winery</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/penfolds</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/ridge-vineyards</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/screaming-eagle</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/shafer-vineyards</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/silver-oak-cellars</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/tenuta-san-guido</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winedb.dataengineered.io/wineries/torbreck-vintners</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

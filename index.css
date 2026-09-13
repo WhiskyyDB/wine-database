@@ -1245,3 +1245,45 @@ body {
     animation: fadeIn 0.4s ease;
 }
 
+/* Related-links block on vintage/winery specimen pages */
+.related {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.related h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+    color: #fcf6f8;
+    margin: 0 0 0.8rem;
+}
+
+.related ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.5rem 1rem;
+}
+
+.related li {
+    font-size: 0.92rem;
+    line-height: 1.4;
+}
+
+.related a {
+    color: #d4af37;
+    text-decoration: none;
+}
+
+.related a:hover {
+    text-decoration: underline;
+}
+
+.related-why {
+    color: #a8929b;
+    font-size: 0.82rem;
+}
+
