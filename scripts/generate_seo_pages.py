@@ -3,7 +3,7 @@ import os
 import re
 import sys
 import html
-from collections import defaultdict
+from collections import defaultdict, Counter
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import seo_common as seo
@@ -40,6 +40,49 @@ def _fnum(x):
 
 def vintage_h1(winery, wine, year):
     return f"{winery} {wine} — {year} Vintage"
+
+
+def make_vintage_title(rec, extra=None):
+    """Title entity is '<wine> <year>' (year never truncatable away); the winery
+    is the preferred descriptor, with a short 'vintage' fallback so a long winery
+    name is dropped before the entity ever is. `extra` (ABV/volume/slug) is folded
+    into the entity itself when two vintages would otherwise collide, since a
+    descriptor can be dropped by fit_title but the entity is protected."""
+    entity = f"{seo._cut(rec['wine'], 34)} {rec['year']}"
+    if extra:
+        entity = f"{entity} ({extra})"
+    return seo.fit_title(entity, [rec['winery'], "vintage"], BRAND)
+
+
+def build_vintage_titles(vrecs):
+    """Every vintage title unique; disambiguate collisions with ABV, then bottle
+    volume, then both, then the (always-unique) slug as a last resort."""
+    titles = {r['vid']: make_vintage_title(r) for r in vrecs}
+    tiers = ['abv', 'vol', 'both', 'slug']
+    tier_idx = {r['vid']: -1 for r in vrecs}
+    for _ in range(len(tiers)):
+        counts = Counter(titles.values())
+        dupes = {t for t, c in counts.items() if c > 1}
+        if not dupes:
+            break
+        for r in vrecs:
+            if titles[r['vid']] not in dupes:
+                continue
+            tier_idx[r['vid']] += 1
+            tier = tiers[min(tier_idx[r['vid']], len(tiers) - 1)]
+            abv = (r['row'].get('abv_percent') or '').strip()
+            vol = (r['row'].get('bottle_volume_ml') or '').strip()
+            if tier == 'abv' and abv:
+                extra = f"{abv}% ABV"
+            elif tier == 'vol' and vol:
+                extra = f"{vol} mL"
+            elif tier == 'both' and (abv or vol):
+                extra = ", ".join(x for x in [f"{abv}% ABV" if abv else None,
+                                              f"{vol} mL" if vol else None] if x)
+            else:
+                extra = r['slug']
+            titles[r['vid']] = make_vintage_title(r, extra)
+    return titles
 
 
 def dominant_variety(blend_rows):
@@ -265,6 +308,7 @@ def main():
         by_winery[key].sort(key=lambda r: (r['year_int'] if r['year_int'] is not None else 0, r['wine'].lower()))
 
     vrecs_by_name = sorted(vrecs, key=lambda r: (r['winery'].lower(), r['wine'].lower(), r['year']))
+    vintage_titles = build_vintage_titles(vrecs)
 
     wineries_sorted = sorted(wineries, key=lambda w: (w.get('name') or '').strip().lower())
     winery_names_sorted = [(w.get('name') or '').strip() for w in wineries_sorted]
@@ -313,7 +357,7 @@ def main():
                 href_set.add(href)
             step += 1
 
-        items.append(("../vintages/", "All vintages", None))
+        items = items[:5] + [("../vintages/", "All vintages", None)]
         return items
 
     def winery_related(name, country):
@@ -394,8 +438,7 @@ def main():
         profile_html = vintage_profile(winery, wine, year, abv, vol, aging, cases, rel_price, val,
                                        wine_type, appellation, w_country, w_region, blend_rows, tasting_rows)
 
-        title = seo.fit_title(f"{winery} {wine} {year}",
-                              [f"{abv}% ABV vintage", "vintage record", "vintage"], BRAND)
+        title = vintage_titles[rec['vid']]
 
         variety_clause = f" ({rec['variety']} blend)" if rec['variety'] else ""
         desc_raw = f"{year} {wine} from {winery}{variety_clause}: {abv}% ABV, {vol} mL bottle."
