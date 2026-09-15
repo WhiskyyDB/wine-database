@@ -217,6 +217,5 @@
       }
     }
   ],
-  "userSpecifiedSources": "https://winedb.dataengineered.io/, https://github.com/WhiskyyDB/wine-database (SOURCES.md: SAQ/LCBO listings, Liv-ex style auction observations, US TTB COLA registry)",
-  "expectedUpdateFrequency": "monthly"
+  "userSpecifiedSources": "https://winedb.dataengineered.io/, https://github.com/WhiskyyDB/wine-database (SOURCES.md: SAQ/LCBO listings, Liv-ex style auction observations, US TTB COLA registry)"
 }
