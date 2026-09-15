@@ -561,6 +561,9 @@ def main():
     {related_html}
     <a href="/#explorer" class="btn-back">← Back to Sommelier Explorer</a>
   </div>
+  <footer style="border-top:1px solid rgba(255,255,255,0.08); margin-top:40px; padding:24px 16px; text-align:center;">
+    <div class="catalog-line" style="text-align:center; margin-top:14px; font-size:0.85rem; opacity:0.85;"><a href="https://dataengineered.io/">Part of the DataEngineered catalog →</a> · <a href="https://dataengineered.io/about">About</a> · <a href="https://dataengineered.io/terms">Terms</a> · <a href="https://dataengineered.io/privacy">Privacy</a> · <a href="https://dataengineered.io/refund-policy">Refund policy</a></div>
+  </footer>
 </body>
 </html>"""
         with open(out_path, 'w', encoding='utf-8') as f:
@@ -663,6 +666,9 @@ def main():
     {related_html}
     <a href="/#explorer" class="btn-back">← Back to Sommelier Explorer</a>
   </div>
+  <footer style="border-top:1px solid rgba(255,255,255,0.08); margin-top:40px; padding:24px 16px; text-align:center;">
+    <div class="catalog-line" style="text-align:center; margin-top:14px; font-size:0.85rem; opacity:0.85;"><a href="https://dataengineered.io/">Part of the DataEngineered catalog →</a> · <a href="https://dataengineered.io/about">About</a> · <a href="https://dataengineered.io/terms">Terms</a> · <a href="https://dataengineered.io/privacy">Privacy</a> · <a href="https://dataengineered.io/refund-policy">Refund policy</a></div>
+  </footer>
 </body>
 </html>"""
         with open(out_path, 'w', encoding='utf-8') as f:
