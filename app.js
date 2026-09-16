@@ -38,6 +38,17 @@ const FALLBACK_TASTING = [
     { vintage_id: 6, winery_name: "Ridge Vineyards", wine_name: "Monte Bello", vintage_year: 2019, descriptor: "Red plum" }
 ];
 
+// Runtime UI text lives in the #i18n-strings table on the page, so localized copies of
+// the page (scripts/i18n_common.py) show these messages in the page's language.
+const I18N = (() => {
+    try { return JSON.parse(document.getElementById("i18n-strings").textContent); }
+    catch (e) { return {}; }
+})();
+
+function escapeHtml(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
 let vintagesData = [];
 let blendsData = [];
 let tastingData = [];
@@ -97,9 +108,9 @@ async function loadData() {
         // Fetch from samples/ directory where CSV files actually reside, with cache buster so CDN never serves stale data
         const cacheBuster = `?v=${Date.now()}`;
         const [vResp, bResp, tResp] = await Promise.all([
-            fetch(`samples/vintages.csv${cacheBuster}`),
-            fetch(`samples/blends.csv${cacheBuster}`),
-            fetch(`samples/tasting_profiles.csv${cacheBuster}`)
+            fetch(`/samples/vintages.csv${cacheBuster}`),
+            fetch(`/samples/blends.csv${cacheBuster}`),
+            fetch(`/samples/tasting_profiles.csv${cacheBuster}`)
         ]);
 
         if (vResp.ok && bResp.ok && tResp.ok) {
@@ -235,7 +246,7 @@ function renderVintagesTable() {
     const filtered = vintagesData.filter(filterMatches);
 
     if (filtered.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="9" style="text-align: center; padding: 2rem; color: #a69b9e;">No vintages match your current filters.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="9" style="text-align: center; padding: 2rem; color: #a69b9e;">${escapeHtml(I18N.noVintages)}</td></tr>`;
         return;
     }
 
@@ -243,18 +254,18 @@ function renderVintagesTable() {
         const tr = document.createElement("tr");
         const valBadge = row.valuation_index_usd 
             ? `<span class="badge-valuation">$${Number(row.valuation_index_usd).toLocaleString()} USD</span>`
-            : `<span class="badge-no-obs">NULL (&lt; 3 Obs)</span>`;
+            : `<span class="badge-no-obs">${escapeHtml(I18N.noObs)}</span>`;
 
         tr.innerHTML = `
             <td><code>#${row.vintage_id}</code></td>
             <td><strong>${row.winery_name}</strong></td>
             <td>${row.wine_name}</td>
             <td><span class="badge-format">${row.vintage_year}</span></td>
-            <td><code>${row.abv_percent || 'N/A'}%</code></td>
+            <td><code>${row.abv_percent || escapeHtml(I18N.notAvailable)}%</code></td>
             <td><span class="badge-format">${row.bottle_volume_ml} ml</span></td>
             <td class="badge-price">$${row.release_price_usd || '—'}</td>
             <td>${valBadge}</td>
-            <td><a href="${row.source_url || '#'}" target="_blank" rel="noopener" style="color: #d4af37; text-decoration: underline;">Tech Sheet &nearr;</a></td>
+            <td><a href="${row.source_url || '#'}" target="_blank" rel="noopener" style="color: #d4af37; text-decoration: underline;">${escapeHtml(I18N.techSheet)}</a></td>
         `;
         tbody.appendChild(tr);
     });
@@ -271,7 +282,7 @@ function renderBlendsTable() {
     });
 
     if (filtered.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 2rem; color: #a69b9e;">No varietal blend records match.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 2rem; color: #a69b9e;">${escapeHtml(I18N.noBlends)}</td></tr>`;
         return;
     }
 
@@ -287,7 +298,7 @@ function renderBlendsTable() {
             <td>
                 <span class="badge-trigger-ok">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
-                    OK (&le; 100.001%)
+                    ${escapeHtml(I18N.blendOk)}
                 </span>
             </td>
         `;
@@ -306,7 +317,7 @@ function renderTastingTable() {
     });
 
     if (filtered.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; padding: 2rem; color: #a69b9e;">No organoleptic descriptors match.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; padding: 2rem; color: #a69b9e;">${escapeHtml(I18N.noTasting)}</td></tr>`;
         return;
     }
 
@@ -318,7 +329,7 @@ function renderTastingTable() {
             <td>${row.wine_name}</td>
             <td><span class="badge-format">${row.vintage_year}</span></td>
             <td><strong style="color: #ffd1dc;">${row.descriptor}</strong></td>
-            <td><span class="badge-format">Aromatic / Palate</span></td>
+            <td><span class="badge-format">${escapeHtml(I18N.tastingCategory)}</span></td>
         `;
         tbody.appendChild(tr);
     });
@@ -418,7 +429,7 @@ async function handleEnterpriseSubmit(event) {
     const btn = document.getElementById(`${prefix}submit-btn`) || document.getElementById("submit-btn");
     if (btn) {
         btn.disabled = true;
-        btn.innerHTML = `<span>⏳ Submitting to Engineering...</span>`;
+        btn.innerHTML = `<span>${escapeHtml(I18N.submitting)}</span>`;
     }
 
     const name = document.getElementById(`${prefix}req-name`)?.value || document.getElementById("req-name")?.value || "";
@@ -441,7 +452,10 @@ async function handleEnterpriseSubmit(event) {
         email: email,
         format: format,
         enrichment_options: checkedOpts.join(", "),
-        detailed_scope: scope
+        detailed_scope: scope,
+        // Page language (en, es, de, fr, pt-br) so replies go out in the
+        // visitor's language; localized copies set <html lang>.
+        lang: (document.documentElement.getAttribute("lang") || "en").toLowerCase()
     };
 
     const plainSubject = `[WineDB Enterprise Scope] Request from ${org}`;
@@ -469,7 +483,7 @@ async function handleEnterpriseSubmit(event) {
             const text = `To: winedb@dataengineered.io\nSubject: ${plainSubject}\n\n${plainBody}`;
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(text).then(() => {
-                    mailtoBtn.textContent = "Copied — paste it into an email to winedb@dataengineered.io";
+                    mailtoBtn.textContent = I18N.copied;
                 }).catch(() => {});
             }
         };
@@ -499,8 +513,8 @@ async function handleEnterpriseSubmit(event) {
         if (!delivered) {
             const heading = successBox.querySelector("h4");
             const para = successBox.querySelector("p");
-            if (heading) heading.textContent = "⚠️ Your request was not sent";
-            if (para) para.innerHTML = "Our form service is unreachable right now. Use the button below to send the same request from your email app — it is pre-filled and goes straight to <code>winedb@dataengineered.io</code>.";
+            if (heading) heading.textContent = I18N.notSentTitle;
+            if (para) para.innerHTML = escapeHtml(I18N.notSentBefore) + " <code>winedb@dataengineered.io</code>" + escapeHtml(I18N.notSentAfter);
             successBox.style.background = "rgba(191, 54, 12, 0.18)";
             successBox.style.borderColor = "#e64a19";
             successBox.style.color = "#ffab91";
@@ -513,7 +527,7 @@ async function handleEnterpriseSubmit(event) {
             btn.style.display = "none";
         } else {
             btn.disabled = false;
-            btn.innerHTML = "<span>Retry sending &rarr;</span>";
+            btn.innerHTML = `<span>${escapeHtml(I18N.retry)}</span>`;
         }
     }
 }

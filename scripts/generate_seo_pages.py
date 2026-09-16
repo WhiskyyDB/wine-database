@@ -22,6 +22,14 @@ def _esc(v):
     return html.escape(str(v if v is not None else ''))
 
 
+def _nt(value, lang_en=False):
+    """Data value (entity name, variety, place, upstream text): translate="no" so
+    scripts/i18n_common.py keeps it verbatim and translates only the copy around it.
+    `value` must already be HTML-ready (escaped where the page escapes it)."""
+    extra = ' lang="en"' if lang_en else ''
+    return f'<span translate="no"{extra}>{value}</span>'
+
+
 def _oxford(items):
     items = [i for i in items if i]
     if not items:
@@ -119,8 +127,8 @@ def wine_blend(blend_rows):
     chips, txt = [], []
     for var, p in parts:
         label = f"{_esc(var)} {p:g}%" if p is not None else _esc(var)
-        chips.append(f'<span class="badge" style="background:#3a0f20;color:#f0d0dc;margin:2px;">{label}</span>')
-        txt.append(f"{var} ({p:g}%)" if p is not None else var)
+        chips.append(f'<span class="badge" translate="no" style="background:#3a0f20;color:#f0d0dc;margin:2px;">{label}</span>')
+        txt.append(f"{_nt(var)} ({p:g}%)" if p is not None else _nt(var))
     return " ".join(chips), _oxford(txt)
 
 
@@ -135,20 +143,23 @@ def vintage_profile(winery, wine, year, abv, vol, aging, cases, rel_price, val,
     for x in [appellation, w_region, w_country]:
         if x and x not in loc_parts:
             loc_parts.append(x)
-    loc = ", ".join(loc_parts)
-    p1 = f"The {_esc(year)} {_esc(wine)} from {_esc(winery)} is a {_esc(typ)}"
+    loc = ", ".join(_nt(_esc(x)) for x in loc_parts)
+    # one <span> per sentence: each optional sentence is its own translation segment
+    p1 = f"The {_esc(year)} {_nt(_esc(wine))} from {_nt(_esc(winery))} is a {_esc(typ)}"
     if loc:
-        p1 += f" from {_esc(loc)}"
+        p1 += f" from {loc}"
     if abv and vol:
         p1 += f", bottled at {_esc(abv)}% ABV in a {_esc(vol)} mL format."
     elif abv:
         p1 += f", bottled at {_esc(abv)}% ABV."
     elif vol:
         p1 += f", bottled in a {_esc(vol)} mL format."
+    s1 = [f"<span>{p1}</span>"]
     if blend_txt:
-        p1 += f" Its varietal composition is {blend_txt}."
+        s1.append(f"<span>Its varietal composition is {blend_txt}.</span>")
     if aging:
-        p1 += f" Maturation regime: {_esc(aging)}."
+        s1.append(f"<span>Maturation regime: {_nt(_esc(aging), lang_en=True)}.</span>")
+    p1 = " ".join(s1)
     bits = []
     try:
         if cases:
@@ -160,20 +171,20 @@ def vintage_profile(winery, wine, year, abv, vol, aging, cases, rel_price, val,
             bits.append(f"a release price of ${float(rel_price):,.0f}")
     except (TypeError, ValueError):
         pass
-    p2 = ("This vintage carries " + _oxford(bits) + ".") if bits else ""
+    p2 = ("<span>This vintage carries " + _oxford(bits) + ".</span>") if bits else ""
     try:
         if val and val not in ('None', 'NULL', ''):
-            p2 += f" Its secondary-market valuation index stands at ${float(val):,.2f} USD, aggregated from a minimum of three auction observations."
+            p2 += f" <span>Its secondary-market valuation index stands at ${float(val):,.2f} USD, aggregated from a minimum of three auction observations.</span>"
     except (TypeError, ValueError):
         pass
     blend_block = (f'<div style="margin-top:1.4rem;"><div class="metric-label">Varietal Blend</div>'
                    f'<div style="margin-top:0.5rem;">{blend_chips}</div></div>') if blend_chips else ""
     desc_block = ""
     if descriptors:
-        chips = " ".join(f'<span class="badge" style="background:rgba(212,175,55,0.12);color:#e8cf8a;margin:2px;">{_esc(d)}</span>' for d in descriptors)
+        chips = " ".join(f'<span class="badge" translate="no" style="background:rgba(212,175,55,0.12);color:#e8cf8a;margin:2px;">{_esc(d)}</span>' for d in descriptors)
         desc_block = (f'<div style="margin-top:1.4rem;"><div class="metric-label">Tasting Descriptors ({len(descriptors)})</div>'
                       f'<div style="margin-top:0.5rem;">{chips}</div></div>')
-    winery_link = f'<a href="/wineries/{slugify(winery)}" style="color:#d4af37;">{_esc(winery)}</a>'
+    winery_link = f'<a href="/wineries/{slugify(winery)}" translate="no" style="color:#d4af37;">{_esc(winery)}</a>'
     p2_html = f'<p style="color:#d8c4cc; margin-top:0.6rem;">{p2}</p>' if p2 else ''
     return f"""
     <section style="margin-top:2rem; line-height:1.7;">
@@ -207,7 +218,7 @@ def winery_prose(recs):
         span = f"{years[0]}" if years[0] == years[-1] else f"{years[0]} to {years[-1]}"
         sentences.append(f"WineDB tracks {n} vintage{'s' if n != 1 else ''} from this winery, spanning {span}.")
     if varieties:
-        sentences.append(f"Recorded varietal composition across these vintages includes {_oxford(varieties)}.")
+        sentences.append(f"Recorded varietal composition across these vintages includes {_oxford([_nt(v) for v in varieties])}.")
     if abvs:
         lo, hi = min(abvs), max(abvs)
         if lo == hi:
@@ -219,7 +230,7 @@ def winery_prose(recs):
             sentences.append(f"All tracked releases are bottled in a {vols[0]} mL format.")
         else:
             sentences.append(f"Bottle formats on record include {_oxford(vols)} mL.")
-    return " ".join(sentences[:4])
+    return " ".join(f"<span>{x}</span>" for x in sentences[:4])
 
 
 def main():
@@ -324,7 +335,7 @@ def main():
     def vintage_related(rec):
         href_set, items = set(), []
         w_href = f"../wineries/{slugify(rec['winery'])}"
-        items.append((w_href, rec['winery'], "producer"))
+        items.append((w_href, rec['winery'], "producer", False))
         href_set.add(w_href)
 
         siblings = by_wine.get((rec['winery'], rec['wine']), [])
@@ -339,7 +350,7 @@ def main():
             href = f"../vintages/{s['slug']}"
             if href in href_set:
                 continue
-            items.append((href, vintage_h1(s['winery'], s['wine'], s['year']), f"{s['year']} vintage of the same wine"))
+            items.append((href, vintage_h1(s['winery'], s['wine'], s['year']), f"{s['year']} vintage of the same wine", False))
             href_set.add(href)
 
         if rec['variety']:
@@ -348,7 +359,7 @@ def main():
                 href = f"../vintages/{s['slug']}"
                 if href in href_set:
                     continue
-                items.append((href, vintage_h1(s['winery'], s['wine'], s['year']), f"same {rec['variety']} varietal"))
+                items.append((href, vintage_h1(s['winery'], s['wine'], s['year']), f"same {rec['variety']} varietal", False))
                 href_set.add(href)
 
         idx_g = next(i for i, s in enumerate(vrecs_by_name) if s['vid'] == rec['vid'])
@@ -358,7 +369,7 @@ def main():
             cand = vrecs_by_name[(idx_g + step) % n_total]
             href = f"../vintages/{cand['slug']}"
             if href not in href_set and cand['vid'] != rec['vid']:
-                items.append((href, vintage_h1(cand['winery'], cand['wine'], cand['year']), None))
+                items.append((href, vintage_h1(cand['winery'], cand['wine'], cand['year']), None, False))
                 href_set.add(href)
             step += 1
 
@@ -369,7 +380,7 @@ def main():
         href_set, items = set(), []
         for s in by_winery.get(name, []):
             href = f"../vintages/{s['slug']}"
-            items.append((href, vintage_h1(s['winery'], s['wine'], s['year']), f"{s['year']}"))
+            items.append((href, vintage_h1(s['winery'], s['wine'], s['year']), f"{s['year']}", False))
             href_set.add(href)
 
         same_country = [n for n in by_country.get(country, []) if n != name]
@@ -377,7 +388,7 @@ def main():
             href = f"../wineries/{slugify(n)}"
             if href in href_set:
                 continue
-            items.append((href, n, f"also in {country}" if country else None))
+            items.append((href, n, f"also in {country}" if country else None, False))
             href_set.add(href)
 
         idx_g = winery_names_sorted.index(name)
@@ -387,7 +398,7 @@ def main():
             cand = winery_names_sorted[(idx_g + step) % n_total]
             href = f"../wineries/{slugify(cand)}"
             if href not in href_set and cand != name:
-                items.append((href, cand, None))
+                items.append((href, cand, None, False))
                 href_set.add(href)
             step += 1
 
@@ -435,6 +446,8 @@ def main():
         blend_rows = blends_by_vid.get(vid, [])
         tasting_rows = tasting_by_vid.get(vid, [])
         gold_badge = _esc(appellation or (wine_type.title() if wine_type else 'Provenance-Tracked'))
+        gold_nt = ' translate="no"' if appellation else ''
+        appellation_nt = ' translate="no"' if (appellation or w_region) else ''
         appellation_disp = _esc(appellation or w_region or '—')
         try:
             production_disp = f"{int(float(cases)):,} cases" if cases else '—'
@@ -462,6 +475,10 @@ def main():
         description = seo.fit_desc(desc_raw)
 
         related_html = seo.related_block(vintage_related(rec), heading="Related", limit=6)
+        if rec['variety']:
+            v_esc = html.escape(rec['variety'])
+            related_html = related_html.replace(f'— same {v_esc} varietal</span>',
+                                                f'— same {_nt(v_esc)} varietal</span>')
 
         og_parts = [x for x in [f"Exact ABV ({abv}%)" if abv else None,
                                  f"bottle format ({vol} mL)" if vol else None] if x]
@@ -542,21 +559,21 @@ def main():
   <div class="spec-container">
     <div class="spec-header">
       <span class="badge">3NF Relational Record</span>
-      <span class="badge badge-gold">{gold_badge}</span>
-      <h1>{winery} {wine} — {year} Vintage</h1>
+      <span class="badge badge-gold"{gold_nt}>{gold_badge}</span>
+      <h1>{_nt(winery)} {_nt(wine)} — {year} Vintage</h1>
       <p style="color: #a8929b;">Verified primary producer specification and secondary auction market indices.</p>
     </div>
     <div class="grid-metrics">
       <div class="metric-card"><div class="metric-label">Harvest Vintage</div><div class="metric-val">{year}</div></div>
       {abv_card}
       {vol_card}
-      <div class="metric-card"><div class="metric-label">Appellation</div><div class="metric-val" style="font-size: 1rem;">{appellation_disp}</div></div>
+      <div class="metric-card"><div class="metric-label">Appellation</div><div class="metric-val"{appellation_nt} style="font-size: 1rem;">{appellation_disp}</div></div>
       <div class="metric-card"><div class="metric-label">Production</div><div class="metric-val" style="font-size: 1rem;">{production_disp}</div></div>
       <div class="metric-card"><div class="metric-label">Valuation Index</div><div class="metric-val" style="font-size: 1rem;">{val_display}</div></div>
     </div>
 {profile_html}
     <div style="background: rgba(212, 175, 55, 0.08); padding: 1.2rem; border-left: 3px solid #d4af37; border-radius: 4px; font-size: 0.9rem;">
-      <strong>Provenance Audit:</strong> This record is linked to primary authority <em>{source}</em>. All varietal composition percentages satisfy the database-level constraint `(0.0, 100.0]` with `SUM <= 100.001%`.
+      <strong>Provenance Audit:</strong> This record is linked to primary authority <em translate="no">{source}</em>. All varietal composition percentages satisfy the database-level constraint <span translate="no">`(0.0, 100.0]`</span> with <span translate="no">`SUM <= 100.001%`</span>.
     </div>
     {related_html}
     <a href="/#explorer" class="btn-back">← Back to Sommelier Explorer</a>
@@ -611,6 +628,9 @@ def main():
                      if prose else '')
 
         related_html = seo.related_block(winery_related(name, country), heading="Related", limit=None)
+        if country:
+            c_esc = html.escape(country)
+            related_html = related_html.replace(f'— also in {c_esc}</span>', f'— also in {_nt(c_esc)}</span>')
 
         html_content = f"""<!DOCTYPE html>
 <html lang="en" class="dark">
@@ -659,8 +679,8 @@ def main():
 <body>
   <div class="spec-container">
     <span class="badge">Canonical Producer</span>
-    <h1>{name}</h1>
-    <p style="color: #d4af37; font-weight: 600; font-size: 1.1rem; margin-top: 0.5rem;">{region}, {country} {f'· Founded {founded}' if founded else ''}</p>
+    <h1 translate="no">{name}</h1>
+    <p style="color: #d4af37; font-weight: 600; font-size: 1.1rem; margin-top: 0.5rem;">{_nt(region)}, {_nt(country)} {f'· Founded {founded}' if founded else ''}</p>
     <p style="color: #a8929b; margin-top: 1.5rem; line-height: 1.6;">Registered in the WineDB canonical producer table (`wineries.csv`). This entity serves as the parent foreign key (`winery_id`) for cuvee classifications (`wines.csv`) and harvest vintage metrics (`vintages.csv`).</p>
     {prose_html}
     {related_html}

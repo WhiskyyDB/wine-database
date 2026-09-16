@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>WineDB — base de datos de vinos con 3.675 añadas verificadas</title>
+<meta content="Descarga 3.675 añadas de vinos finos verificadas en SQLite o 7 CSV normalizados: ensamblajes exactos, química de laboratorio, medianas de subastas. Muestra gratuita de 59 añadas." name="description"/>
+<meta content="WineDB Initiative" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta content="2VE0Ll5xPaIkGjSTkvTenDhcKRLJGPFgVqekvGOIw-4" name="google-site-verification"/>
+<link href="https://winedb.dataengineered.io/es/" rel="canonical"/>
+<!-- i18n:alternates -->
+<link rel="alternate" hreflang="en" href="https://winedb.dataengineered.io/">
+<link rel="alternate" hreflang="es" href="https://winedb.dataengineered.io/es/">
+<link rel="alternate" hreflang="de" href="https://winedb.dataengineered.io/de/">
+<link rel="alternate" hreflang="fr" href="https://winedb.dataengineered.io/fr/">
+<link rel="alternate" hreflang="pt-BR" href="https://winedb.dataengineered.io/pt-br/">
+<link rel="alternate" hreflang="x-default" href="https://winedb.dataengineered.io/">
+<style>th,td{overflow-wrap:anywhere;hyphens:auto}h1,h2,h3,h4,button,.btn{overflow-wrap:break-word;hyphens:auto}</style>
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="pt_BR">
+<script src="/i18n/i18n.js?v=1" defer></script>
+<!-- /i18n:alternates -->
+<link href="/site.webmanifest" rel="manifest"/>
+<meta content="#1a0b12" name="theme-color"/>
+<!-- Open Graph / Social -->
+<meta content="WineDB — base de datos de vinos con 3.675 añadas verificadas" property="og:title"/>
+<meta content="3.675 añadas de vinos finos con ensamblajes varietales exactos, química de laboratorio y medianas de subastas. SQLite + 7 CSV normalizados. Muestra gratuita de 59 añadas." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://winedb.dataengineered.io/es/" property="og:url"/>
+<meta content="https://winedb.dataengineered.io/assets/winedb-cover.png" property="og:image"/>
+<!-- JSON-LD Structured Data: Dataset -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "WineDB — base de datos relacional canónica de vinos finos y variedades por añada",
+  "description": "Estándar de datos abiertos de nivel empresarial, normalizado en 3NF, para seguir vinos finos de prestigio, porcentajes de ensamblaje varietal por añada, dimensiones de botella, grado alcohólico (%), azúcar residual de laboratorio (g/L), acidez natural y medianas de valoración en subastas del mercado secundario.",
+  "url": "https://winedb.dataengineered.io/es/",
+  "creator": {
+    "@type": "Organization",
+    "name": "WineDB Initiative",
+    "url": "https://winedb.dataengineered.io/es/"
+  },
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "isAccessibleForFree": true,
+  "variableMeasured": [
+    "alcohol by volume percentage",
+    "bottle volume in milliliters",
+    "varietal composition blend percentages",
+    "laboratory residual sugar g/L",
+    "laboratory total acidity g/L H2SO4",
+    "secondary market auction valuation index USD"
+  ],
+  "inLanguage": "es"
+}
+</script>
+<!-- JSON-LD Structured Data: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Por qué WineDB impone restricciones de suma del ensamblaje a nivel de base de datos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A diferencia de las hojas de cálculo planas, donde los ensamblajes varietales a menudo suman imposibilidades matemáticas como 105%, WineDB aplica un trigger de SQLite (`trg_check_blend_sum_insert`) que verifica que el porcentaje total del ensamblaje varietal de cualquier añada nunca supere 100,001% (`ABORT`)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En qué consiste la metodología de valoración con >= 3 observaciones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Conforme a las pautas de transparencia del mercado secundario de subastas, `valuation_index_usd` representa la mediana del precio de remate en transacciones recientes de subastas públicas. Si existen menos de 3 observaciones de precio independientes para una cuvée/añada en una ventana de 12 meses, el índice de valoración se almacena estrictamente como NULL."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué incluye la muestra gratuita frente al Full Dataset Snapshot de $49?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La muestra gratuita (`samples/`) incluye 59 añadas de muestra verificadas en 6 tablas CSV (más una vista previa en SQLite) y taxonomías abiertas ($0 / CC BY 4.0). El Full Dataset Snapshot de $49 contiene la base de datos relacional completa de 3.675 añadas, 106 bodegas emblemáticas, química de laboratorio de SAQ/LCBO, referencias de Liv-ex y el registro maestro de auditoría de 11.960 filas."
+      }
+    }
+  ],
+  "inLanguage": "es"
+}
+</script>
+<!-- JSON-LD Structured Data: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://winedb.dataengineered.io/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Sommelier Explorer",
+      "item": "https://winedb.dataengineered.io/es/#explorer"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Arquitectura 3NF",
+      "item": "https://winedb.dataengineered.io/es/#architecture"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Niveles comerciales",
+      "item": "https://winedb.dataengineered.io/es/#pricing"
+    }
+  ]
+}
+</script>
+<!-- Fonts (Non-Blocking Core Web Vitals Load) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Outfit:wght@400;600;700;800&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Outfit:wght@400;600;700;800&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/></noscript>
+<!-- Styles -->
+<link href="/index.css" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "WineDB: base de datos de vinos finos y variedades por añada — Snapshot",
+  "description": "Estándar de datos abiertos de nivel empresarial, normalizado en 3NF, para seguir vinos finos de prestigio, porcentajes de ensamblaje varietal por añada, dimensiones de botella, grado alcohólico (%), azúcar residual de laboratorio (g/L), acidez natural y medianas de valoración en subastas del mercado secundario.",
+  "image": "https://winedb.dataengineered.io/assets/winedb-cover.png",
+  "brand": {
+    "@type": "Brand",
+    "name": "WineDB"
+  },
+  "category": "Software > Data & Databases",
+  "offers": {
+    "@type": "Offer",
+    "price": "49.00",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "url": "https://winedb.dataengineered.io/es/#pricing",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "USD"
+      },
+      "shippingDestination": [
+        {
+          "@type": "DefinedRegion",
+          "addressCountry": "US"
+        },
+        {
+          "@type": "DefinedRegion",
+          "addressCountry": "GB"
+        },
+        {
+          "@type": "DefinedRegion",
+          "addressCountry": "CA"
+        },
+        {
+          "@type": "DefinedRegion",
+          "addressCountry": "AU"
+        }
+      ],
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 0,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 0,
+          "unitCode": "DAY"
+        }
+      }
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": [
+        "US",
+        "GB",
+        "CA",
+        "AU"
+      ],
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+    }
+  }
+}
+</script>
+</head>
+<body>
+<div class="background-glow">
+<div class="glow-orb orb-burgundy"></div>
+<div class="glow-orb orb-gold"></div>
+</div>
+<header class="navbar">
+<div class="nav-container">
+<a class="brand-logo" href="#hero">
+<span class="logo-icon">🍷</span>
+<span class="logo-text" translate="no">Wine<span class="accent-gold">DB</span></span>
+<span class="badge-version">v1.0.0</span>
+</a>
+<nav class="nav-links">
+<a href="#explorer" id="nav-explorer">Sommelier Explorer</a>
+<a href="#architecture" id="nav-architecture">Arquitectura 3NF</a>
+<a href="#blends-showcase" id="nav-blends">Composición varietal</a>
+<a href="#data-guarantees" id="nav-guarantees">Garantías de datos</a>
+<a class="btn-nav-download" href="#downloads" id="nav-downloads">Descargar conjunto de datos</a>
+</nav>
+</div>
+</header>
+<main id="main-content">
+<!-- Hero Section -->
+<section class="hero-section" id="hero">
+<div class="hero-content">
+<div class="hero-badge">
+<span class="pulse-dot"></span> Estándar de datos abiertos de referencia para vinos finos
+                </div>
+<h1 class="hero-title">
+                    La base relacional de <br/> <span class="text-gradient-gold">añadas finas de primer nivel mundial</span>
+</h1>
+<p class="hero-subtitle">
+                    Sin estimaciones sintéticas ni imposibilidades matemáticas. Explora cuvées verificadas, esquemas estrictos en tercera forma normal (<code class="inline-code">3NF</code>), triggers de suma del ensamblaje varietal a nivel de base de datos (<code class="inline-code">SUM ≤ 100%</code>) y valoraciones de subastas del mercado secundario sujetas a nuestra <strong class="text-gold">regla de ≥ 3 observaciones</strong>.
+                </p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#explorer" id="btn-hero-explore">
+<span>Abrir el portal para sumilleres</span>
+<svg class="icon-arrow" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+</a>
+<a class="btn btn-secondary" href="#downloads" id="btn-hero-kaggle">
+<span>Especificaciones del dataset en Kaggle</span>
+</a>
+</div>
+<div class="hero-stats">
+<div class="stat-card">
+<span class="stat-value" id="stat-wineries">26+</span>
+<span class="stat-label">Productores emblemáticos</span>
+</div>
+<div class="stat-card">
+<span class="stat-value" id="stat-vintages">59+</span>
+<span class="stat-label">Añadas verificadas</span>
+</div>
+<div class="stat-card">
+<span class="stat-value" id="stat-blends">171+</span>
+<span class="stat-label">Registros de ensamblaje varietal</span>
+</div>
+<div class="stat-card">
+<span class="stat-value" id="stat-tasting">236+</span>
+<span class="stat-label">Descriptores de sumiller</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Sommelier Explorer -->
+<section class="explorer-section" id="explorer">
+<div class="section-header">
+<h2 class="section-title"><span class="text-gradient-gold">Portal de añadas</span> para sumilleres</h2>
+<p class="section-subtitle">Busca en tablas de añadas desnormalizadas en tiempo real, filtra por denominación y composición varietal o examina las valoraciones de subastas del mercado secundario.</p>
+</div>
+<div class="explorer-controls glass-panel">
+<div class="search-bar">
+<svg class="search-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+<input id="search-input" placeholder="Busca cuvée, productor (p. ej., Insignia, Opus One, Ridge) o descriptor..." type="text"/>
+</div>
+<div class="filter-group">
+<select class="filter-select" id="filter-appellation">
+<option value="ALL">Todas las denominaciones</option>
+<option translate="no" value="Napa Valley">Napa Valley</option>
+<option translate="no" value="Santa Cruz Mountains">Santa Cruz Mountains</option>
+<option translate="no" value="Pauillac">Pauillac</option>
+<option translate="no" value="Margaux">Margaux</option>
+<option translate="no" value="Barolo">Barolo</option>
+</select>
+<select class="filter-select" id="filter-variety">
+<option value="ALL">Todas las variedades</option>
+<option translate="no" value="Cabernet Sauvignon">Cabernet Sauvignon</option>
+<option translate="no" value="Merlot">Merlot</option>
+<option translate="no" value="Pinot Noir">Pinot Noir</option>
+<option translate="no" value="Chardonnay">Chardonnay</option>
+<option translate="no" value="Nebbiolo">Nebbiolo</option>
+</select>
+</div>
+</div>
+<!-- Tabs -->
+<div class="tabs-container">
+<button class="tab-btn active" data-target="tab-vintages" id="tab-vintages-btn">Añadas verificadas (`vintages.csv`)</button>
+<button class="tab-btn" data-target="tab-blends" id="tab-blends-btn">Ensamblajes varietales (`blends.csv`)</button>
+<button class="tab-btn" data-target="tab-tasting" id="tab-tasting-btn">Perfiles de cata (`tasting_profiles.csv`)</button>
+</div>
+<div class="table-container glass-panel">
+<!-- Vintages Tab -->
+<div class="tab-content active" id="tab-vintages">
+<table class="data-table">
+<thead>
+<tr>
+<th>ID de añada</th>
+<th>Productor</th>
+<th>Nombre de la cuvée</th>
+<th>Año</th>
+<th>Grado alcohólico %</th>
+<th>Formato (ml)</th>
+<th>Precio de lanzamiento</th>
+<th>Índice de valoración (3+ obs.)</th>
+<th>Procedencia</th>
+</tr>
+</thead>
+<tbody id="vintages-tbody">
+<!-- Dynamic populated by JS -->
+</tbody>
+</table>
+</div>
+<!-- Blends Tab -->
+<div class="tab-content" id="tab-blends">
+<table class="data-table">
+<thead>
+<tr>
+<th>ID de añada</th>
+<th>Productor</th>
+<th>Nombre de la cuvée</th>
+<th>Año</th>
+<th>Variedad de uva</th>
+<th>Composición %</th>
+<th>Verificación de la suma del ensamblaje</th>
+</tr>
+</thead>
+<tbody id="blends-tbody">
+<!-- Dynamic populated by JS -->
+</tbody>
+</table>
+</div>
+<!-- Tasting Tab -->
+<div class="tab-content" id="tab-tasting">
+<table class="data-table">
+<thead>
+<tr>
+<th>ID de añada</th>
+<th>Productor</th>
+<th>Nombre de la cuvée</th>
+<th>Año</th>
+<th>Descriptor organoléptico</th>
+<th>Categoría</th>
+</tr>
+</thead>
+<tbody id="tasting-tbody">
+<!-- Dynamic populated by JS -->
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Varietal Composition Showcase -->
+<section class="showcase-section" id="blends-showcase">
+<div class="section-header">
+<h2 class="section-title"><span class="text-gradient-gold">Composición varietal</span> de precisión</h2>
+<p class="section-subtitle">Visualización de los porcentajes exactos de las fichas técnicas y de los triggers de base de datos que evitan errores matemáticos (over-100%).</p>
+</div>
+<div class="blends-grid">
+<div class="blend-card glass-panel">
+<div class="blend-header">
+<div>
+<span class="blend-producer" translate="no">Joseph Phelps Vineyards</span>
+<h3 class="blend-cuvee" translate="no">Insignia 2019</h3>
+</div>
+<span class="blend-abv">14,5% vol.</span>
+</div>
+<div class="blend-bar-container">
+<div class="blend-bar">
+<div class="bar-segment variety-cab" style="width: 92%;" title="Cabernet Sauvignon: 92%" translate="no">92% Cab</div>
+<div class="bar-segment variety-merlot" style="width: 6%;" title="Merlot: 6%" translate="no">6%</div>
+<div class="bar-segment variety-pv" style="width: 2%;" title="Petit Verdot: 2%" translate="no">2%</div>
+</div>
+</div>
+<ul class="blend-legend" translate="no">
+<li><span class="legend-dot variety-cab"></span> Cabernet Sauvignon (92.0%)</li>
+<li><span class="legend-dot variety-merlot"></span> Merlot (6.0%)</li>
+<li><span class="legend-dot variety-pv"></span> Petit Verdot (2.0%)</li>
+</ul>
+<div class="blend-trigger-badge verified">
+<svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><path d="M22 4 12 14.01l-3-3"></path></svg>
+<span>Verificado por trigger de SQLite: total = 100,0% (≤ 100,001%)</span>
+</div>
+</div>
+<div class="blend-card glass-panel">
+<div class="blend-header">
+<div>
+<span class="blend-producer" translate="no">Ridge Vineyards</span>
+<h3 class="blend-cuvee" translate="no">Monte Bello 2019</h3>
+</div>
+<span class="blend-abv">13,7% vol.</span>
+</div>
+<div class="blend-bar-container">
+<div class="blend-bar">
+<div class="bar-segment variety-cab" style="width: 77%;" title="Cabernet Sauvignon: 77%" translate="no">77% Cab</div>
+<div class="bar-segment variety-merlot" style="width: 14%;" title="Merlot: 14%" translate="no">14% Merlot</div>
+<div class="bar-segment variety-pv" style="width: 9%;" title="Petit Verdot: 9%" translate="no">9% PV</div>
+</div>
+</div>
+<ul class="blend-legend" translate="no">
+<li><span class="legend-dot variety-cab"></span> Cabernet Sauvignon (77.0%)</li>
+<li><span class="legend-dot variety-merlot"></span> Merlot (14.0%)</li>
+<li><span class="legend-dot variety-pv"></span> Petit Verdot (9.0%)</li>
+</ul>
+<div class="blend-trigger-badge verified">
+<svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><path d="M22 4 12 14.01l-3-3"></path></svg>
+<span>Verificado por trigger de SQLite: total = 100,0% (≤ 100,001%)</span>
+</div>
+</div>
+<div class="blend-card glass-panel">
+<div class="blend-header">
+<div>
+<span class="blend-producer" translate="no">Opus One Winery</span>
+<h3 class="blend-cuvee" translate="no">Opus One 2019</h3>
+</div>
+<span class="blend-abv">14,0% vol.</span>
+</div>
+<div class="blend-bar-container">
+<div class="blend-bar">
+<div class="bar-segment variety-cab" style="width: 78%;" title="Cabernet Sauvignon: 78%" translate="no">78% Cab</div>
+<div class="bar-segment variety-merlot" style="width: 8%;" title="Merlot: 8%" translate="no">8%</div>
+<div class="bar-segment variety-pv" style="width: 6%;" title="Petit Verdot: 6%" translate="no">6%</div>
+<div class="bar-segment variety-cf" style="width: 6%;" title="Cabernet Franc: 6%" translate="no">6%</div>
+<div class="bar-segment variety-malbec" style="width: 2%;" title="Malbec: 2%" translate="no">2%</div>
+</div>
+</div>
+<ul class="blend-legend" translate="no">
+<li><span class="legend-dot variety-cab"></span> Cab. Sauvignon (78%) • <span class="legend-dot variety-merlot"></span> Merlot (8%)</li>
+<li><span class="legend-dot variety-pv"></span> Petit Verdot (6%) • <span class="legend-dot variety-cf"></span> Cab. Franc (6%) • <span class="legend-dot variety-malbec"></span> Malbec (2%)</li>
+</ul>
+<div class="blend-trigger-badge verified">
+<svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><path d="M22 4 12 14.01l-3-3"></path></svg>
+<span>Verificado por trigger de SQLite: total = 100,0% (≤ 100,001%)</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3NF Architecture & Relational Constraints -->
+<section class="arch-section" id="architecture">
+<div class="section-header">
+<h2 class="section-title"><span class="text-gradient-gold">Arquitectura 3NF</span> relacional</h2>
+<p class="section-subtitle">Cómo WineDB separa los metadatos del productor de las expresiones de cada añada y aplica restricciones de esquema estrictas.</p>
+</div>
+<div class="arch-grid">
+<div class="arch-card glass-panel">
+<div class="arch-icon">🔗</div>
+<h3>Tercera forma normal (3NF)</h3>
+<p>Las hojas de cálculo planas repiten miles de veces los años de fundación de los productores y los detalles de las denominaciones. WineDB normaliza las entidades en <code>wineries</code>, <code>wines</code>, <code>vintages</code>, <code>blends</code> y <code>tasting_profiles</code>, vinculadas mediante claves foráneas estrictas.</p>
+</div>
+<div class="arch-card glass-panel">
+<div class="arch-icon">🏷️</div>
+<h3>Ampelografía controlada del VIVC</h3>
+<p>Los nombres de variedades de uva se normalizan automáticamente durante la ingesta con los registros ampelográficos del VIVC, que asignan los sinónimos (p. ej., <code>Shiraz</code> → <code>Syrah</code>, <code>Cannonau</code> → <code>Grenache</code>) a claves canónicas.</p>
+</div>
+</div>
+</section>
+<!-- Verified Data Guarantees -->
+<section class="arch-section" id="data-guarantees" style="padding-top: 3rem;">
+<div class="section-header">
+<h2 class="section-title"><span class="text-gradient-gold">Garantías de datos</span> verificadas</h2>
+<p class="section-subtitle">Restricciones de verificación matemática estrictas, registros de auditoría de fuentes primarias y reglas de valoración aplicadas en la capa de base de datos.</p>
+</div>
+<div class="arch-grid">
+<div class="arch-card glass-panel">
+<div class="arch-icon">⚖️</div>
+<h3>Trigger de verificación de la suma del ensamblaje</h3>
+<p>El trigger de base de datos <code>trg_check_blend_sum_insert</code> se ejecuta en cada INSERT o UPDATE sobre <code>blends</code>. Si la suma acumulada de las variedades de una añada supera <code>100.001%</code>, SQLite lanza de inmediato un <code>ABORT</code>.</p>
+</div>
+<div class="arch-card glass-panel">
+<div class="arch-icon">📊</div>
+<h3>Regla de valoración (≥ 3 observaciones)</h3>
+<p>Los índices del mercado secundario se calculan estrictamente a partir de precios de remate en subastas públicas. Si se observan menos de 3 lotes independientes en 18 meses, el índice queda en <code>NULL</code> para evitar sesgos especulativos.</p>
+</div>
+<div class="arch-card glass-panel">
+<div class="arch-icon">🛡️</div>
+<h3>Registro de auditoría de fuentes primarias</h3>
+<p>Cada registro de cuvée y de añada está vinculado directamente a nuestra tabla maestra <code>data_sources</code>, con URL exactas a los registros de etiquetas US TTB COLA, las fichas de laboratorio de SAQ/LCBO y las notas técnicas de las fincas.</p>
+</div>
+<div class="arch-card glass-panel">
+<div class="arch-icon">🧪</div>
+<h3>Química de laboratorio cuantitativa</h3>
+<p>En lugar de basarse solo en descriptores subjetivos de sumiller, WineDB registra química de laboratorio precisa: valores exactos de <code>residual_sugar_g_l</code>, <code>titratable_acidity_g_l</code> y <code>ph_level</code>, y el volumen del formato de botella (`750ml`, `1500ml`).</p>
+</div>
+</div>
+</section>
+<!-- Pricing & Dataset Tiers Section -->
+<section class="download-section" id="downloads">
+<span id="pricing"></span>
+<div class="section-header">
+<h2 class="section-title"><span class="text-gradient-gold">Niveles de datos</span> comerciales y abiertos</h2>
+<p class="section-subtitle">Empieza con nuestra muestra gratuita de vista previa o desbloquea la base de datos relacional completa de 3.675 añadas, con química completa, referencias del mercado secundario y registros maestros de auditoría.</p>
+</div>
+<div class="pricing-grid">
+<!-- Tier 0: Free Sample -->
+<div class="pricing-card">
+<div class="pricing-header">
+<h3>Muestra gratuita de vista previa</h3>
+<p>Evalúa una muestra de 11 columnas del esquema de añadas y prueba la integración antes de comprar.</p>
+</div>
+<div class="pricing-price">
+<span>$0</span>
+<span class="period">/ gratis para siempre</span>
+</div>
+<ul class="pricing-features">
+<li><span class="check">✓</span> 59 añadas de muestra verificadas en 6 tablas relacionales</li>
+<li><span class="check">✓</span> Esquema completo con columnas de química y auditoría</li>
+<li><span class="check">✓</span> Vista previa de la base de datos relacional <code>winedb.sqlite</code></li>
+<li><span class="check">✓</span> Taxonomías abiertas ampelográficas del VIVC y de denominaciones</li>
+<li><span class="check">✓</span> Licencia Creative Commons Attribution 4.0</li>
+</ul>
+<a class="btn btn-secondary btn-tier" download="" href="/samples/vintages.csv">
+<span>Descargar CSV de muestra</span>
+</a>
+</div>
+<!-- Tier 1: Full Dataset Snapshot -->
+<div class="pricing-card featured">
+<span class="pricing-badge">Más popular</span>
+<div class="pricing-header">
+<h3>Full Dataset Snapshot</h3>
+<p>El conjunto de datos relacional de vinos finos completo y listo para producción, para empresas y analistas.</p>
+</div>
+<div class="pricing-price">
+<span>$49</span>
+<span class="period">/ snapshot completo</span>
+</div>
+<ul class="pricing-features">
+<li><span class="check">✓</span> <strong>3.675 añadas de vinos finos verificadas</strong> en 143 cuvées emblemáticas</li>
+<li><span class="check">✓</span> <strong>106 bodegas de prestigio</strong> y 57 denominaciones de todo el mundo</li>
+<li><span class="check">✓</span> <strong>Química de laboratorio de SAQ/LCBO</strong> (azúcar residual y acidez)</li>
+<li><span class="check">✓</span> <strong>Referencias de Liv-ex y subastas</strong> con regla de ≥3 observaciones</li>
+<li><span class="check">✓</span> ID de etiqueta verificados del <strong>registro US TTB COLA</strong> y extractos OCR</li>
+<li><span class="check">✓</span> <strong>Registro maestro de procedencia de 11.960 filas</strong> (<code>data_sources.csv</code>)</li>
+<li><span class="check">✓</span> 3NF <code>winedb.sqlite</code> completo + las 7 exportaciones CSV</li>
+<li><span class="check">✓</span> Edición actual (2026.09) y derechos comerciales</li>
+</ul>
+<a class="btn btn-primary btn-tier" href="https://buy.stripe.com/bJe8wQf3GdrobDZ0A038407" rel="noopener" style="text-align: center; display: block;" target="_blank">
+<span>💳 Comprar Full Dataset Snapshot — $49</span>
+</a>
+<div style="margin-top: 0.85rem; text-align: center;">
+<a href="javascript:void(0)" onclick="openStripeModal();" style="font-size: 0.85rem; color: #d4af37; text-decoration: underline; cursor: pointer; display: inline-block; padding: 0.2rem 0.5rem;">Detalles de la licencia →</a>
+</div>
+</div>
+<p class="custom-line" style="margin-top:24px;text-align:center;font-size:0.88rem;color:var(--text-muted);">Trabajo a medida (subconjuntos, pipelines de extracción, mapeo de esquemas): desde $99 — <a href="#enterprise-contact" style="text-decoration:underline;">contacta con el equipo</a></p><span translate="no">\1 &amp; Contact Section --&gt;</span>
+<section class="arch-section" id="enterprise-contact" style="padding-top: 3rem; max-width: 860px; margin: 0 auto 4rem auto; scroll-margin-top: 100px;">
+<div class="glass-panel" style="padding: 2.5rem; border-radius: 24px; border: 1px solid rgba(212, 175, 55, 0.35); box-shadow: 0 20px 50px rgba(0,0,0,0.6);">
+<div class="section-header" style="margin-bottom: 2rem;">
+<h2 class="section-title" style="font-size: 2rem;">Enterprise: <span class="text-gradient-gold">formulario de alcance personalizado</span></h2>
+<p class="section-subtitle">¿Necesitas historia detallada de fincas, scrapers de Apify a medida o webhooks de API REST en vivo? Envía aquí mismo tus especificaciones de extracción o escríbenos a <span style="color: #d4af37;">winedb@dataengineered.io</span>.</p>
+</div>
+<form id="onpage-enterprise-form" onsubmit="handleEnterpriseSubmit(event)">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+<div class="form-group" style="margin: 0;">
+<label for="page-req-name">Tu nombre completo *</label>
+<input class="form-input" id="page-req-name" placeholder="p. ej., Jean-Luc Moreau" required="" type="text"/>
+</div>
+<div class="form-group" style="margin: 0;">
+<label for="page-req-org">Empresa / Bodega / Fondo de inversión *</label>
+<input class="form-input" id="page-req-org" placeholder="p. ej., Grand Cru Data &amp; Analytics" required="" type="text"/>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+<div class="form-group" style="margin: 0;">
+<label for="page-req-email">Correo electrónico profesional *</label>
+<input class="form-input" id="page-req-email" placeholder="p. ej., cliente@organizacion.com" required="" type="email"/>
+</div>
+<div class="form-group" style="margin: 0;">
+<label for="page-req-format">Formato de entrega preferido</label>
+<select class="form-select" id="page-req-format">
+<option value="Relational SQLite 3NF (.db)">SQLite relacional 3NF (.db)</option>
+<option value="PostgreSQL SQL Dump (.sql)">Volcado SQL de PostgreSQL (.sql)</option>
+<option value="Live REST API Webhook / JSON">Webhook de API REST en vivo / endpoint JSON</option>
+<option value="Partitioned CSV / Parquet Tables">Tablas CSV / Parquet particionadas</option>
+</select>
+</div>
+</div>
+<div class="form-group" style="margin-bottom: 1.5rem;">
+<label>Opciones de enriquecimiento de datos</label>
+<div class="checkbox-grid">
+<label class="checkbox-item">
+<input checked="" name="page-req-opts" type="checkbox" value="Liv-ex Auction Medians"/>
+<span>Medianas de subastas Liv-ex</span>
+</label>
+<label class="checkbox-item">
+<input checked="" name="page-req-opts" type="checkbox" value="SAQ/LCBO Chemistry Data"/>
+<span>Datos químicos de SAQ/LCBO</span>
+</label>
+<label class="checkbox-item">
+<input checked="" name="page-req-opts" type="checkbox" value="TTB COLA Label Registries"/>
+<span>Registros de etiquetas TTB COLA</span>
+</label>
+<label class="checkbox-item">
+<input checked="" name="page-req-opts" type="checkbox" value="Dedicated Apify Scraping Actor"/>
+<span>Actor de scraping de Apify dedicado</span>
+</label>
+</div>
+</div>
+<div class="form-group" style="margin-bottom: 1.8rem;">
+<label for="page-req-scope">Alcance detallado y bodegas / regiones objetivo *</label>
+<textarea class="form-textarea" id="page-req-scope" placeholder="Describe your exact coverage needs (e.g., 'We require 10-year historical pricing and blend percentages for all Classified Growths in Pauillac and Margaux, updated daily via Apify webhook...')" required="" style="min-height: 120px;"></textarea>
+</div>
+<div class="form-success-alert" id="page-form-success-box" style="display: none; margin-bottom: 1.5rem;">
+<h4 style="margin: 0 0 0.5rem 0; color: #fff;">🎉 ¡Alcance personalizado registrado!</h4>
+<p style="margin: 0; font-size: 0.88rem;">Nuestro equipo de ingeniería (<code>winedb@dataengineered.io</code>) ha recibido las especificaciones de tu alcance Enterprise. Revisaremos tus requisitos y enviaremos un presupuesto de extracción a medida directamente a tu bandeja de entrada (<strong id="page-sent-email-display" style="color: #d4af37;"></strong>) en un plazo de 4 horas hábiles.</p>
+<div style="margin-top: 1rem;">
+<a class="btn btn-secondary" href="#" id="page-fallback-mailto-btn" style="font-size: 0.8rem; padding: 0.5rem 1rem;">Copiar la solicitud para enviarla por correo</a>
+</div>
+</div>
+<button class="btn btn-primary" id="page-submit-btn" style="width: 100%; padding: 1rem 2rem; font-size: 1.05rem; font-weight: 700;" type="submit">
+<span>🚀 Enviar solicitud Enterprise al equipo de ingeniería →</span>
+</button>
+</form>
+</div>
+</section>
+</div></section></main>
+<!-- BEGIN:hub-browse -->
+<section id="browse" style="max-width:1000px;margin:0 auto;padding:30px 24px;border-top:1px solid rgba(128,128,128,.28)">
+<h2 style="font-size:1.05rem;margin:0 0 8px">Explorar todas las páginas</h2>
+<p style="margin:0;opacity:.85"><a href="/es/vintages/">59 registros de añadas</a> · <a href="/es/wineries/">26 bodegas y productores</a></p>
+</section>
+<!-- END:hub-browse -->
+<footer class="footer">
+<div class="footer-content">
+<div class="footer-left">
+<div class="brand-logo">
+<span class="logo-icon">🍷</span>
+<span class="logo-text" translate="no">Wine<span class="accent-gold">DB</span></span>
+</div>
+<p class="footer-copy">© 2026 WineDB Project. Distribuido bajo CC BY 4.0.</p>
+</div>
+<div class="footer-links">
+<a href="/DATA_DICTIONARY.md">Diccionario de datos</a>
+<a href="/SOURCES.md">Registro de fuentes</a>
+<a href="/SAMPLE_PREVIEW.md">Vista previa de la muestra</a>
+<a href="https://github.com/WhiskyyDB/wine-database" rel="noopener" target="_blank">Repositorio de GitHub</a>
+</div>
+</div>
+<div class="catalog-line" style="text-align:center; margin-top:14px; font-size:0.85rem; opacity:0.85;"><a href="https://dataengineered.io/">Parte del catálogo DataEngineered →</a> · <a href="https://dataengineered.io/about">Acerca de</a> · <a href="https://dataengineered.io/terms">Términos</a> · <a href="https://dataengineered.io/privacy">Privacidad</a> · <a href="https://dataengineered.io/refund-policy">Política de reembolso</a></div>
+<!-- i18n:switcher --><nav class="i18n-switch" translate="no" aria-label="Idioma" style="text-align:center;margin:14px auto;font-size:0.85rem;opacity:0.85;"><a href="/" hreflang="en" lang="en" data-i18n-lang="en">English</a> · <span aria-current="true" style="font-weight:600">Español</span> · <a href="/de/" hreflang="de" lang="de" data-i18n-lang="de">Deutsch</a> · <a href="/fr/" hreflang="fr" lang="fr" data-i18n-lang="fr">Français</a> · <a href="/pt-br/" hreflang="pt-BR" lang="pt-BR" data-i18n-lang="pt-br">Português</a></nav><!-- /i18n:switcher --></footer>
+<!-- Stripe Checkout ($49 Plan) Modal -->
+<div class="modal-overlay" id="stripe-modal" style="display: none;">
+<div class="modal-container">
+<div class="modal-header">
+<h3><span class="logo-icon">🔒</span> Pago seguro con Stripe</h3>
+<button class="modal-close" onclick="closeModals()">✕</button>
+</div>
+<div class="modal-body">
+<div>
+<span class="stripe-badge"><span>⚡</span> Comercio verificado por Stripe</span>
+</div>
+<div class="stripe-summary" style="margin-top: 1.2rem;">
+<h4 style="margin: 0 0 0.5rem 0; font-family: var(--font-display); color: var(--text-main); font-size: 1.25rem;">Snapshot comercial del conjunto de datos completo</h4>
+<p style="margin: 0; font-size: 0.88rem; color: var(--text-muted);">Pago único de <strong>$49.00 USD</strong>. Incluye licencia comercial perpetua de la edición actual (2026.09).</p>
+<ul class="stripe-summary-list">
+<li><span>📦</span> <strong>3.675 añadas</strong> completas en <strong>106 bodegas</strong></li>
+<li><span>⚗️</span> Química completa (`residual_sugar`, `acidity`, `pH`) de SAQ y LCBO</li>
+<li><span>📈</span> Medianas de subastas LIVEX (regla verificada de ≥3 observaciones)</li>
+<li><span>🏷️</span> Enlaces al registro de etiquetas US TTB COLA y textos OCR</li>
+<li><span>🗄️</span> `winedb.sqlite` relacional 3NF + 7 exportaciones CSV normalizadas</li>
+<li><span>⚡</span> <strong>Acceso automático de descarga inmediata</strong> tras el pago correcto con Stripe</li>
+</ul>
+</div>
+<div class="stripe-action-box">
+<p style="margin: 0 0 1rem 0; font-size: 0.95rem; color: var(--text-main); font-weight: 600;">¿Listo para completar tu pedido?</p>
+<a class="btn-stripe" href="javascript:void(0)" onclick="initiateStripePayment()">
+<span>💳 Pagar con Stripe ($49.00 USD)</span>
+</a>
+<p class="deliverables-link" style="margin: 0.8rem 0 0 0;">¿Ya pagaste con Stripe? El correo de tu recibo contiene tu enlace de descarga permanente. ¿Necesitas ayuda? winedb@dataengineered.io</p>
+</div>
+</div>
+<div class="modal-footer">
+<button class="btn btn-secondary" onclick="closeModals()" style="padding: 0.6rem 1.4rem;">Cerrar</button>
+</div>
+</div>
+</div>
+<!-- Enterprise Custom Scope Request Form Modal -->
+<div class="modal-overlay" id="custom-request-modal" style="display: none;">
+<div class="modal-container">
+<div class="modal-header">
+<h3><span class="logo-icon">⚙️</span> Solicitud Enterprise de alcance personalizado</h3>
+<button class="modal-close" onclick="closeModals()">✕</button>
+</div>
+<div class="modal-body">
+<p style="margin: 0 0 1.5rem 0; font-size: 0.92rem; color: var(--text-muted);">Envía tus requisitos de extracción a medida directamente a nuestro equipo de ingeniería. Normalmente respondemos con un esquema de datos adaptado y un calendario de alcance en un plazo de 4 horas hábiles.</p>
+<form id="enterprise-form" onsubmit="handleEnterpriseSubmit(event)">
+<div class="form-group">
+<label for="req-name">Tu nombre completo *</label>
+<input class="form-input" id="req-name" placeholder="p. ej., Jean-Luc Moreau" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="req-org">Empresa / Bodega / Fondo de inversión *</label>
+<input class="form-input" id="req-org" placeholder="p. ej., Grand Cru Data &amp; Analytics" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="req-email">Correo electrónico profesional *</label>
+<input class="form-input" id="req-email" placeholder="p. ej., cliente@organizacion.com" required="" type="email"/>
+</div>
+<div class="form-group">
+<label for="req-format">Formato de entrega preferido</label>
+<select class="form-select" id="req-format">
+<option value="Relational SQLite 3NF (.db)">SQLite relacional 3NF (.db)</option>
+<option value="PostgreSQL SQL Dump (.sql)">Volcado SQL de PostgreSQL (.sql)</option>
+<option value="Live REST API Webhook / JSON">Webhook de API REST en vivo / endpoint JSON</option>
+<option value="Partitioned CSV / Parquet Tables">Tablas CSV / Parquet particionadas</option>
+</select>
+</div>
+<div class="form-group">
+<label>Opciones de enriquecimiento de datos</label>
+<div class="checkbox-grid">
+<label class="checkbox-item">
+<input checked="" name="req-opts" type="checkbox" value="Liv-ex Auction Medians"/>
+<span>Medianas de subastas Liv-ex</span>
+</label>
+<label class="checkbox-item">
+<input checked="" name="req-opts" type="checkbox" value="SAQ/LCBO Chemistry Data"/>
+<span>Datos químicos de SAQ/LCBO</span>
+</label>
+<label class="checkbox-item">
+<input checked="" name="req-opts" type="checkbox" value="TTB COLA Label Registries"/>
+<span>Registros de etiquetas TTB COLA</span>
+</label>
+<label class="checkbox-item">
+<input checked="" name="req-opts" type="checkbox" value="Dedicated Apify Scraping Actor"/>
+<span>Actor de scraping de Apify dedicado</span>
+</label>
+</div>
+</div>
+<div class="form-group">
+<label for="req-scope">Alcance detallado y bodegas / regiones objetivo *</label>
+<textarea class="form-textarea" id="req-scope" placeholder="Describe your exact coverage needs (e.g., 'We require 10-year historical pricing and blend percentages for all Classified Growths in Pauillac and Margaux, updated daily via Apify webhook...')" required=""></textarea>
+</div>
+<div class="form-success-alert" id="form-success-box">
+<h4 style="margin: 0 0 0.5rem 0; color: #fff;">🎉 ¡Solicitud recibida!</h4>
+<p style="margin: 0; font-size: 0.88rem;">Nuestro equipo de ingeniería (<code>winedb@dataengineered.io</code>) ha registrado tu consulta. Revisaremos tus especificaciones y enviaremos nuestro presupuesto directamente a tu bandeja de entrada (<strong id="sent-email-display" style="color: #d4af37;"></strong>) en breve.</p>
+<div style="margin-top: 1rem;">
+<a class="btn btn-secondary" href="#" id="fallback-mailto-btn" style="font-size: 0.8rem; padding: 0.5rem 1rem;">Copiar la solicitud para enviarla por correo</a>
+</div>
+</div>
+<div class="modal-footer" style="padding: 1.5rem 0 0 0; border: none; background: transparent;">
+<button class="btn btn-secondary" onclick="closeModals()" style="padding: 0.8rem 1.6rem;" type="button">Cancelar</button>
+<button class="btn btn-primary" id="submit-btn" style="padding: 0.8rem 2rem; font-weight: 700;" type="submit">Enviar solicitud personalizada →</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<!-- Runtime UI text for app.js: localized copies of this page (scripts/i18n_common.py) translate it -->
+<script data-i18n="" id="i18n-strings" type="application/json">
+{
+  "noVintages": "Ninguna añada coincide con los filtros actuales.",
+  "noBlends": "Ningún registro de ensamblaje varietal coincide.",
+  "noTasting": "Ningún descriptor organoléptico coincide.",
+  "noObs": "NULL (< 3 obs.)",
+  "notAvailable": "N/D",
+  "techSheet": "Ficha técnica ↗",
+  "blendOk": "OK (≤ 100,001%)",
+  "tastingCategory": "Aroma / Boca",
+  "submitting": "⏳ Enviando al equipo de ingeniería...",
+  "copied": "Copiado: pégalo en un correo a winedb@dataengineered.io",
+  "notSentTitle": "⚠️ Tu solicitud no se envió",
+  "notSentBefore": "Nuestro servicio de formularios no está disponible en este momento. Usa el botón de abajo para enviar la misma solicitud desde tu aplicación de correo: ya está rellenada y va directamente a",
+  "notSentAfter": ".",
+  "retry": "Reintentar el envío →"
+}
+</script>
+<script src="/app.js?v=2.1.5"></script>
+</body>
+</html>
