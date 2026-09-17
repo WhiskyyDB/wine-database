@@ -960,6 +960,41 @@ body {
         gap: 1.5rem;
         text-align: center;
     }
+
+    /* phones: header, nav and tab rows wrap instead of widening the page */
+    .nav-container {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 0.5rem 1rem;
+    }
+    .tabs-container {
+        flex-wrap: wrap;
+    }
+    /* a flex li turns each text run and <code> into an unwrappable item; use a block with a hanging check */
+    .pricing-features li {
+        display: block;
+        position: relative;
+        padding-left: 1.3rem;
+    }
+    .pricing-features li .check {
+        position: absolute;
+        left: 0;
+    }
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem 1.8rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .arch-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ==========================================================================
@@ -1228,6 +1263,13 @@ body {
 .checkbox-item input[type="checkbox"]:checked + span {
     color: var(--text-main);
     font-weight: 600;
+}
+
+/* phones: one checkbox per row (German labels are wider than half the form) */
+@media (max-width: 640px) {
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .form-success-alert {
