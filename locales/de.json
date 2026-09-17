@@ -1197,6 +1197,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "cadd05716ec0ff59": {
+  "src": "Describe your exact coverage needs (e.g., 'We require {0}-year historical pricing and blend percentages for all Classified Growths in {1} and {2}, updated daily via Apify webhook...')",
+  "t": "Beschreiben Sie Ihren genauen Abdeckungsbedarf (z. B. 'Wir benötigen historische Preise über {0} Jahre und Cuvée-Anteile für alle Grands Crus Classés in {1} und {2}, täglich aktualisiert per Apify-Webhook...')",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
  "cbad4e22b6b0247d": {
   "src": "Tasting Profiles (`tasting_profiles.csv`)",
   "t": "Verkostungsprofile (`tasting_profiles.csv`)",
