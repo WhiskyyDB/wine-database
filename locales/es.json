@@ -1,0 +1,1464 @@
+{
+ "036225eb46176c43": {
+  "src": "One-time payment of <0>{1} USD</0>. Includes perpetual commercial licensing of the current edition ({2}).",
+  "t": "Pago único de <0>{1} USD</0>. Incluye licencia comercial perpetua de la edición actual ({2}).",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "03d619d7ccd15bdb": {
+  "src": "<0>⚗️</0> Full chemistry (`residual_sugar`, `acidity`, `pH`) from SAQ &amp; LCBO",
+  "t": "<0>⚗️</0> Química completa (`residual_sugar`, `acidity`, `pH`) de SAQ y LCBO",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "05be5ec6fe4f07c2": {
+  "src": "Its varietal composition is {0} ({1}).",
+  "t": "Su composición varietal es {0} ({1}).",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "07f6e7e7ad500f56": {
+  "src": "The {0} {1} from {2} is a sparkling wine from {3}, {4}, bottled at {5} ABV in a {6} mL format.",
+  "t": "El {1} {0} de {2} es un vino espumoso de {3}, {4}, embotellado con {5} de grado alcohólico en formato de {6} mL.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "08d2e98e6754af94": {
+  "src": "N/A",
+  "t": "N/D",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "08da29c11f616fee": {
+  "src": "Aromatic / Palate",
+  "t": "Aroma / Boca",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "0922309c657e1e72": {
+  "src": "<0>✓</0> Creative Commons Attribution {1} license",
+  "t": "<0>✓</0> Licencia Creative Commons Attribution {1}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "0ab7bf1a8ceb5f2b": {
+  "src": "Alcohol by Volume",
+  "t": "Grado alcohólico",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "0ade107b139663e7": {
+  "src": "Organoleptic Descriptor",
+  "t": "Descriptor organoléptico",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "0c9016e9f82d28bd": {
+  "src": "Exact ABV ({0}), bottle format ({1} mL), varietal blend, tasting descriptors, and secondary auction market index.",
+  "t": "Grado alcohólico exacto ({0}), formato de botella ({1} mL), ensamblaje varietal, descriptores de cata e índice del mercado secundario de subastas.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "0cd597561a524fb0": {
+  "src": "e.g. Grand Cru Data &amp; Analytics",
+  "t": "p. ej., Grand Cru Data &amp; Analytics",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "0edab3f65b84c085": {
+  "src": "<0>✓</0> Current edition ({1}) &amp; commercial rights",
+  "t": "<0>✓</0> Edición actual ({1}) y derechos comerciales",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "1181348c27daa9b0": {
+  "src": "Grape Variety",
+  "t": "Variedad de uva",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "11ae5a6ef90500c3": {
+  "src": "{0} — Wine Database of {1} Verified Vintages",
+  "t": "{0} — base de datos de vinos con {1} añadas verificadas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "128cdb8c6d06c140": {
+  "src": "The Free Sample (`samples/`) includes {0} verified sample vintages across {1} CSV tables (plus a SQLite preview) and open taxonomies ({2} / CC BY {3}). The {4} Full Dataset Snapshot contains the complete {5}-vintage relational database, {6} iconic wineries, SAQ/LCBO laboratory chemistry, Liv-ex benchmarks, and the master {7}-row audit registry.",
+  "t": "La muestra gratuita (`samples/`) incluye {0} añadas de muestra verificadas en {1} tablas CSV (más una vista previa en SQLite) y taxonomías abiertas ({2} / CC BY {3}). El Full Dataset Snapshot de {4} contiene la base de datos relacional completa de {5} añadas, {6} bodegas emblemáticas, química de laboratorio de SAQ/LCBO, referencias de Liv-ex y el registro maestro de auditoría de {7} filas.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "13292cfedff92a02": {
+  "src": "Normalized vintage metrics for {0} {1} {2} ABV, {3} format, varietal blend composition, tasting descriptors, aging regime, and secondary auction index.",
+  "t": "Métricas de añada normalizadas de {0} {1} {2} de grado alcohólico, formato {3}, composición del ensamblaje varietal, descriptores de cata, crianza e índice secundario de subastas.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "135aa63f17099be1": {
+  "src": "{0} {1} from {2} ({3} blend): {4} ABV, {5} mL bottle. Aged {6}. {7} tasting descriptors on record.",
+  "t": "{0} {1} de {2} (ensamblaje {3}): {4} vol., botella de {5} mL. Crianza: {6}. {7} descriptores de cata registrados.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "14290178f93713b3": {
+  "src": "All Appellations",
+  "t": "Todas las denominaciones",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "142bb90a30c4e425": {
+  "src": "Sommelier Descriptors",
+  "t": "Descriptores de sumiller",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "171b74850db180c1": {
+  "src": "Grape varietal names are automatically normalized against VIVC ampelographic registries during ingestion, mapping synonyms (e.g., {0} → {1}, {2} → {3}) to canonical keys.",
+  "t": "Los nombres de variedades de uva se normalizan automáticamente durante la ingesta con los registros ampelográficos del VIVC, que asignan los sinónimos (p. ej., {0} → {1}, {2} → {3}) a claves canónicas.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "17c2673deff229de": {
+  "src": "🚀 Submit Enterprise Request to Engineering →",
+  "t": "🚀 Enviar solicitud Enterprise al equipo de ingeniería →",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "1a7b6b43637ac7b2": {
+  "src": "License details →",
+  "t": "Detalles de la licencia →",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "1cf5db688e13160e": {
+  "src": "{0} {1} ({2}) Structured Vintage Record",
+  "t": "{0} {1} ({2}): registro estructurado de añada",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "1e10d7e5a409681a": {
+  "src": "Enterprise <0>Custom Scope Form</0>",
+  "t": "Enterprise: <0>formulario de alcance personalizado</0>",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "232ff4941673f8a0": {
+  "src": "Enterprise-grade, {0} normalized open data standard for tracking prestige fine wines, vintage varietal blend percentages, bottle dimensions, ABV %, laboratory residual sugar (g/L), natural acidity, and secondary auction valuation medians.",
+  "t": "Estándar de datos abiertos de nivel empresarial, normalizado en {0}, para seguir vinos finos de prestigio, porcentajes de ensamblaje varietal por añada, dimensiones de botella, grado alcohólico (%), azúcar residual de laboratorio (g/L), acidez natural y medianas de valoración en subastas del mercado secundario.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "2363f1d6892b534e": {
+  "src": "The {0} {1} from {2} is a red wine from {3}, {4}, {5}, bottled at {6} ABV in a {7} mL format.",
+  "t": "El {1} {0} de {2} es un vino tinto de {3}, {4}, {5}, embotellado con {6} de grado alcohólico en formato de {7} mL.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "23ac2e665d4a6013": {
+  "src": "What is the &gt;= {0} observations valuation methodology?",
+  "t": "¿En qué consiste la metodología de valoración con &gt;= {0} observaciones?",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "252cc0051ca94497": {
+  "src": "{0} vintage records",
+  "t": "{0} registros de añadas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "2584d11f629ba691": {
+  "src": "Ready to complete your order?",
+  "t": "¿Listo para completar tu pedido?",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "25db9e0e32b93b66": {
+  "src": "Valuation Rule (≥ {0} Observations)",
+  "t": "Regla de valoración (≥ {0} observaciones)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "262ac1ec2559fbe3": {
+  "src": "This vintage carries a production run of {0} cases and a release price of {1}.",
+  "t": "Esta añada tiene una producción de {0} cajas y un precio de lanzamiento de {1}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "269687a2c87cc55c": {
+  "src": "Relational <0>{1} Architecture</0>",
+  "t": "<0>Arquitectura {1}</0> relacional",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "269c848682f8911a": {
+  "src": "{0} {1} ({2}) Vintage Record — WineDB",
+  "t": "{0} {1} ({2}): registro de añada — WineDB",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "277c96e561e18686": {
+  "src": "Sommelier <0>Vintage Portal</0>",
+  "t": "<0>Portal de añadas</0> para sumilleres",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "28a0bb1c47095438": {
+  "src": "<0>✓</0> Full schema with chemistry &amp; audit columns",
+  "t": "<0>✓</0> Esquema completo con columnas de química y auditoría",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "29a6df795dbd5e0a": {
+  "src": "Third-Normal Form ({0})",
+  "t": "Tercera forma normal ({0})",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "2a7e686f945f3e62": {
+  "src": "WineDB tracks {0} vintage from this winery, spanning {1}.",
+  "t": "WineDB registra {0} añada de esta bodega, correspondiente a {1}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "2b49250cad278a0c": {
+  "src": "Adrianna Vineyard Mundus Bacillus {0} — vintage | WineDB",
+  "t": "Adrianna Vineyard Mundus Bacillus {0} — añada | WineDB",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "2bdd446b9c9bc0bc": {
+  "src": "<0>✓</0> Master <1>{2}-row provenance registry</1> ({3})",
+  "t": "<0>✓</0> <1>Registro maestro de procedencia de {2} filas</1> ({3})",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "2d11aad53f0cc582": {
+  "src": "Harvest Vintage",
+  "t": "Añada de cosecha",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "2d450a8c631e961f": {
+  "src": "Varietal Composition",
+  "t": "Composición varietal",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "2e0c89fe95e29048": {
+  "src": "<0>📈</0> LIVEX auction medians ({1} observations verified rule)",
+  "t": "<0>📈</0> Medianas de subastas LIVEX (regla verificada de {1} observaciones)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "2fa43c2542b5da0a": {
+  "src": "Composition %",
+  "t": "Composición %",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "2fd7cdeb517b823f": {
+  "src": "Why does {0} enforce database-level blend sum constraints?",
+  "t": "¿Por qué {0} impone restricciones de suma del ensamblaje a nivel de base de datos?",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3071a9dd85d164ee": {
+  "src": "Our engineering desk ({0}) has logged your inquiry. We will review your specs and email our quote directly to your inbox ({1}) shortly.",
+  "t": "Nuestro equipo de ingeniería ({0}) ha registrado tu consulta. Revisaremos tus especificaciones y enviaremos nuestro presupuesto directamente a tu bandeja de entrada ({1}) en breve.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "31bb3d239b01eba9": {
+  "src": "ABV %",
+  "t": "Grado alcohólico %",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "34ac37f56e147bf6": {
+  "src": "Back to home",
+  "t": "Volver al inicio",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "350e1eb74475ec2e": {
+  "src": "Need bespoke estate history, custom Apify scrapers, or live REST API webhooks? Submit your extraction specs right here or email us at <0>winedb@dataengineered.io</0>.",
+  "t": "¿Necesitas historia detallada de fincas, scrapers de Apify a medida o webhooks de API REST en vivo? Envía aquí mismo tus especificaciones de extracción o escríbenos a <0>winedb@dataengineered.io</0>.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3637168dc6a4a9d1": {
+  "src": "💳 Buy Full Dataset Snapshot — {0}",
+  "t": "💳 Comprar Full Dataset Snapshot — {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "364b858854aea182": {
+  "src": "Eliminating synthetic estimates and mathematical impossibilities. Explore verified cuvees, strict third-normal form ({0}) schemas, database-level varietal blend sum triggers ({1}), and secondary auction valuations enforced by our <2>≥ {3} Observations Rule</2>.",
+  "t": "Sin estimaciones sintéticas ni imposibilidades matemáticas. Explora cuvées verificadas, esquemas estrictos en tercera forma normal ({0}), triggers de suma del ensamblaje varietal a nivel de base de datos ({1}) y valoraciones de subastas del mercado secundario sujetas a nuestra <2>regla de ≥ {3} observaciones</2>.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "37de8744cb503561": {
+  "src": "Precision <0>Varietal Composition</0>",
+  "t": "<0>Composición varietal</0> de precisión",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "385b4b232f2a109b": {
+  "src": "Most Popular",
+  "t": "Más popular",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3bfc0642e9733f7e": {
+  "src": "<0>Home</0> › Winery directory",
+  "t": "<0>Inicio</0> › Directorio de bodegas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3da64b9e2fd07e1f": {
+  "src": "<0>📦</0> Complete <1>{2} Vintages</1> across <3>{4} Wineries</3>",
+  "t": "<0>📦</0> <1>{2} añadas</1> completas en <3>{4} bodegas</3>",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3e1a08a9f933e76c": {
+  "src": "Iconic Producers",
+  "t": "Productores emblemáticos",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3e543a68e515ed0a": {
+  "src": "Varietal Blends (`blends.csv`)",
+  "t": "Ensamblajes varietales (`blends.csv`)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3f53bbb3b23f3917": {
+  "src": "Maturation regime: {0}.",
+  "t": "Régimen de crianza: {0}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3fc5c125542c2102": {
+  "src": "Data Dictionary",
+  "t": "Diccionario de datos",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "40e496db7a0d6b76": {
+  "src": "Varietal Blend Records",
+  "t": "Registros de ensamblaje varietal",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "41365a837425219f": {
+  "src": "Winery directory — WineDB",
+  "t": "Directorio de bodegas — WineDB",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "41755a3d023024e0": {
+  "src": "{0} Fine Wine &amp; Vintage Varietal Database — Snapshot",
+  "t": "{0}: base de datos de vinos finos y variedades por añada — Snapshot",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "41b80d431f1cbee8": {
+  "src": "Special Selection Cabernet {0} — {1} | WineDB",
+  "t": "Special Selection Cabernet {0} — {1} | WineDB",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4220ef2dc809b19b": {
+  "src": "Full Dataset Snapshot",
+  "t": "Full Dataset Snapshot",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "45b0830c254afdfe": {
+  "src": "Verified primary producer specification and secondary auction market indices.",
+  "t": "Especificación verificada del productor primario e índices del mercado secundario de subastas.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "45f6f5ced26b5e62": {
+  "src": "Format (ml)",
+  "t": "Formato (ml)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "463b77cb8bc03218": {
+  "src": "{0} {1} — {2} Vintage",
+  "t": "{0} {1} — añada {2}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "464ce715f0de3e37": {
+  "src": "{0} ABV",
+  "t": "{0} vol.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4811b98da9325e90": {
+  "src": "All Varietals",
+  "t": "Todas las variedades",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4a105ead631564de": {
+  "src": "Tech Sheet ↗",
+  "t": "Ficha técnica ↗",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4ad5d4280aa8e3c3": {
+  "src": "Strict mathematical check constraints, primary audit registries, and valuation rules enforced at the database layer.",
+  "t": "Restricciones de verificación matemática estrictas, registros de auditoría de fuentes primarias y reglas de valoración aplicadas en la capa de base de datos.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4b064fc45dd5f87a": {
+  "src": "Already paid via Stripe? Your receipt email contains your permanent download link. Need help? winedb@dataengineered.io",
+  "t": "¿Ya pagaste con Stripe? El correo de tu recibo contiene tu enlace de descarga permanente. ¿Necesitas ayuda? winedb@dataengineered.io",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4b143eb2d4a46f9a": {
+  "src": "How WineDB separates producer metadata from vintage expressions and enforces strict schema constraints.",
+  "t": "Cómo WineDB separa los metadatos del productor de las expresiones de cada añada y aplica restricciones de esquema estrictas.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4b59b75262b22825": {
+  "src": "Search cuvee, producer (e.g., Insignia, Opus One, Ridge), or descriptor...",
+  "t": "Busca cuvée, productor (p. ej., Insignia, Opus One, Ridge) o descriptor...",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4b98f437459a960e": {
+  "src": "Verified Vintages",
+  "t": "Añadas verificadas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4c348bea2dd88290": {
+  "src": "No vintages match your current filters.",
+  "t": "Ninguna añada coincide con los filtros actuales.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4ca62dd624327c5f": {
+  "src": "Our form service is unreachable right now. Use the button below to send the same request from your email app — it is pre-filled and goes straight to",
+  "t": "Nuestro servicio de formularios no está disponible en este momento. Usa el botón de abajo para enviar la misma solicitud desde tu aplicación de correo: ya está rellenada y va directamente a",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4f2f5ade69675c16": {
+  "src": "<0>⚡</0> Stripe Verified Merchant",
+  "t": "<0>⚡</0> Comercio verificado por Stripe",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "50d525a6f83ea4c7": {
+  "src": "No organoleptic descriptors match.",
+  "t": "Ningún descriptor organoléptico coincide.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "539c4ada4ccd71b0": {
+  "src": "Blend Sum Check Trigger",
+  "t": "Trigger de verificación de la suma del ensamblaje",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5411085cd046546f": {
+  "src": "Work Email Address *",
+  "t": "Correo electrónico profesional *",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "59936c8aaac66c43": {
+  "src": "🎉 Custom Scope Logged!",
+  "t": "🎉 ¡Alcance personalizado registrado!",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "59b008b6fb5b945d": {
+  "src": "All tracked releases are bottled in a {0} mL format.",
+  "t": "Todos los lanzamientos registrados se embotellan en formato de {0} mL.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5ab8e087cf542737": {
+  "src": "In accordance with secondary auction market transparency guidelines, `valuation_index_usd` represents the median hammer price across recent public auction transactions. If fewer than {0} independent price observations exist for a cuvee/vintage within a {1}-month window, the valuation index is strictly stored as NULL.",
+  "t": "Conforme a las pautas de transparencia del mercado secundario de subastas, `valuation_index_usd` representa la mediana del precio de remate en transacciones recientes de subastas públicas. Si existen menos de {0} observaciones de precio independientes para una cuvée/añada en una ventana de {1} meses, el índice de valoración se almacena estrictamente como NULL.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5b8d2481ae4f0b44": {
+  "src": "Part of the DataEngineered catalog →",
+  "t": "Parte del catálogo DataEngineered →",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5dd3ebd07e58f3ee": {
+  "src": "Commercial Tiers",
+  "t": "Niveles comerciales",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5e789f417a31e34f": {
+  "src": "{0} {1} from {2} ({3} blend): {4} ABV, {5} mL bottle. Aged {6} months, new French…",
+  "t": "{0} {1} de {2} (ensamblaje {3}): {4} vol., botella de {5} mL. Crianza de {6} meses, roble francés nuevo…",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5f60b69e5968c989": {
+  "src": "Sample Preview",
+  "t": "Vista previa de la muestra",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "6224dcf48ff567c8": {
+  "src": "Valuation Index ({0} Obs)",
+  "t": "Índice de valoración ({0} obs.)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "622ea94ddc880491": {
+  "src": "Copy the request to send by email",
+  "t": "Copiar la solicitud para enviarla por correo",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "63376111d5c484e4": {
+  "src": "Every winery and producer in WineDB, each with its cuvees, vintages and appellations.",
+  "t": "Todas las bodegas y productores de WineDB, cada uno con sus cuvées, añadas y denominaciones.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "66a189005558f51c": {
+  "src": "Download Sample CSVs",
+  "t": "Descargar CSV de muestra",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "677b02f91b3a9e4d": {
+  "src": "Producer record: {0}.",
+  "t": "Ficha del productor: {0}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "68d34ce25ffbf1bb": {
+  "src": "PostgreSQL SQL Dump (.sql)",
+  "t": "Volcado SQL de PostgreSQL (.sql)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "6b0a1be99a1db6f4": {
+  "src": "{0} wineries and producers",
+  "t": "{0} bodegas y productores",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "6b21fb791ac05170": {
+  "src": "About",
+  "t": "Acerca de",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "6b6e7f0ea118030e": {
+  "src": "© {0} WineDB Project. Distributed under CC BY {1}.",
+  "t": "© {0} WineDB Project. Distribuido bajo CC BY {1}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "6c73e36fab5e527a": {
+  "src": "Company / Winery / Investment Fund *",
+  "t": "Empresa / Bodega / Fondo de inversión *",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "6cfe8b2b9f943bbf": {
+  "src": "Download Dataset",
+  "t": "Descargar conjunto de datos",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "6d972c3c39fde7f8": {
+  "src": "Vintage ID",
+  "t": "ID de añada",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "6f8ef8d3fc26c1d6": {
+  "src": "<0>✓</0> Complete {1} {2} + all {3} CSV exports",
+  "t": "<0>✓</0> {1} {2} completo + las {3} exportaciones CSV",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7015ff9370eebb92": {
+  "src": "— also in {0}",
+  "t": "— también en {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "70f8bb9a8a5393ef": {
+  "src": "Home",
+  "t": "Inicio",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "730f26e9cc5d8778": {
+  "src": "e.g. Jean-Luc Moreau",
+  "t": "p. ej., Jean-Luc Moreau",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7321b996136a2ad9": {
+  "src": "Verified <0>Data Guarantees</0>",
+  "t": "<0>Garantías de datos</0> verificadas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "734739e87a146f2f": {
+  "src": "Varietal Blend",
+  "t": "Ensamblaje varietal",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7398c2472b920e56": {
+  "src": "<0>Home</0> › Vintage directory",
+  "t": "<0>Inicio</0> › Directorio de añadas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "76addff09f7caa2e": {
+  "src": "Your Full Name *",
+  "t": "Tu nombre completo *",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "76e3a23e6bf3fb03": {
+  "src": "Vintage directory — WineDB",
+  "t": "Directorio de añadas — WineDB",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7787700ddec9ef1c": {
+  "src": "Release Price",
+  "t": "Precio de lanzamiento",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "77dfd2135f4db726": {
+  "src": "Cancel",
+  "t": "Cancelar",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7b7194967fd8d62a": {
+  "src": "Producer",
+  "t": "Productor",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7b9f3ab66fe7ff65": {
+  "src": "— same {0} varietal",
+  "t": "— misma variedad {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7bbaf21c20c7c4c3": {
+  "src": "Sommelier Explorer",
+  "t": "Sommelier Explorer",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7c586deac02a1390": {
+  "src": "{0} {1} from {2} ({3} blend): {4} ABV, {5} mL bottle. Aged {6}. {7}",
+  "t": "{0} {1} de {2} (ensamblaje {3}): {4} vol., botella de {5} mL. Crianza: {6}. {7}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7da69aa440ddb62b": {
+  "src": "<0>✓</0> <1>US TTB COLA Registry</1> verified label IDs &amp; OCR extracts",
+  "t": "<0>✓</0> ID de etiqueta verificados del <1>registro US TTB COLA</1> y extractos OCR",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7dac8ef7de8b3194": {
+  "src": "{0} Architecture",
+  "t": "Arquitectura {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7dfe190f81fa78af": {
+  "src": "<0>✓</0> <1>{2} verified fine wine vintages</1> across {3} iconic cuvees",
+  "t": "<0>✓</0> <1>{2} añadas de vinos finos verificadas</1> en {3} cuvées emblemáticas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7f2e79f4e043909b": {
+  "src": "Flat spreadsheets repeat producer foundation years and appellation details thousands of times. WineDB normalizes entities into {0}, {1}, {2}, {3}, and {4} linked by strict foreign keys.",
+  "t": "Las hojas de cálculo planas repiten miles de veces los años de fundación de los productores y los detalles de las denominaciones. WineDB normaliza las entidades en {0}, {1}, {2}, {3} y {4}, vinculadas mediante claves foráneas estrictas.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8152f603a4652990": {
+  "src": "💳 Pay with Stripe ({0} USD)",
+  "t": "💳 Pagar con Stripe ({0} USD)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "828fbf6069e76a68": {
+  "src": "{0} {1} from {2} ({3} blend): {4} ABV, {5} mL bottle. Aged {6}.",
+  "t": "{0} {1} de {2} (ensamblaje {3}): {4} vol., botella de {5} mL. Crianza: {6}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "82a92cd803f13120": {
+  "src": "Secondary market indexes are calculated strictly from public auction hammer prices. If fewer than {0} independent lots are observed within {1} months, the index remains {2} to prevent speculative bias.",
+  "t": "Los índices del mercado secundario se calculan estrictamente a partir de precios de remate en subastas públicas. Si se observan menos de {0} lotes independientes en {1} meses, el índice queda en {2} para evitar sesgos especulativos.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "83a5481ab1a654bb": {
+  "src": "<0>✓</0> Open VIVC ampelographic &amp; appellation taxonomies",
+  "t": "<0>✓</0> Taxonomías abiertas ampelográficas del VIVC y de denominaciones",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "83ff752256c376aa": {
+  "src": "<0>Provenance Audit:</0> This record is linked to primary authority {1}. All varietal composition percentages satisfy the database-level constraint {2} with {3}.",
+  "t": "<0>Auditoría de procedencia:</0> este registro está vinculado a la fuente primaria {1}. Todos los porcentajes de composición varietal cumplen la restricción a nivel de base de datos {2} con {3}."
+ },
+ "84b0433cbc1025cf": {
+  "src": "Free Preview Sample",
+  "t": "Muestra gratuita de vista previa",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "86f92dc303f29abf": {
+  "src": "⚠️ Your request was not sent",
+  "t": "⚠️ Tu solicitud no se envió",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "87154f4af253b06f": {
+  "src": "— producer",
+  "t": "— productor",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "87692dbaa678975c": {
+  "src": "Alcohol content is recorded at {0} ABV.",
+  "t": "El grado alcohólico registrado es de {0}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "879e32326c521796": {
+  "src": "Year",
+  "t": "Año",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "87acf8d69b52dee8": {
+  "src": "Appellation",
+  "t": "Denominación de origen",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "87ce61809c3c1dea": {
+  "src": "<0>🗄️</0> {1} Relational `winedb.sqlite` + {2} normalized CSV exports",
+  "t": "<0>🗄️</0> `winedb.sqlite` relacional {1} + {2} exportaciones CSV normalizadas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "87f30dd7c15bd0df": {
+  "src": "SQLite Trigger Verified: Total = {0} (≤ {1})",
+  "t": "Verificado por trigger de SQLite: total = {0} (≤ {1})",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "88dfbfc29bf4b22e": {
+  "src": "Get the dataset",
+  "t": "Obtener el conjunto de datos",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8a17dc04ea211a94": {
+  "src": "{0} mL",
+  "t": "{0} mL",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8a76f72e0cfa194f": {
+  "src": "The Relational Foundation of {0} <1>World-Class Fine Vintages</1>",
+  "t": "La base relacional de {0} <1>añadas finas de primer nivel mundial</1>",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8b34e3e8ebb8a55d": {
+  "src": "{0} fine wine vintages with exact varietal blends, lab chemistry and auction medians. SQLite + {1} normalized CSVs. Free {2}-vintage sample.",
+  "t": "{0} añadas de vinos finos con ensamblajes varietales exactos, química de laboratorio y medianas de subastas. SQLite + {1} CSV normalizados. Muestra gratuita de {2} añadas.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8c16b9b14d66bb31": {
+  "src": "OK (≤ {0})",
+  "t": "OK (≤ {0})",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8c5c8bd9b531aeb4": {
+  "src": "Registered in the WineDB canonical producer table (`wineries.csv`). This entity serves as the parent foreign key (`winery_id`) for cuvee classifications (`wines.csv`) and harvest vintage metrics (`vintages.csv`).",
+  "t": "Registrado en la tabla canónica de productores de WineDB (`wineries.csv`). Esta entidad actúa como clave foránea principal (`winery_id`) para las clasificaciones de cuvées (`wines.csv`) y las métricas de añada (`vintages.csv`).",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8e072025366d8304": {
+  "src": "Refund policy",
+  "t": "Política de reembolso",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8fd0f36ac855660c": {
+  "src": "{0} {1} from {2} ({3} blend): {4} ABV, {5} mL bottle. Aged {6}. {7} tasting descriptors…",
+  "t": "{0} {1} de {2} (ensamblaje {3}): {4} vol., botella de {5} mL. Crianza: {6}. {7} descriptores de cata…",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8fef02c0cf94fa8a": {
+  "src": "Blend Sum Check",
+  "t": "Verificación de la suma del ensamblaje",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "907375837e7329b3": {
+  "src": "WineDB tracks {0} vintages from this winery, spanning {1} to {2}.",
+  "t": "WineDB registra {0} añadas de esta bodega, de {1} a {2}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "90819f4ba6490c06": {
+  "src": "— {0} vintage of the same wine",
+  "t": "— añada {0} del mismo vino",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "90b35dcc0d3e01d4": {
+  "src": "Send Custom Request →",
+  "t": "Enviar solicitud personalizada →",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "90e91072584e3727": {
+  "src": "Send your bespoke extraction requirements directly to our engineering team. We typically respond with a tailored data schema and scope timeline within {0} business hours.",
+  "t": "Envía tus requisitos de extracción a medida directamente a nuestro equipo de ingeniería. Normalmente respondemos con un esquema de datos adaptado y un calendario de alcance en un plazo de {0} horas hábiles.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "917df91e1730cb55": {
+  "src": "Related",
+  "t": "Relacionado",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "91b1215b82a15f6f": {
+  "src": "Recorded varietal composition across these vintages includes {0}.",
+  "t": "La composición varietal registrada en estas añadas incluye {0}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "92974a0516083f6f": {
+  "src": "Its varietal composition is {0} ({1}) and {2} ({3}).",
+  "t": "Su composición varietal es {0} ({1}) y {2} ({3}).",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "9325c886c56637f1": {
+  "src": "Full Dataset Commercial Snapshot",
+  "t": "Snapshot comercial del conjunto de datos completo",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "9523126d59d6c39f": {
+  "src": "Preferred Delivery Format",
+  "t": "Formato de entrega preferido",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "96efae0c4c43dc03": {
+  "src": "{0} — Canonical Relational Fine Wine &amp; Vintage Varietal Database",
+  "t": "{0} — base de datos relacional canónica de vinos finos y variedades por añada",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "98e65ff321b86e3a": {
+  "src": "Partitioned CSV / Parquet Tables",
+  "t": "Tablas CSV / Parquet particionadas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "99714899c14cfe04": {
+  "src": "The {0} {1} from {2} is a dessert wine from {3}, {4}, {5}, bottled at {6} ABV in a {7} mL format.",
+  "t": "El {1} {0} de {2} es un vino dulce de {3}, {4}, {5}, embotellado con {6} de grado alcohólico en formato de {7} mL.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "9d990a7f25a26957": {
+  "src": "What is included in the Free Sample versus the {0} Full Dataset Snapshot?",
+  "t": "¿Qué incluye la muestra gratuita frente al Full Dataset Snapshot de {0}?",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "9dbbb78d3b4daaac": {
+  "src": "<0>🔒</0> Stripe Secure Checkout",
+  "t": "<0>🔒</0> Pago seguro con Stripe",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "9e6e25865614dd62": {
+  "src": "Verified Vintages (`vintages.csv`)",
+  "t": "Añadas verificadas (`vintages.csv`)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "9eef83d86062f10f": {
+  "src": "Liv-ex Auction Medians",
+  "t": "Medianas de subastas Liv-ex",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a04f5371a3badc85": {
+  "src": "Copied — paste it into an email to winedb@dataengineered.io",
+  "t": "Copiado: pégalo en un correo a winedb@dataengineered.io",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a12c7a38a9e8ac23": {
+  "src": "TTB COLA Label Registries",
+  "t": "Registros de etiquetas TTB COLA",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a1d562506b3476e3": {
+  "src": "Winery directory",
+  "t": "Directorio de bodegas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a3c686e711e4720f": {
+  "src": "Category",
+  "t": "Categoría",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a55a275aa676930d": {
+  "src": "Terms",
+  "t": "Términos",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a57e3f91d4e47c5b": {
+  "src": "<0>🏷️</0> US TTB COLA label registry links &amp; OCR text payloads",
+  "t": "<0>🏷️</0> Enlaces al registro de etiquetas US TTB COLA y textos OCR",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a82847336f95ad63": {
+  "src": "Alcohol content ranges from {0} to {1} ABV across these bottlings.",
+  "t": "El grado alcohólico de estos embotellados va de {0} a {1}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a8cc93d1a0f567e1": {
+  "src": "Every fine wine vintage in WineDB, each with its exact varietal blend percentages, lab chemistry and auction valuation.",
+  "t": "Todas las añadas de vinos finos de WineDB, cada una con sus porcentajes exactos de ensamblaje varietal, química de laboratorio y valoración en subastas.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "abb09aaace53d82c": {
+  "src": "{0} Relational Record",
+  "t": "Registro relacional {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "abb942447c03b368": {
+  "src": "Page not found — WineDB",
+  "t": "Página no encontrada — WineDB",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "abd2841b25b493a8": {
+  "src": "Kaggle Dataset Specs",
+  "t": "Especificaciones del dataset en Kaggle",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "acb233397f6777ee": {
+  "src": "Quantitative Laboratory Chemistry",
+  "t": "Química de laboratorio cuantitativa",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "acde86d6666de58a": {
+  "src": "Commercial &amp; Open <0>Data Tiers</0>",
+  "t": "<0>Niveles de datos</0> comerciales y abiertos",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ad4abb080fa3fde1": {
+  "src": "Every single cuvee and vintage record links directly to our master {0} table with exact URLs pointing to US TTB COLA label filings, SAQ/LCBO laboratory sheets, and estate technical notes.",
+  "t": "Cada registro de cuvée y de añada está vinculado directamente a nuestra tabla maestra {0}, con URL exactas a los registros de etiquetas US TTB COLA, las fichas de laboratorio de SAQ/LCBO y las notas técnicas de las fincas.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ade946b911abc60f": {
+  "src": "Tasting Descriptors ({0})",
+  "t": "Descriptores de cata ({0})",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ae84eab5d4b4b9dd": {
+  "src": "Cuvee Name",
+  "t": "Nombre de la cuvée",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ae8b28917cbc4b61": {
+  "src": "Sources Registry",
+  "t": "Registro de fuentes",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "aeefd10343764be0": {
+  "src": "Its secondary-market valuation index stands at {0} USD, aggregated from a minimum of three auction observations.",
+  "t": "Su índice de valoración en el mercado secundario es de {0} USD, agregado a partir de un mínimo de tres observaciones de subasta.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b072cfd0fa9ed8af": {
+  "src": "Its varietal composition is {0} ({1}), {2} ({3}), {4} ({5}), {6} ({7}), and {8} ({9}).",
+  "t": "Su composición varietal es {0} ({1}), {2} ({3}), {4} ({5}), {6} ({7}) y {8} ({9}).",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b13d4382db11a131": {
+  "src": "{0} Authoritative Open Data Standard for Fine Wines",
+  "t": "{0} Estándar de datos abiertos de referencia para vinos finos",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b28893c312ab305c": {
+  "src": "Browse every page",
+  "t": "Explorar todas las páginas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b35ceaf45174fd9b": {
+  "src": "Vintage Profile",
+  "t": "Perfil de la añada",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b35eb20e8665c758": {
+  "src": "Live REST API Webhook / JSON endpoint",
+  "t": "Webhook de API REST en vivo / endpoint JSON",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b4c3c92c76aa6548": {
+  "src": "Custom work (subsets, extraction pipelines, schema mapping): from {0} — <1>contact the desk</1>",
+  "t": "Trabajo a medida (subconjuntos, pipelines de extracción, mapeo de esquemas): desde {0} — <1>contacta con el equipo</1>",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b5448d9dbe5beff3": {
+  "src": "<0>⚙️</0> Enterprise Custom Scope Request",
+  "t": "<0>⚙️</0> Solicitud Enterprise de alcance personalizado",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b64ecb5b39b8c08c": {
+  "src": "Unlike flat spreadsheets where varietal blends often sum to mathematical impossibilities like {0}, {1} enforces a SQLite trigger (`trg_check_blend_sum_insert`) that verifies the total varietal blend percentage for any vintage never exceeds {2} (`ABORT`).",
+  "t": "A diferencia de las hojas de cálculo planas, donde los ensamblajes varietales a menudo suman imposibilidades matemáticas como {0}, {1} aplica un trigger de SQLite (`trg_check_blend_sum_insert`) que verifica que el porcentaje total del ensamblaje varietal de cualquier añada nunca supere {2} (`ABORT`).",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b8012777d4b5a644": {
+  "src": "<0>⚡</0> <1>Instant automated download access</1> upon successful Stripe payment",
+  "t": "<0>⚡</0> <1>Acceso automático de descarga inmediata</1> tras el pago correcto con Stripe",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b80e31dc41e72ede": {
+  "src": "e.g. client@organization.com",
+  "t": "p. ej., cliente@organizacion.com",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "bbfa773e5a63a5ea": {
+  "src": "Close",
+  "t": "Cerrar",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "bc0af231e299ba5c": {
+  "src": "Launch Sommelier Portal",
+  "t": "Abrir el portal para sumilleres",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "bc3023b36063a768": {
+  "src": "Page not found",
+  "t": "Página no encontrada",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "bc987dd45d5d9cf4": {
+  "src": "SAQ/LCBO Chemistry Data",
+  "t": "Datos químicos de SAQ/LCBO",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "bf4aaebf670724a8": {
+  "src": "Instead of subjective sommelier descriptors alone, WineDB records precise laboratory chemistry: exact {0}, {1}, {2}, and bottle format volume dimensions ({3}).",
+  "t": "En lugar de basarse solo en descriptores subjetivos de sumiller, WineDB registra química de laboratorio precisa: valores exactos de {0}, {1} y {2}, y el volumen del formato de botella ({3}).",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c0104f3e413bba3b": {
+  "src": "Valuation Index",
+  "t": "Índice de valoración",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c032e157bddd7586": {
+  "src": "<0>✓</0> Preview {1} relational database",
+  "t": "<0>✓</0> Vista previa de la base de datos relacional {1}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c2c11d27a0849b7f": {
+  "src": "Target Data Enrichment Options",
+  "t": "Opciones de enriquecimiento de datos",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c32880fda0fbef21": {
+  "src": "Visualizing exact technical sheet percentages and database triggers that prevent {0} mathematical errors.",
+  "t": "Visualización de los porcentajes exactos de las fichas técnicas y de los triggers de base de datos que evitan errores matemáticos ({0}).",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c416e33125b0535b": {
+  "src": "{0}, {1} · Founded {2}",
+  "t": "{0}, {1} · Fundada en {2}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c5d09020268477c9": {
+  "src": "Canonical Producer",
+  "t": "Productor canónico",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c5f66d7875f3468e": {
+  "src": "Its varietal composition is {0} ({1}), {2} ({3}), {4} ({5}), and {6} ({7}).",
+  "t": "Su composición varietal es {0} ({1}), {2} ({3}), {4} ({5}) y {6} ({7}).",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c5f87d3b565a0a43": {
+  "src": "{0} — {1} winery | WineDB",
+  "t": "{0} — bodega de {1} | WineDB",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c605fa14d66f968a": {
+  "src": "The page you're looking for doesn't exist or may have moved.",
+  "t": "La página que buscas no existe o puede haberse movido.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c8ab5c71f2da9e18": {
+  "src": "/ free forever",
+  "t": "/ gratis para siempre",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "cad0007eea9755d4": {
+  "src": "<0>✓</0> {1} verified sample vintages across {2} relational tables",
+  "t": "<0>✓</0> {1} añadas de muestra verificadas en {2} tablas relacionales",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "cadd05716ec0ff59": {
+  "src": "Describe your exact coverage needs (e.g., 'We require {0}-year historical pricing and blend percentages for all Classified Growths in {1} and {2}, updated daily via Apify webhook...')",
+  "t": "Describe exactamente la cobertura que necesitas (p. ej., 'Necesitamos precios históricos de {0} años y porcentajes de ensamblaje de todos los Grands Crus Classés de {1} y {2}, actualizados a diario mediante un webhook de Apify...')",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "cbad4e22b6b0247d": {
+  "src": "Tasting Profiles (`tasting_profiles.csv`)",
+  "t": "Perfiles de cata (`tasting_profiles.csv`)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "cc0713d0fad7c191": {
+  "src": "No varietal blend records match.",
+  "t": "Ningún registro de ensamblaje varietal coincide.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "cc9db3a795571c7e": {
+  "src": "Red",
+  "t": "Tinto",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ccc686538e7ad9f3": {
+  "src": "{0} has {1} vintage in WineDB ({2}), spanning {3}. Founded {4} in {5}, {6}.",
+  "t": "{0} tiene {1} añada en WineDB ({2}), correspondiente a {3}. Fundada en {4} en {5}, {6}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "cf01481f626d5127": {
+  "src": "Privacy",
+  "t": "Privacidad",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "cf132948d1c5c84d": {
+  "src": "Download {0} verified fine wine vintages as SQLite or {1} normalized CSVs — exact varietal blends, lab chemistry, auction medians. Free {2}-vintage sample.",
+  "t": "Descarga {0} añadas de vinos finos verificadas en SQLite o {1} CSV normalizados: ensamblajes exactos, química de laboratorio, medianas de subastas. Muestra gratuita de {2} añadas.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "d0f5ef4e7c793efd": {
+  "src": "The complete, production-ready fine wine relational dataset for enterprises and analysts.",
+  "t": "El conjunto de datos relacional de vinos finos completo y listo para producción, para empresas y analistas.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "d31c013adafabdb0": {
+  "src": "/ full snapshot",
+  "t": "/ snapshot completo",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "d366c8667ebfbae6": {
+  "src": "Vintage directory",
+  "t": "Directorio de añadas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "d48ad8ce08056e8e": {
+  "src": "🎉 Request Received!",
+  "t": "🎉 ¡Solicitud recibida!",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "d57795de00dd9d85": {
+  "src": "<0>✓</0> <1>Liv-ex &amp; Auction Benchmarks</1> with {2} observations rule",
+  "t": "<0>✓</0> <1>Referencias de Liv-ex y subastas</1> con regla de {2} observaciones",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "d5fdf5d1a48e58e9": {
+  "src": "<0>✓</0> <1>{2} prestige wineries</1> &amp; {3} global appellations",
+  "t": "<0>✓</0> <1>{2} bodegas de prestigio</1> y {3} denominaciones de todo el mundo",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "d66f240df8d2076d": {
+  "src": "<0>✓</0> <1>SAQ/LCBO Laboratory Chemistry</1> (residual sugar &amp; acidity)",
+  "t": "<0>✓</0> <1>Química de laboratorio de SAQ/LCBO</1> (azúcar residual y acidez)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "d83b7cb8008d35ea": {
+  "src": "WineDB — Relational Fine Wine &amp; Vintage Database",
+  "t": "WineDB — base de datos relacional de vinos finos y añadas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "d8f632ed79e75109": {
+  "src": "Database trigger {0} fires on every INSERT or UPDATE to {1}. If the cumulative sum across varieties for a vintage exceeds {2}, SQLite raises an immediate {3}.",
+  "t": "El trigger de base de datos {0} se ejecuta en cada INSERT o UPDATE sobre {1}. Si la suma acumulada de las variedades de una añada supera {2}, SQLite lanza de inmediato un {3}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "da2a53fc14c25df2": {
+  "src": "Data Guarantees",
+  "t": "Garantías de datos",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "da7e15d685c68a48": {
+  "src": "{0} {1} from {2} ({3} blend): {4} ABV, {5} mL bottle. Aged {6}. {7} tasting…",
+  "t": "{0} {1} de {2} (ensamblaje {3}): {4} vol., botella de {5} mL. Crianza: {6}. {7} descriptores…",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "daad7c57049bfed8": {
+  "src": "Retry sending →",
+  "t": "Reintentar el envío →",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "dd35a81646abbc39": {
+  "src": "Provenance",
+  "t": "Procedencia",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "dde6f91221714554": {
+  "src": "Search real-time denormalized vintage tables, filter by appellation and varietal composition, or inspect secondary auction valuations.",
+  "t": "Busca en tablas de añadas desnormalizadas en tiempo real, filtra por denominación y composición varietal o examina las valoraciones de subastas del mercado secundario.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "dec643bcd223f09e": {
+  "src": "Start with our free preview sample, or unlock the full {0}-vintage relational database with complete chemistry, secondary market benchmarks, and master audit logs.",
+  "t": "Empieza con nuestra muestra gratuita de vista previa o desbloquea la base de datos relacional completa de {0} añadas, con química completa, referencias del mercado secundario y registros maestros de auditoría.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "df70fc7991d3f147": {
+  "src": "Production",
+  "t": "Producción",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e006a896005fc669": {
+  "src": "{0} cases",
+  "t": "{0} cajas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e1f8b998b5d9c05e": {
+  "src": "Dedicated Apify Scraping Actor",
+  "t": "Actor de scraping de Apify dedicado",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e3520aadabf0d339": {
+  "src": "{0} {1} — vintage | WineDB",
+  "t": "{0} {1} — añada | WineDB",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e4716fa09f7b0022": {
+  "src": "Its varietal composition is {0} ({1}), {2} ({3}), and {4} ({5}).",
+  "t": "Su composición varietal es {0} ({1}), {2} ({3}) y {4} ({5}).",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e5531adae3c84603": {
+  "src": "GitHub Repository",
+  "t": "Repositorio de GitHub",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e62d486de0ff4ac1": {
+  "src": "Controlled VIVC Ampelography",
+  "t": "Ampelografía controlada del VIVC",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e9754247dc034afb": {
+  "src": "The {0} {1} from {2} is a red wine from {3}, {4}, bottled at {5} ABV in a {6} mL format.",
+  "t": "El {1} {0} de {2} es un vino tinto de {3}, {4}, embotellado con {5} de grado alcohólico en formato de {6} mL.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "eb07b2c5d6b4ae2c": {
+  "src": "All wineries",
+  "t": "Todas las bodegas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "eb735399f9c0cba2": {
+  "src": "NULL (&lt; {0} Obs)",
+  "t": "NULL (&lt; {0} obs.)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "eccfd0fd4fab9c53": {
+  "src": "⏳ Submitting to Engineering...",
+  "t": "⏳ Enviando al equipo de ingeniería...",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ed0817f7ae0a9b26": {
+  "src": "Evaluate an {0}-column sample of the vintages schema and test integration before purchasing.",
+  "t": "Evalúa una muestra de {0} columnas del esquema de añadas y prueba la integración antes de comprar.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f028d88a89636360": {
+  "src": "Requires &gt;= {0} Auction Observations",
+  "t": "Requiere &gt;= {0} observaciones de subasta",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f3bb74c3a5164146": {
+  "src": "Our engineering desk ({0}) has received your enterprise scope specs. We will review your requirements and send a tailored extraction quote directly to your inbox ({1}) within {2} business hours.",
+  "t": "Nuestro equipo de ingeniería ({0}) ha recibido las especificaciones de tu alcance Enterprise. Revisaremos tus requisitos y enviaremos un presupuesto de extracción a medida directamente a tu bandeja de entrada ({1}) en un plazo de {2} horas hábiles.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f4819ebd4c8a464c": {
+  "src": "Detailed Scope &amp; Target Wineries / Regions *",
+  "t": "Alcance detallado y bodegas / regiones objetivo *",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f4d1516682e7b7d3": {
+  "src": "Wineries",
+  "t": "Bodegas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f51576c2cd509ecd": {
+  "src": "Relational SQLite {0} (.db)",
+  "t": "SQLite relacional {0} (.db)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f52ddbc4a7b7976c": {
+  "src": "Bottle Format",
+  "t": "Formato de botella",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "fa12589cbde7e2ec": {
+  "src": "← Back to Sommelier Explorer",
+  "t": "← Volver a Sommelier Explorer",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "fc509ed8fcf1d385": {
+  "src": "Primary Source Audit Registry",
+  "t": "Registro de auditoría de fuentes primarias",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "fe894d15bb250432": {
+  "src": "{0} has {1} vintages in WineDB ({2}), spanning {3}. Founded {4} in {5}, {6}.",
+  "t": "{0} tiene {1} añadas en WineDB ({2}), que abarcan {3}. Fundada en {4} en {5}, {6}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "fea3362b5755a933": {
+  "src": "All vintages",
+  "t": "Todas las añadas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ }
+}
