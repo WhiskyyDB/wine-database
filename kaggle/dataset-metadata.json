@@ -1,7 +1,7 @@
 {
   "title": "WineDB: Fine Wine Vintages & Blends (Sample)",
   "subtitle": "Wineries, vintages, exact varietal blend percentages, and tasting descriptors",
-  "id": "ahtiticheamine/winedb-fine-wines-and-vintages",
+  "id": "dataengineered/winedb-fine-wines-and-vintages",
   "licenses": [
     {
       "name": "CC BY 4.0"
