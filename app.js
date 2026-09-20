@@ -416,9 +416,19 @@ function initiateStripePayment() {
     // update STRIPE_PAYMENT_LINK below or set window.STRIPE_PAYMENT_LINK.
     const STRIPE_PAYMENT_LINK = window.STRIPE_PAYMENT_LINK || "https://buy.stripe.com/bJe8wQf3GdrobDZ0A038407";
 
+    // Sale attribution: Stripe stores client_reference_id on the Checkout Session
+    // and the delivery worker prints it in the order email. Same <brand>_<lang>_<surface>
+    // scheme as the static buy buttons (the i18n build localises those; here the
+    // page language comes from <html lang>).
+    const lang = (document.documentElement.lang || "en").toLowerCase();
+    const url = new URL(STRIPE_PAYMENT_LINK);
+    if (!url.searchParams.has("client_reference_id")) {
+        url.searchParams.set("client_reference_id", `winedb_${lang}_home`);
+    }
+
     // Stripe redirects to the delivery worker after payment, which verifies the
     // checkout session before serving the snapshot. No client-side success page.
-    window.location.href = STRIPE_PAYMENT_LINK;
+    window.location.href = url.toString();
 }
 
 async function handleEnterpriseSubmit(event) {
