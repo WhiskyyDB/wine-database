@@ -1,6 +1,6 @@
 # WineDB — The Authoritative Relational Fine Wine & Vintage Varietal Database
 
-> WineDB is an enterprise-grade, 3NF-normalized relational dataset of 3,675 curated fine wine vintages across 106 prestige wineries, 143 cuvees, and 57 global appellations, with exact varietal blend percentages (database-enforced `SUM <= 100.001%`), quantitative laboratory chemistry (residual sugar `g/L`, titratable acidity, pH), and secondary auction valuation indices (median hammer price under a `>= 3 observations` rule). Every record links to a primary document in an 11,960-row provenance audit registry (`data_sources`), grounded on producer technical sheets, US TTB COLA label filings, SAQ/LCBO laboratory analyses, and Liv-ex / public auction house results.
+> WineDB is an enterprise-grade, 3NF-normalized relational dataset of 3,675 curated fine wine vintages across 106 prestige wineries, 143 cuvees, and 57 global appellations, with exact varietal blend percentages (database-enforced `SUM <= 100.001%`), quantitative laboratory chemistry (residual sugar `g/L`, titratable acidity, pH), and secondary auction valuation indices (median hammer price under a `>= 3 observations` rule). Every record links to a primary document in an 3,746-row provenance audit registry (`data_sources`), grounded on producer technical sheets, US TTB COLA label filings, SAQ/LCBO laboratory analyses, and Liv-ex / public auction house results.
 
 ## Key Links & Documentation
 - [Landing Page](https://winedb.dataengineered.io/)
