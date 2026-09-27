@@ -57,8 +57,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     setupTabs();
     setupSearchAndFilters();
     setupModalButtons();
-    await loadData();
-    renderAllTables();
+    try {
+        await loadData();
+        renderAllTables();
+    } finally {
+        // The tables just grew #explorer and moved every section below it: land an arrival
+        // at /#pricing, /#enterprise-contact, ... on its section again (section-links snippet
+        // in index.html). Runs on the fallback-data path and if rendering throws, too.
+        if (window.realignSectionLink) window.realignSectionLink();
+    }
     animateStats();
 });
 

@@ -45,3 +45,18 @@ When copy is new or changed:
 
 After a content refresh goes live, re-submit IndexNow deliberately
 (`node scripts/indexnow-submit.mjs winedb` from the portfolio root).
+
+## Section links (sticky header)
+
+`index.html` carries the shared portfolio snippet between `<!-- section-links -->` and
+`<!-- /section-links -->`, right after the sticky `<header class="navbar">`. It sets
+`scroll-padding-top` to the header's live height so `#section` jumps land below the header
+(it wraps and grows taller on phones), and on a fresh navigation to `/#pricing`,
+`/#enterprise-contact`, ... it jumps to the section again once the web fonts and the sample
+tables have moved the page. `scripts/section_links.py` is a byte-identical copy of the
+portfolio tool; do not modify it here. To refresh the snippet, run
+`python scripts/section_links.py index.html`, then `build` and `check` as above.
+
+- `app.js` calls `window.realignSectionLink()` right after the sample tables render; keep
+  that call after any new content rendered above a section.
+- Do not add `scroll-margin-top` to sections: it would add to the header offset.
