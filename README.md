@@ -4,13 +4,13 @@
 
 # 🍷 WineDB — Relational Fine Wine, Varietal & Provenance Dataset
 
-**3,675 curated fine wine vintages · quantitative SAQ/LCBO chemistry · 3NF relational design · exact varietal blend constraint (`SUM <= 100.001%`) · Liv-ex auction medians (`>=3 obs`) · 11,960-row provenance registry**
+**3,675 curated fine wine vintages · quantitative SAQ/LCBO chemistry · 3NF relational design · exact varietal blend constraint (`SUM <= 100.001%`) · Liv-ex auction medians (`>=3 obs`) · 3,746-row provenance registry**
 
 [![Free Sample: 59 vintages](https://img.shields.io/badge/Free%20Sample-59%20vintages-brightgreen.svg)](samples/)
 [![Live Sommelier Portal](https://img.shields.io/badge/%F0%9F%8D%B7%20Sommelier%20Portal-live%20explorer-ffd21e.svg)](https://winedb.dataengineered.io)
 [![Data Integrity: 3NF](https://img.shields.io/badge/Data%20Integrity-3NF%20%2B%20Triggers-800020.svg)](#architecture--relational-schema)
 [![Valuation: Liv--ex](https://img.shields.io/badge/Valuation-3%2B%20Observations-d4af37.svg)](#provenance--auditability)
-[![Snapshot: 2026.07](https://img.shields.io/badge/Snapshot-2026.07-blue.svg)](SOURCES.md)
+[![Snapshot: 2026.09](https://img.shields.io/badge/Snapshot-2026.09-blue.svg)](SOURCES.md)
 [![Get the data](https://img.shields.io/badge/Get%20the%20data-winedb-86a862.svg)](https://winedb.dataengineered.io)
 
 **[→ Get the full dataset snapshot at WineDB Portal](https://winedb.dataengineered.io)**
@@ -34,7 +34,7 @@ This is a **curated fine wine + data-integrity** dataset — designed from the g
 | Distinct cuvees & bottlings | **143** | 27 |
 | Varietal blend records (`blends.csv`) | **7,746** | 171 |
 | Organoleptic tasting descriptors | **18,315** | 236 |
-| Master provenance audit records (`data_sources`) | **11,960** | Sample rows |
+| Master provenance audit records (`data_sources`) | **3,746** | Sample rows |
 | Official geographical appellations (`appellations`) | **57** | 27 |
 | Formats distributed | SQLite (`winedb.sqlite`) · 7 normalized CSVs | SQLite preview · 6 CSVs |
 
