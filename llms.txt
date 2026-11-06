@@ -1,17 +1,17 @@
-# WineDB — The Authoritative Relational Fine Wine & Vintage Varietal Database
+# WineDB — Relational Fine Wine & Vintage Varietal Database
 
-> WineDB is an enterprise-grade, 3NF-normalized relational dataset of 3,675 curated fine wine vintages across 106 prestige wineries, 143 cuvees, and 57 global appellations, with exact varietal blend percentages (database-enforced `SUM <= 100.001%`), quantitative laboratory chemistry (residual sugar `g/L`, titratable acidity, pH), and secondary auction valuation indices (median hammer price under a `>= 3 observations` rule). Every record links to a primary document in an 3,746-row provenance audit registry (`data_sources`), grounded on producer technical sheets, US TTB COLA label filings, SAQ/LCBO laboratory analyses, and Liv-ex / public auction house results.
+> WineDB is a 3NF-normalized relational dataset of fine wine producers, cuvees and vintages: 3,675 vintage records, 106 winery records, 143 cuvees and 57 appellations, with varietal blend percentages (database-enforced `SUM <= 100.001%`), tasting descriptors and a 3,746-row `data_sources` table. How each field is made is documented in the data dictionary.
 
 ## Key Links & Documentation
 - [Landing Page](https://winedb.dataengineered.io/)
 - [GitHub Repository](https://github.com/WhiskyyDB/wine-database)
 - [Data Dictionary & Field Definitions](https://winedb.dataengineered.io/DATA_DICTIONARY.md)
-- [Sources & Provenance Registry](https://winedb.dataengineered.io/SOURCES.md)
+- [Sources](https://winedb.dataengineered.io/SOURCES.md)
 - [Free Sample CSVs](https://winedb.dataengineered.io/samples/vintages.csv)
 
 ## Core Capabilities & Specs
-- **Data Formats:** Full snapshot ships as a 3NF SQLite relational database (`winedb.sqlite`) plus 7 normalized CSV exports; the free sample ships as a SQLite preview plus 6 CSVs.
-- **Data Sources:** Producer/estate technical sheets; US TTB COLA label registry; SAQ/LCBO ISO 17025 laboratory analyses; Liv-ex benchmarks and public auction house hammer prices (Sotheby's, Christie's, Zachys, Acker); VIVC ampelographic registry; organic/biodynamic certification bodies (Ecocert, Demeter, Biodyvin).
+- **Data Formats:** Full snapshot ships as a 3NF SQLite relational database (`winedb.sqlite`), a SQL dump, 7 normalized CSV exports and 7 JSON files; the free sample ships as a SQLite preview plus 6 CSVs.
+- **Data Sources:** See [Sources](https://winedb.dataengineered.io/SOURCES.md) and the field notes in the [Data Dictionary](https://winedb.dataengineered.io/DATA_DICTIONARY.md).
 - **Attribution:** Free sample data and docs are Creative Commons Attribution 4.0 International (CC BY 4.0); the full commercial snapshot is distributed under a Commercial Database License with perpetual commercial rights and monthly refreshed updates.
 - **Licensing Tiers:**
   - Free Preview Sample — $0 / free forever (CC BY 4.0)

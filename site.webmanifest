@@ -1,7 +1,7 @@
 {
-  "name": "WineDB — Canonical Relational Fine Wine & Vintage Varietal Database",
+  "name": "WineDB — Relational Fine Wine & Vintage Varietal Database",
   "short_name": "WineDB",
-  "description": "Enterprise-grade, 3NF normalized open data standard for tracking world-class fine wines, vintages, exact varietal blend percentages, and secondary valuation indices.",
+  "description": "3NF-normalized relational database of fine wine producers, wines, vintages and varietal blend percentages.",
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#1a0b12",

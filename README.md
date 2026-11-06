@@ -1,15 +1,14 @@
 <div align="center">
 
-![WineDB — The Authoritative Relational Fine Wine & Vintage Varietal Database](assets/winedb-cover.png)
+![WineDB — Relational Fine Wine & Vintage Varietal Database](assets/winedb-cover.png)
 
-# 🍷 WineDB — Relational Fine Wine, Varietal & Provenance Dataset
+# 🍷 WineDB — Relational Fine Wine & Varietal Dataset
 
-**3,675 curated fine wine vintages · quantitative SAQ/LCBO chemistry · 3NF relational design · exact varietal blend constraint (`SUM <= 100.001%`) · Liv-ex auction medians (`>=3 obs`) · 3,746-row provenance registry**
+**3,675 vintage records · 3NF relational design · varietal blend constraint (`SUM <= 100.001%`) · 3,746-row `data_sources` table · SQLite, SQL, CSV and JSON**
 
 [![Free Sample: 59 vintages](https://img.shields.io/badge/Free%20Sample-59%20vintages-brightgreen.svg)](samples/)
 [![Live Sommelier Portal](https://img.shields.io/badge/%F0%9F%8D%B7%20Sommelier%20Portal-live%20explorer-ffd21e.svg)](https://winedb.dataengineered.io)
 [![Data Integrity: 3NF](https://img.shields.io/badge/Data%20Integrity-3NF%20%2B%20Triggers-800020.svg)](#architecture--relational-schema)
-[![Valuation: Liv--ex](https://img.shields.io/badge/Valuation-3%2B%20Observations-d4af37.svg)](#provenance--auditability)
 [![Snapshot: 2026.09](https://img.shields.io/badge/Snapshot-2026.09-blue.svg)](SOURCES.md)
 [![Get the data](https://img.shields.io/badge/Get%20the%20data-winedb-86a862.svg)](https://winedb.dataengineered.io)
 
@@ -21,59 +20,52 @@
 
 ---
 
-A structured, enterprise-grade relational dataset that turns subjective wine tasting sheets and flat, error-prone collector spreadsheets into **quantitative engineering metrics** (exact residual sugar, titratable acidity, pH, bottle formats, and verified alcohol by volume), joined to **Liv-ex and secondary auction market valuation indices** (`>= 3 observations` rule) and grounded on **US TTB COLA filings and official appellation registries**, with a **source URL on every record** (`data_sources` table) so any single fact can be re-verified.
+A relational fine wine dataset of producers, cuvees and vintage records in **third normal form**: wineries, wines, vintages, varietal blends, tasting profiles, appellations and a `data_sources` table. The full snapshot ships as SQLite, a SQL dump, CSV and JSON; the free sample as CSV and a SQLite preview.
 
-This is a **curated fine wine + data-integrity** dataset — designed from the ground up for quantitative collectors, sommelier applications, algorithmic pricing models, and AI/RAG evaluation corpora. Unlike flat wine lists that allow mathematical impossibilities like varietal percentages summing to 110%, WineDB enforces strict **3NF relational normalization** and **database-level SQLite triggers** (`BEFORE INSERT/UPDATE`). The honest [field-coverage table](#field-coverage-the-honest-numbers) below shows exactly what is and isn't populated across our sample and commercial snapshot tiers. No hype — just what's inside the box.
+Unlike flat wine lists that allow mathematical impossibilities like varietal percentages summing to 110%, WineDB enforces strict **3NF relational normalization** and **database-level SQLite triggers** (`AFTER INSERT/UPDATE`) that abort any blend summing to more than 100.001%. The [field notes](#how-each-field-is-made-full-snapshot-edition-202609) below show what is populated in the full snapshot and how each field is made.
 
 ## What's inside
 
 | | Full dataset (`$49 Tier`) | Free sample (`samples/`) |
 | :--- | ---: | ---: |
-| Curated fine wine vintages | **3,675** | 59 |
-| Canonical wineries & producers | **106** | 26 |
-| Distinct cuvees & bottlings | **143** | 27 |
+| Vintage records | **3,675** | 59 |
+| Winery records | **106** | 26 |
+| Wine (cuvee) records | **143** | 27 |
 | Varietal blend records (`blends.csv`) | **7,746** | 171 |
-| Organoleptic tasting descriptors | **18,315** | 236 |
-| Master provenance audit records (`data_sources`) | **3,746** | Sample rows |
-| Official geographical appellations (`appellations`) | **57** | 27 |
-| Formats distributed | SQLite (`winedb.sqlite`) · 7 normalized CSVs | SQLite preview · 6 CSVs |
+| Tasting descriptors | **18,315** | 236 |
+| `data_sources` entries | **3,746** | 59 (SQLite preview only) |
+| Appellation records (`appellations`) | **57** | 27 |
+| Formats distributed | SQLite (`winedb.sqlite`) · SQL dump · 7 CSVs · 7 JSON files | SQLite preview · 6 CSVs |
 
-The free [`samples/`](samples/) directory contains 59 verified sample vintages across 26 iconic producers (`Insignia`, `Opus One`, `Monte Bello`, etc.) — a complete functional preview of our exact 3NF schema and validation constraints. Explore the interactive frontend in our **[Sommelier Portal](https://winedb.dataengineered.io)**, or inspect the normalized tables directly in your local environment. The full commercial snapshot (`3,675 vintages`) is available instantly via verified Stripe checkout at **[WineDB Portal](https://winedb.dataengineered.io)**.
+The free [`samples/`](samples/) directory contains 59 sample vintages across 26 producers (`Insignia`, `Opus One`, `Monte Bello`, etc.). It shows the table layout, but it is a subset of the full schema: its `vintages.csv` has 11 of the full snapshot's 17 columns, and its rows are all hand-entered rows (see the field notes below for how they differ from the rest of the full snapshot). Explore the interactive frontend in our **[Sommelier Portal](https://winedb.dataengineered.io)**, or inspect the normalized tables directly in your local environment. The full commercial snapshot (`3,675 vintage records`) is available instantly via Stripe checkout at **[WineDB Portal](https://winedb.dataengineered.io)**.
 
-## Field coverage (the honest numbers)
+## How each field is made (full snapshot, edition 2026.09)
 
-Measured across all **3,675** core vintage records in the full commercial database. Published up front so you know the exact population density before integrating:
+No value is fetched from an external source at build time. **3,611 of the 3,675 vintage rows (98.3%) are generated by a formula** from 113 hand-entered wine records: every one of those wines gets the same 32 years (1989–2023, without 1991–1993), whether or not the wine was made that year. 59 rows were entered by hand (the free sample's rows) and 5 come from a hand-typed product list. Measured on the 2026.09 build:
 
-| Table / Field | Coverage | | Table / Field | Coverage |
-| :--- | ---: | --- | :--- | ---: |
-| `wineries.name` & `country` | 100% | | `vintages.abv_percent` | 100% |
-| `wines.name` & `classification` | 100% | | `vintages.bottle_volume_ml` | 100% |
-| `vintages.vintage_year` (`1980 - 2023`) | 100% | | `vintages.release_price_usd` | 94% |
-| `blends.percent` (`(0, 100]` constraint) | 100% | | `vintages.valuation_index_usd` | 68% (`>= 3 obs` rule) |
-| `vintages.residual_sugar_g_l` (SAQ/LCBO) | 82% | | `vintages.titratable_acidity_g_l` | 74% |
-| `vintages.ph_level` (Government lab reports) | 71% | | `data_sources.source_url` link | 100% |
+| Table / Field | Filled | How it is made |
+| :--- | ---: | :--- |
+| `vintages.vintage_year` | 100% | 1989–2023; on generated rows, the fixed 32-year grid |
+| `vintages.abv_percent` | 100% | on generated rows, a hand-entered base value plus or minus 0.2 in a fixed cycle |
+| `vintages.bottle_volume_ml` | 100% | `750` on every row (a default) |
+| `vintages.aging_regime` | 99.9% | one hand-entered value per wine, the same in every year |
+| `vintages.release_price_usd` | 99.9% | one hand-entered value per wine, the same in every year |
+| `vintages.production_cases` | 1.6% | the 59 hand-entered rows only |
+| `vintages.valuation_index_usd` | 98.3% | **modelled, not observed**: computed from the hand-entered base price and the year on 3,611 rows, plus 1 hand-typed value. No value comes from an observed sale |
+| `vintages.residual_sugar_g_l`, `acidity_g_l` | 34.9% | one hand-entered value per wine, copied to every vintage; no laboratory source |
+| pH, titratable acidity | — | no such columns |
+| `vintages.organic_certification` | 34.9% | hand-entered free text per wine, copied to every vintage; not checked against certifier registers |
+| `blends.percent` | 3,670 of 3,675 vintages | on generated rows, a hand-entered base blend whose first two varieties move by one point with odd and even years; every blend sums to 100 |
+| `tasting_profiles.descriptor` | — | on generated rows, one fixed list per wine, repeated on every vintage |
+| `vintages.source_url` | 100% | on generated rows, built from a URL pattern plus the year and never fetched (the ones tested return "not found"); on hand-entered rows, the producer URL cited for the row, not re-checked |
+| `data_sources.retrieved_at` | 1.6% | the build time, not a retrieval time; there is no licence column |
+| `wineries`, `wines`, `appellations` | — | entered by hand; 4 producers and 6 wines appear twice under accent variants, and 13 vintages appear twice |
 
-**Two quality & validation tiers** (both included in the full snapshot):
-- **Full Chemical & Technical Core** — **3,675** vintages with complete structural metadata, blend compositions (`SUM <= 100.001%`), and technical sheet links.
-- **Auction Benchmark Tier** — **2,499** vintages satisfying our strict secondary market transparency rule (`>= 3 independent public auction transactions`) with verified median hammer prices (`valuation_index_usd`).
+[`DATA_DICTIONARY.md`](DATA_DICTIONARY.md) gives every column, and [`SOURCES.md`](SOURCES.md) the inputs.
 
-### Data-quality flags — the honest part
-Every record includes self-describing integrity markers so your pipelines can filter with precision:
-- `valuation_index_usd` — populated **only** if `>= 3` independent auction transactions exist in the past 18 months. If `< 3` observations exist, it is strictly set to `NULL` — we **never** interpolate or guess synthetic market prices.
-- `blend_sum_check` — enforced at the database kernel via SQLite trigger (`trg_check_blend_sum_insert`). If a producer's marketing sheet reports blend numbers that sum to more than `100.001%` due to rounding, our normalizer scales them to `100.000%` during ingestion and logs the adjustment in `data_sources`.
-- `source_url` — every cuvee and vintage row links to its primary verification document (estate technical pdf, US TTB COLA label registry ID, or SAQ/LCBO lab test report).
+## The `data_sources` table
 
-## Provenance & Auditability
-
-Every single row in WineDB is linked to a canonical audit record inside our master `data_sources` table:
-
-| Field | Meaning |
-| :--- | :--- |
-| `entity_type` | The target table (`wineries`, `wines`, or `vintages`) |
-| `entity_id` | The exact primary key inside the target table |
-| `source_type` | Document category (`producer_tech_sheet`, `ttb_cola_registry`, `saq_lab_report`, `liv_ex_benchmark`) |
-| `source_url` | Direct, re-verifiable URL to the primary document |
-| `ingested_at` | UTC timestamp of initial extraction and normalization (`2026-07-13`) |
+Vintage and winery rows carry a `source_id` into `data_sources`, whose columns are `source_id`, `source_type`, `source_name`, `source_url_or_id`, `retrieved_at` and `raw_payload`. In edition 2026.09 its entries do not record fetched sources (see the field notes above and [`SOURCES.md`](SOURCES.md)).
 
 See [`DATA_DICTIONARY.md`](DATA_DICTIONARY.md) for exact SQL column definitions, types, and check constraints.
 
@@ -107,7 +99,7 @@ Unlike flat spreadsheets where cell typos corrupt analytical aggregations, WineD
              +---------------+ +--------------+ +---------------+
              |    blends     | |tasting_profil| | data_sources  |
              | (variety_name,| | (descriptor,  | | (url, type,   |
-             |  percent)     | |  category)   | |  ingested_at) |
+             |  percent)     | |  category)   | | retrieved_at) |
              +---------------+ +--------------+ +---------------+
 ```
 
@@ -117,18 +109,16 @@ We offer our dataset in two commercial tiers alongside our free open-source samp
 
 | Tier | What's Included | Price |
 | :--- | :--- | :--- |
-| **Free Sample (`samples/`)** | 59 verified sample vintages · 6 normalized CSV tables · `winedb.sqlite` preview · open taxonomies | **$0 / Free** |
-| **Full Dataset Snapshot** | Complete **3,675-vintage** relational database · **106 wineries** · SAQ/LCBO chemistry (`sugar`, `acidity`, `pH`) · Liv-ex medians (`>=3 obs`) · TTB COLA records · master `data_sources` audit registry · SQLite + 7 CSVs · monthly updates | **$49 one-time** |
+| **Free Sample (`samples/`)** | 59 sample vintages · 6 normalized CSV tables · `winedb.sqlite` preview | **$0 / Free** |
+| **Full Dataset Snapshot** | Complete relational database: **3,675 vintage records** · **106 winery records** · `data_sources` table · SQLite + SQL dump + 7 CSVs + 7 JSON files · data dictionary · monthly updates | **$49 one-time** |
 | **Custom work** | Subsets, extraction pipelines, schema mapping — quoted per engagement | from $99, via the [enterprise scope form](https://winedb.dataengineered.io/#enterprise-contact) |
 
 **[→ Instant Download via Stripe at WineDB Portal](https://winedb.dataengineered.io)** · or use the [enterprise scope form](https://winedb.dataengineered.io/#enterprise-contact) (winedb@dataengineered.io) for custom schema modeling.
 
 ## Use cases
 
-- **Sommelier & Cellar Management Apps:** High-precision relational backend for cellar tracking with exact bottle formats (`375ml`, `750ml`, `1500ml`) and varietal breakdowns.
-- **Algorithmic Wine Valuation & Investment:** Secondary auction analysis backed by our strict median hammer price calculations (`>= 3 observations`).
-- **AI & RAG Fine Wine Corpora:** Grounded, hallucination-free training data where every sommelier tasting profile and technical note maps directly to a primary `source_url`.
-- **Enological & Agricultural Research:** Cross-appellation correlation between sugar/acidity ratios (`ph_level`, `residual_sugar_g_l`) and vintage weather anomalies across decades.
+- **Cellar and wine-list app prototypes:** a relational backend of producers, cuvees, vintages and varietal breakdowns to build and test against.
+- **Teaching relational schema design:** normalized, join-ready tables with foreign keys and blend-sum triggers.
 
 ## Quick look
 
@@ -165,13 +155,12 @@ print(df.head(6))
 ## Documentation & Resources
 
 - [Data Dictionary (`DATA_DICTIONARY.md`)](DATA_DICTIONARY.md) — Exact table definitions, SQL types, and check constraints.
-- [Sources & Provenance Registry (`SOURCES.md`)](SOURCES.md) — Primary extraction sources and normalizer methodologies.
+- [Sources (`SOURCES.md`)](SOURCES.md) — What the data is built from.
 - [Sample Preview (`SAMPLE_PREVIEW.md`)](SAMPLE_PREVIEW.md) — Quick visual preview of table structures.
 
 ## License & Support
 
 - **Sample data & docs inside `samples/`:** Creative Commons Attribution 4.0 International (**CC BY 4.0**) — free to use and adapt with attribution (see [`LICENSE`](LICENSE)).
 - **Full Commercial Snapshot (`$49`):** Distributed under our **Commercial Database License** with perpetual commercial rights and monthly refreshed updates.
-- **Enological note:** Chemical metrics (`residual_sugar_g_l`, `ph_level`) are extracted from official government testing boards (`SAQ`, `LCBO`). Variations may occur between individual bottling runs or lot numbers.
 
 Want a specific estate or classified growth prioritized in a future edition? Use the [enterprise scope form](https://winedb.dataengineered.io/#enterprise-contact) or write to winedb@dataengineered.io.

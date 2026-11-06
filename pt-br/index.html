@@ -4,8 +4,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>WineDB — banco de dados de vinhos com 3.675 safras verificadas</title>
-<meta content="Baixe 3.675 safras de vinhos finos verificadas em SQLite ou 7 CSVs normalizados: cortes exatos, química de laboratório, medianas de leilões. Amostra gratuita de 59 safras." name="description"/>
+<title>WineDB — banco de dados de vinhos finos com 3.675 registros de safras</title>
+<meta content="Baixe 3.675 registros de safras de vinhos finos em SQLite ou 7 CSVs normalizados: vinícolas, vinhos, safras, cortes varietais, perfis de degustação e denominações. Amostra gratuita de 59 safras." name="description"/>
 <meta content="WineDB Initiative" name="author"/>
 <meta content="index, follow" name="robots"/>
 <meta content="2VE0Ll5xPaIkGjSTkvTenDhcKRLJGPFgVqekvGOIw-4" name="google-site-verification"/>
@@ -29,8 +29,8 @@
 <link href="/site.webmanifest" rel="manifest"/>
 <meta content="#1a0b12" name="theme-color"/>
 <!-- Open Graph / Social -->
-<meta content="WineDB — banco de dados de vinhos com 3.675 safras verificadas" property="og:title"/>
-<meta content="3.675 safras de vinhos finos com cortes varietais exatos, química de laboratório e medianas de leilões. SQLite + 7 CSVs normalizados. Amostra gratuita de 59 safras." property="og:description"/>
+<meta content="WineDB — banco de dados de vinhos finos com 3.675 registros de safras" property="og:title"/>
+<meta content="3.675 registros de safras de vinhos finos com cortes varietais e descritores de degustação. SQLite + 7 CSVs normalizados. Amostra gratuita de 59 safras." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="https://winedb.dataengineered.io/pt-br/" property="og:url"/>
 <meta content="https://winedb.dataengineered.io/assets/winedb-cover.png" property="og:image"/>
@@ -39,8 +39,8 @@
 {
   "@context": "https://schema.org",
   "@type": "Dataset",
-  "name": "WineDB — banco de dados relacional canônico de vinhos finos e variedades por safra",
-  "description": "Padrão de dados abertos de nível empresarial, normalizado em 3NF, para acompanhar vinhos finos de prestígio, percentuais de corte varietal por safra, dimensões de garrafa, teor alcoólico (%), açúcar residual de laboratório (g/L), acidez natural e medianas de valoração em leilões do mercado secundário.",
+  "name": "WineDB — banco de dados relacional de vinhos finos e variedades por safra",
+  "description": "Amostra gratuita CC BY 4.0 do WineDB, um banco de dados relacional de vinhos finos na terceira forma normal (3NF): vinícolas, vinhos, safras (teor alcoólico, volume da garrafa, amadurecimento, preço de lançamento), percentuais de corte varietal, descritores de degustação e denominações.",
   "url": "https://winedb.dataengineered.io/pt-br/",
   "creator": {
     "@type": "Organization",
@@ -52,10 +52,7 @@
   "variableMeasured": [
     "alcohol by volume percentage",
     "bottle volume in milliliters",
-    "varietal composition blend percentages",
-    "laboratory residual sugar g/L",
-    "laboratory total acidity g/L H2SO4",
-    "secondary market auction valuation index USD"
+    "varietal composition blend percentages"
   ],
   "inLanguage": "pt-BR",
   "sameAs": "https://winedb.dataengineered.io/"
@@ -77,18 +74,10 @@
     },
     {
       "@type": "Question",
-      "name": "O que é a metodologia de valoração com >= 3 observações?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "De acordo com as diretrizes de transparência do mercado secundário de leilões, `valuation_index_usd` representa a mediana do preço de arremate em transações recentes de leilões públicos. Se houver menos de 3 observações de preço independentes para uma cuvée/safra em uma janela de 12 meses, o índice de valoração é armazenado estritamente como NULL."
-      }
-    },
-    {
-      "@type": "Question",
       "name": "O que está incluído na amostra gratuita em comparação com o Full Dataset Snapshot de $49?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A amostra gratuita (`samples/`) inclui 59 safras de amostra verificadas em 6 tabelas CSV (mais uma prévia em SQLite) e taxonomias abertas ($0 / CC BY 4.0). O Full Dataset Snapshot de $49 contém o banco de dados relacional completo de 3.675 safras, 106 vinícolas icônicas, química de laboratório da SAQ/LCBO, referências da Liv-ex e o registro mestre de auditoria de 3.746 linhas."
+        "text": "A amostra gratuita (`samples/`) inclui 59 safras de amostra em 6 tabelas CSV (mais uma prévia em SQLite) ($0 / CC BY 4.0). O Full Dataset Snapshot de $49 contém o banco de dados relacional completo (3.675 registros de safras, 106 registros de vinícolas, 143 vinhos, 57 denominações e uma tabela data_sources com 3.746 linhas) em SQLite, dump SQL, CSV e JSON, com dicionário de dados e licença comercial."
       }
     }
   ],
@@ -140,7 +129,7 @@
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "WineDB: banco de dados de vinhos finos e variedades por safra — Snapshot",
-  "description": "Padrão de dados abertos de nível empresarial, normalizado em 3NF, para acompanhar vinhos finos de prestígio, percentuais de corte varietal por safra, dimensões de garrafa, teor alcoólico (%), açúcar residual de laboratório (g/L), acidez natural e medianas de valoração em leilões do mercado secundário.",
+  "description": "Banco de dados relacional de vinhos finos com produtores, cuvées e registros de safras (vinícolas, vinhos, safras, cortes, perfis de degustação, denominações e uma tabela data_sources), em SQLite, dump SQL, CSV e JSON, com dicionário de dados e licença comercial.",
   "image": "https://winedb.dataengineered.io/assets/winedb-cover.png",
   "brand": {
     "@type": "Brand",
@@ -224,7 +213,7 @@
 <a href="#explorer" id="nav-explorer">Sommelier Explorer</a>
 <a href="#architecture" id="nav-architecture">Arquitetura 3NF</a>
 <a href="#blends-showcase" id="nav-blends">Composição varietal</a>
-<a href="#data-guarantees" id="nav-guarantees">Garantias de dados</a>
+<a href="#data-guarantees" id="nav-guarantees">Restrições do esquema</a>
 <a class="btn-nav-download" href="#downloads" id="nav-downloads">Baixar conjunto de dados</a>
 <!-- i18n:header --><details class="i18n-menu i18n-menu--nav" translate="no"><summary aria-label="Idioma: Português" title="Idioma: Português"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>PT</span></summary><ul><li><a href="/" hreflang="en" lang="en" data-i18n-lang="en">English</a></li><li><a href="/es/" hreflang="es" lang="es" data-i18n-lang="es">Español</a></li><li><a href="/de/" hreflang="de" lang="de" data-i18n-lang="de">Deutsch</a></li><li><a href="/fr/" hreflang="fr" lang="fr" data-i18n-lang="fr">Français</a></li><li><span aria-current="true" lang="pt-BR">Português</span></li></ul></details><!-- /i18n:header --></nav>
 </div>
@@ -280,13 +269,13 @@
 <section class="hero-section" id="hero">
 <div class="hero-content">
 <div class="hero-badge">
-<span class="pulse-dot"></span> Padrão de dados abertos de referência para vinhos finos
+<span class="pulse-dot"></span> Conjunto de dados relacional de vinhos finos
                 </div>
 <h1 class="hero-title">
                     A base relacional de <br/> <span class="text-gradient-gold">safras finas de classe mundial</span>
 </h1>
 <p class="hero-subtitle">
-                    Sem estimativas sintéticas nem impossibilidades matemáticas. Explore cuvées verificadas, esquemas estritos na terceira forma normal (<code class="inline-code">3NF</code>), triggers de soma do corte varietal no nível do banco de dados (<code class="inline-code">SUM ≤ 100%</code>) e valorações de leilões do mercado secundário sujeitas à nossa <strong class="text-gold">regra de ≥ 3 observações</strong>.
+                    Explore as cuvées e safras da amostra gratuita em um esquema estrito na terceira forma normal (<code class="inline-code">3NF</code>), com triggers de soma do corte varietal no nível do banco de dados (<code class="inline-code">SUM ≤ 100%</code>).
                 </p>
 <div class="hero-actions">
 <a class="btn btn-primary" href="#explorer" id="btn-hero-explore">
@@ -304,7 +293,7 @@
 </div>
 <div class="stat-card">
 <span class="stat-value" id="stat-vintages">59+</span>
-<span class="stat-label">Safras verificadas</span>
+<span class="stat-label">Safras de amostra</span>
 </div>
 <div class="stat-card">
 <span class="stat-value" id="stat-blends">171+</span>
@@ -312,7 +301,7 @@
 </div>
 <div class="stat-card">
 <span class="stat-value" id="stat-tasting">236+</span>
-<span class="stat-label">Descritores de sommelier</span>
+<span class="stat-label">Descritores de degustação</span>
 </div>
 </div>
 </div>
@@ -321,7 +310,7 @@
 <section class="explorer-section" id="explorer">
 <div class="section-header">
 <h2 class="section-title"><span class="text-gradient-gold">Portal de safras</span> para sommeliers</h2>
-<p class="section-subtitle">Pesquise tabelas de safras desnormalizadas em tempo real, filtre por denominação e composição varietal ou examine as valorações de leilões do mercado secundário.</p>
+<p class="section-subtitle">Pesquise as tabelas de safras desnormalizadas da amostra gratuita e filtre por denominação e composição varietal.</p>
 </div>
 <div class="explorer-controls glass-panel">
 <div class="search-bar">
@@ -349,7 +338,7 @@
 </div>
 <!-- Tabs -->
 <div class="tabs-container">
-<button class="tab-btn active" data-target="tab-vintages" id="tab-vintages-btn">Safras verificadas (`vintages.csv`)</button>
+<button class="tab-btn active" data-target="tab-vintages" id="tab-vintages-btn">Safras de amostra (`vintages.csv`)</button>
 <button class="tab-btn" data-target="tab-blends" id="tab-blends-btn">Cortes varietais (`blends.csv`)</button>
 <button class="tab-btn" data-target="tab-tasting" id="tab-tasting-btn">Perfis de degustação (`tasting_profiles.csv`)</button>
 </div>
@@ -366,8 +355,8 @@
 <th>Teor alcoólico %</th>
 <th>Formato (ml)</th>
 <th>Preço de lançamento</th>
-<th>Índice de valoração (3+ obs.)</th>
-<th>Procedência</th>
+<th>Índice de valoração</th>
+<th>URL da fonte</th>
 </tr>
 </thead>
 <tbody id="vintages-tbody">
@@ -417,8 +406,8 @@
 <!-- Varietal Composition Showcase -->
 <section class="showcase-section" id="blends-showcase">
 <div class="section-header">
-<h2 class="section-title"><span class="text-gradient-gold">Composição varietal</span> de precisão</h2>
-<p class="section-subtitle">Visualização dos percentuais exatos das fichas técnicas e dos triggers de banco de dados que evitam erros matemáticos (over-100%).</p>
+<h2 class="section-title"><span class="text-gradient-gold">Composição varietal</span> da amostra</h2>
+<p class="section-subtitle">Percentuais de corte de três safras da amostra gratuita e o trigger de banco de dados que rejeita qualquer corte cuja soma passe de 100,001%.</p>
 </div>
 <div class="blends-grid">
 <div class="blend-card glass-panel">
@@ -443,7 +432,7 @@
 </ul>
 <div class="blend-trigger-badge verified">
 <svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><path d="M22 4 12 14.01l-3-3"></path></svg>
-<span>Verificado por trigger do SQLite: total = 100,0% (≤ 100,001%)</span>
+<span>Trigger de soma do corte: total = 100,0% (≤ 100,001%)</span>
 </div>
 </div>
 <div class="blend-card glass-panel">
@@ -456,19 +445,21 @@
 </div>
 <div class="blend-bar-container">
 <div class="blend-bar">
-<div class="bar-segment variety-cab" style="width: 77%;" title="Cabernet Sauvignon: 77%" translate="no">77% Cab</div>
-<div class="bar-segment variety-merlot" style="width: 14%;" title="Merlot: 14%" translate="no">14% Merlot</div>
-<div class="bar-segment variety-pv" style="width: 9%;" title="Petit Verdot: 9%" translate="no">9% PV</div>
+<div class="bar-segment variety-cab" style="width: 82%;" title="Cabernet Sauvignon: 82%" translate="no">82% Cab</div>
+<div class="bar-segment variety-merlot" style="width: 9%;" title="Merlot: 9%" translate="no">9%</div>
+<div class="bar-segment variety-pv" style="width: 8%;" title="Petit Verdot: 8%" translate="no">8%</div>
+<div class="bar-segment variety-cf" style="width: 1%;" title="Cabernet Franc: 1%" translate="no"></div>
 </div>
 </div>
 <ul class="blend-legend" translate="no">
-<li><span class="legend-dot variety-cab"></span> Cabernet Sauvignon (77.0%)</li>
-<li><span class="legend-dot variety-merlot"></span> Merlot (14.0%)</li>
-<li><span class="legend-dot variety-pv"></span> Petit Verdot (9.0%)</li>
+<li><span class="legend-dot variety-cab"></span> Cabernet Sauvignon (82.0%)</li>
+<li><span class="legend-dot variety-merlot"></span> Merlot (9.0%)</li>
+<li><span class="legend-dot variety-pv"></span> Petit Verdot (8.0%)</li>
+<li><span class="legend-dot variety-cf"></span> Cabernet Franc (1.0%)</li>
 </ul>
 <div class="blend-trigger-badge verified">
 <svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><path d="M22 4 12 14.01l-3-3"></path></svg>
-<span>Verificado por trigger do SQLite: total = 100,0% (≤ 100,001%)</span>
+<span>Trigger de soma do corte: total = 100,0% (≤ 100,001%)</span>
 </div>
 </div>
 <div class="blend-card glass-panel">
@@ -494,7 +485,7 @@
 </ul>
 <div class="blend-trigger-badge verified">
 <svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><path d="M22 4 12 14.01l-3-3"></path></svg>
-<span>Verificado por trigger do SQLite: total = 100,0% (≤ 100,001%)</span>
+<span>Trigger de soma do corte: total = 100,0% (≤ 100,001%)</span>
 </div>
 </div>
 </div>
@@ -512,17 +503,17 @@
 <p>Planilhas planas repetem milhares de vezes os anos de fundação dos produtores e os detalhes das denominações. O WineDB normaliza as entidades em <code>wineries</code>, <code>wines</code>, <code>vintages</code>, <code>blends</code> e <code>tasting_profiles</code>, vinculadas por chaves estrangeiras rígidas.</p>
 </div>
 <div class="arch-card glass-panel">
-<div class="arch-icon">🏷️</div>
-<h3>Ampelografia controlada do VIVC</h3>
-<p>Os nomes das variedades de uva são normalizados automaticamente durante a ingestão com base nos registros ampelográficos do VIVC, que mapeiam sinônimos (ex.: <code>Shiraz</code> → <code>Syrah</code>, <code>Cannonau</code> → <code>Grenache</code>) para chaves canônicas.</p>
+<div class="arch-icon">🗄️</div>
+<h3>SQLite, SQL, CSV e JSON</h3>
+<p>O snapshot completo traz as mesmas tabelas como banco de dados <code>winedb.sqlite</code>, dump SQL, 7 arquivos CSV e 7 arquivos JSON. A amostra gratuita traz 6 arquivos CSV e uma prévia em SQLite.</p>
 </div>
 </div>
 </section>
-<!-- Verified Data Guarantees -->
+<!-- Schema Constraints -->
 <section class="arch-section" id="data-guarantees" style="padding-top: 3rem;">
 <div class="section-header">
-<h2 class="section-title"><span class="text-gradient-gold">Garantias de dados</span> verificadas</h2>
-<p class="section-subtitle">Restrições rígidas de verificação matemática, registros de auditoria de fontes primárias e regras de valoração aplicadas na camada do banco de dados.</p>
+<h2 class="section-title"><span class="text-gradient-gold">Restrições</span> do esquema</h2>
+<p class="section-subtitle">Restrições de verificação e triggers aplicados na camada do banco de dados.</p>
 </div>
 <div class="arch-grid">
 <div class="arch-card glass-panel">
@@ -531,19 +522,9 @@
 <p>O trigger de banco de dados <code>trg_check_blend_sum_insert</code> é disparado a cada INSERT ou UPDATE em <code>blends</code>. Se a soma acumulada das variedades de uma safra ultrapassar <code>100.001%</code>, o SQLite gera imediatamente um <code>ABORT</code>.</p>
 </div>
 <div class="arch-card glass-panel">
-<div class="arch-icon">📊</div>
-<h3>Regra de valoração (≥ 3 observações)</h3>
-<p>Os índices do mercado secundário são calculados estritamente a partir de preços de arremate em leilões públicos. Se forem observados menos de 3 lotes independentes em 18 meses, o índice permanece <code>NULL</code> para evitar viés especulativo.</p>
-</div>
-<div class="arch-card glass-panel">
-<div class="arch-icon">🛡️</div>
-<h3>Registro de auditoria de fontes primárias</h3>
-<p>Cada registro de cuvée e de safra está vinculado diretamente à nossa tabela mestre <code>data_sources</code>, com URLs exatas para os registros de rótulos US TTB COLA, as fichas de laboratório da SAQ/LCBO e as notas técnicas das propriedades.</p>
-</div>
-<div class="arch-card glass-panel">
-<div class="arch-icon">🧪</div>
-<h3>Química de laboratório quantitativa</h3>
-<p>Em vez de depender apenas de descritores subjetivos de sommelier, o WineDB registra química de laboratório precisa: valores exatos de <code>residual_sugar_g_l</code>, <code>titratable_acidity_g_l</code> e <code>ph_level</code>, além do volume do formato da garrafa (`750ml`, `1500ml`).</p>
+<div class="arch-icon">📖</div>
+<h3>Campos documentados</h3>
+<p>Cada tabela e coluna, incluindo como seus valores são produzidos, está descrita no <a href="/DATA_DICTIONARY.md" style="color: #d4af37; text-decoration: underline;">dicionário de dados</a>.</p>
 </div>
 </div>
 </section>
@@ -552,7 +533,7 @@
 <span id="pricing"></span>
 <div class="section-header">
 <h2 class="section-title"><span class="text-gradient-gold">Planos de dados</span> comerciais e abertos</h2>
-<p class="section-subtitle">Comece com nossa amostra gratuita de prévia ou desbloqueie o banco de dados relacional completo de 3.675 safras, com química completa, referências do mercado secundário e registros mestres de auditoria.</p>
+<p class="section-subtitle">Comece com nossa amostra gratuita de prévia ou adquira o banco de dados relacional completo com 3.675 registros de safras.</p>
 </div>
 <div class="pricing-grid">
 <!-- Tier 0: Free Sample -->
@@ -566,10 +547,10 @@
 <span class="period">/ grátis para sempre</span>
 </div>
 <ul class="pricing-features">
-<li><span class="check">✓</span> 59 safras de amostra verificadas em 6 tabelas relacionais</li>
-<li><span class="check">✓</span> Esquema completo com colunas de química e auditoria</li>
+<li><span class="check">✓</span> 59 safras de amostra em 6 tabelas relacionais</li>
+<li><span class="check">✓</span> Um subconjunto do esquema completo (sem colunas de química nem do registro de fontes)</li>
 <li><span class="check">✓</span> Prévia do banco de dados relacional <code>winedb.sqlite</code></li>
-<li><span class="check">✓</span> Taxonomias abertas ampelográficas do VIVC e de denominações</li>
+<li><span class="check">✓</span> Tabela de denominações</li>
 <li><span class="check">✓</span> Licença Creative Commons Attribution 4.0</li>
 </ul>
 <a class="btn btn-secondary btn-tier" download="" href="/samples/vintages.csv">
@@ -581,20 +562,18 @@
 <span class="pricing-badge">Mais popular</span>
 <div class="pricing-header">
 <h3>Full Dataset Snapshot</h3>
-<p>O conjunto de dados relacional de vinhos finos completo e pronto para produção, para empresas e analistas.</p>
+<p>O banco de dados relacional completo de vinhos finos: SQLite, dump SQL, CSV e JSON.</p>
 </div>
 <div class="pricing-price">
 <span>$49</span>
 <span class="period">/ snapshot completo</span>
 </div>
 <ul class="pricing-features">
-<li><span class="check">✓</span> <strong>3.675 safras de vinhos finos verificadas</strong> em 143 cuvées icônicas</li>
+<li><span class="check">✓</span> <strong>3.675 registros de safras</strong> de 143 cuvées</li>
 <li><span class="check">✓</span> <strong>106 vinícolas de prestígio</strong> e 57 denominações do mundo todo</li>
-<li><span class="check">✓</span> <strong>Química de laboratório da SAQ/LCBO</strong> (açúcar residual e acidez)</li>
-<li><span class="check">✓</span> <strong>Referências da Liv-ex e de leilões</strong> com regra de ≥3 observações</li>
-<li><span class="check">✓</span> IDs de rótulo verificados do <strong>registro US TTB COLA</strong> e extratos de OCR</li>
-<li><span class="check">✓</span> <strong>Registro mestre de procedência com 3.746 linhas</strong> (<code>data_sources.csv</code>)</li>
-<li><span class="check">✓</span> 3NF <code>winedb.sqlite</code> completo + todas as 7 exportações CSV</li>
+<li><span class="check">✓</span> <strong>Tabela <code>data_sources</code> com 3.746 linhas</strong></li>
+<li><span class="check">✓</span> <code>winedb.sqlite</code> 3NF completo, dump SQL, 7 exportações CSV e 7 JSON</li>
+<li><span class="check">✓</span> Dicionário de dados de cada tabela e coluna</li>
 <li><span class="check">✓</span> Edição atual (2026.09) e direitos comerciais</li>
 </ul>
 <a class="btn btn-primary btn-tier" href="https://buy.stripe.com/bJe8wQf3GdrobDZ0A038407?client_reference_id=winedb_pt-br_home" rel="noopener" style="text-align: center; display: block;" target="_blank">
@@ -644,16 +623,12 @@
 <label>Opções de enriquecimento de dados</label>
 <div class="checkbox-grid">
 <label class="checkbox-item">
-<input checked="" name="page-req-opts" type="checkbox" value="Liv-ex Auction Medians"/>
-<span>Medianas de leilões Liv-ex</span>
+<input name="page-req-opts" type="checkbox" value="Subset of the snapshot"/>
+<span>Subconjunto do snapshot</span>
 </label>
 <label class="checkbox-item">
-<input checked="" name="page-req-opts" type="checkbox" value="SAQ/LCBO Chemistry Data"/>
-<span>Dados químicos da SAQ/LCBO</span>
-</label>
-<label class="checkbox-item">
-<input checked="" name="page-req-opts" type="checkbox" value="TTB COLA Label Registries"/>
-<span>Registros de rótulos TTB COLA</span>
+<input name="page-req-opts" type="checkbox" value="Schema mapping"/>
+<span>Mapeamento de esquemas</span>
 </label>
 <label class="checkbox-item">
 <input checked="" name="page-req-opts" type="checkbox" value="Dedicated Apify Scraping Actor"/>
@@ -696,7 +671,7 @@
 </div>
 <div class="footer-links">
 <a href="/DATA_DICTIONARY.md">Dicionário de dados</a>
-<a href="/SOURCES.md">Registro de fontes</a>
+<a href="/SOURCES.md">Fontes</a>
 <a href="/SAMPLE_PREVIEW.md">Prévia da amostra</a>
 <a href="https://github.com/WhiskyyDB/wine-database" rel="noopener" target="_blank">Repositório no GitHub</a>
 </div>
@@ -719,10 +694,8 @@
 <p style="margin: 0; font-size: 0.88rem; color: var(--text-muted);">Pagamento único de <strong>$49.00 USD</strong>. Inclui licença comercial perpétua da edição atual (2026.09).</p>
 <ul class="stripe-summary-list">
 <li><span>📦</span> <strong>3.675 safras</strong> completas em <strong>106 vinícolas</strong></li>
-<li><span>⚗️</span> Química completa (`residual_sugar`, `acidity`, `pH`) da SAQ e da LCBO</li>
-<li><span>📈</span> Medianas de leilões LIVEX (regra verificada de ≥3 observações)</li>
-<li><span>🏷️</span> Links do registro de rótulos US TTB COLA e textos de OCR</li>
-<li><span>🗄️</span> `winedb.sqlite` relacional 3NF + 7 exportações CSV normalizadas</li>
+<li><span>🗄️</span> `winedb.sqlite` relacional 3NF, dump SQL, 7 exportações CSV e 7 JSON</li>
+<li><span>📖</span> Dicionário de dados e licença comercial</li>
 <li><span>⚡</span> <strong>Acesso automático a download imediato</strong> após o pagamento aprovado pela Stripe</li>
 </ul>
 </div>
@@ -774,16 +747,12 @@
 <label>Opções de enriquecimento de dados</label>
 <div class="checkbox-grid">
 <label class="checkbox-item">
-<input checked="" name="req-opts" type="checkbox" value="Liv-ex Auction Medians"/>
-<span>Medianas de leilões Liv-ex</span>
+<input name="req-opts" type="checkbox" value="Subset of the snapshot"/>
+<span>Subconjunto do snapshot</span>
 </label>
 <label class="checkbox-item">
-<input checked="" name="req-opts" type="checkbox" value="SAQ/LCBO Chemistry Data"/>
-<span>Dados químicos da SAQ/LCBO</span>
-</label>
-<label class="checkbox-item">
-<input checked="" name="req-opts" type="checkbox" value="TTB COLA Label Registries"/>
-<span>Registros de rótulos TTB COLA</span>
+<input name="req-opts" type="checkbox" value="Schema mapping"/>
+<span>Mapeamento de esquemas</span>
 </label>
 <label class="checkbox-item">
 <input checked="" name="req-opts" type="checkbox" value="Dedicated Apify Scraping Actor"/>
@@ -816,9 +785,9 @@
   "noVintages": "Nenhuma safra corresponde aos filtros atuais.",
   "noBlends": "Nenhum registro de corte varietal corresponde.",
   "noTasting": "Nenhum descritor organoléptico corresponde.",
-  "noObs": "NULL (< 3 obs.)",
+  "noObs": "NULL",
   "notAvailable": "N/D",
-  "techSheet": "Ficha técnica ↗",
+  "techSheet": "Link da fonte ↗",
   "blendOk": "OK (≤ 100,001%)",
   "tastingCategory": "Aroma / Paladar",
   "submitting": "⏳ Enviando para a engenharia...",

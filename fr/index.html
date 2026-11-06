@@ -4,8 +4,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>WineDB — base de données de 3 675 millésimes de vin vérifiés</title>
-<meta content="Téléchargez 3 675 millésimes de grands vins vérifiés en SQLite ou en 7 CSV normalisés — assemblages exacts, chimie de laboratoire, médianes d’enchères. Échantillon gratuit de 59 millésimes." name="description"/>
+<title>WineDB — base de données de grands vins, 3 675 fiches de millésimes</title>
+<meta content="Téléchargez 3 675 fiches de millésimes de grands vins en SQLite ou en 7 CSV normalisés : domaines, vins, millésimes, assemblages, profils de dégustation et appellations. Échantillon gratuit de 59 millésimes." name="description"/>
 <meta content="WineDB Initiative" name="author"/>
 <meta content="index, follow" name="robots"/>
 <meta content="2VE0Ll5xPaIkGjSTkvTenDhcKRLJGPFgVqekvGOIw-4" name="google-site-verification"/>
@@ -29,8 +29,8 @@
 <link href="/site.webmanifest" rel="manifest"/>
 <meta content="#1a0b12" name="theme-color"/>
 <!-- Open Graph / Social -->
-<meta content="WineDB — base de données de 3 675 millésimes de vin vérifiés" property="og:title"/>
-<meta content="3 675 millésimes de grands vins avec assemblages exacts, chimie de laboratoire et médianes d’enchères. SQLite + 7 CSV normalisés. Échantillon gratuit de 59 millésimes." property="og:description"/>
+<meta content="WineDB — base de données de grands vins, 3 675 fiches de millésimes" property="og:title"/>
+<meta content="3 675 fiches de millésimes de grands vins avec assemblages et descripteurs de dégustation. SQLite + 7 CSV normalisés. Échantillon gratuit de 59 millésimes." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="https://winedb.dataengineered.io/fr/" property="og:url"/>
 <meta content="https://winedb.dataengineered.io/assets/winedb-cover.png" property="og:image"/>
@@ -39,8 +39,8 @@
 {
   "@context": "https://schema.org",
   "@type": "Dataset",
-  "name": "WineDB — base de données relationnelle canonique des grands vins & assemblages par millésime",
-  "description": "Standard de données ouvertes normalisé (3NF), de niveau entreprise, pour le suivi des grands vins de prestige, des pourcentages d’assemblage par millésime, des formats de bouteille, du titre alcoométrique (% vol.), du sucre résiduel mesuré en laboratoire (g/L), de l’acidité naturelle et des valorisations médianes du marché secondaire des enchères.",
+  "name": "WineDB — base de données relationnelle des grands vins & assemblages par millésime",
+  "description": "Échantillon gratuit CC BY 4.0 de WineDB, base de données relationnelle de grands vins en troisième forme normale (3NF) : domaines, vins, millésimes (titre alcoométrique, volume de bouteille, élevage, prix de sortie), pourcentages d’assemblage, descripteurs de dégustation et appellations.",
   "url": "https://winedb.dataengineered.io/fr/",
   "creator": {
     "@type": "Organization",
@@ -52,10 +52,7 @@
   "variableMeasured": [
     "alcohol by volume percentage",
     "bottle volume in milliliters",
-    "varietal composition blend percentages",
-    "laboratory residual sugar g/L",
-    "laboratory total acidity g/L H2SO4",
-    "secondary market auction valuation index USD"
+    "varietal composition blend percentages"
   ],
   "inLanguage": "fr",
   "sameAs": "https://winedb.dataengineered.io/"
@@ -77,18 +74,10 @@
     },
     {
       "@type": "Question",
-      "name": "Qu’est-ce que la méthode de valorisation fondée sur >= 3 observations ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Conformément aux principes de transparence du marché secondaire des enchères, `valuation_index_usd` représente le prix d’adjudication médian des transactions récentes en ventes aux enchères publiques. Si moins de 3 observations de prix indépendantes existent pour une cuvée ou un millésime sur une période de 12 mois, l’indice de valorisation est strictement enregistré comme NULL."
-      }
-    },
-    {
-      "@type": "Question",
       "name": "Que contient l’échantillon gratuit par rapport au Full Dataset Snapshot à $49 ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "L’échantillon gratuit (`samples/`) comprend 59 millésimes d’exemple vérifiés répartis dans 6 tables CSV (plus un aperçu SQLite) et des taxonomies ouvertes ($0 / CC BY 4.0). Le Full Dataset Snapshot à $49 contient la base de données relationnelle complète de 3 675 millésimes, 106 domaines emblématiques, la chimie de laboratoire SAQ/LCBO, les références Liv-ex et le registre d’audit principal de 3 746 lignes."
+        "text": "L’échantillon gratuit (`samples/`) comprend 59 millésimes d’exemple répartis dans 6 tables CSV (plus un aperçu SQLite) ($0 / CC BY 4.0). Le Full Dataset Snapshot à $49 contient la base de données relationnelle complète (3 675 fiches de millésimes, 106 fiches de domaines, 143 vins, 57 appellations et une table data_sources de 3 746 lignes) en SQLite, dump SQL, CSV et JSON, avec un dictionnaire de données et une licence commerciale."
       }
     }
   ],
@@ -140,7 +129,7 @@
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "WineDB Base de données des grands vins & assemblages par millésime — Snapshot",
-  "description": "Standard de données ouvertes normalisé (3NF), de niveau entreprise, pour le suivi des grands vins de prestige, des pourcentages d’assemblage par millésime, des formats de bouteille, du titre alcoométrique (% vol.), du sucre résiduel mesuré en laboratoire (g/L), de l’acidité naturelle et des valorisations médianes du marché secondaire des enchères.",
+  "description": "Base de données relationnelle de grands vins : producteurs, cuvées et fiches de millésimes (domaines, vins, millésimes, assemblages, profils de dégustation, appellations et une table data_sources), en SQLite, dump SQL, CSV et JSON, avec un dictionnaire de données et une licence commerciale.",
   "image": "https://winedb.dataengineered.io/assets/winedb-cover.png",
   "brand": {
     "@type": "Brand",
@@ -224,7 +213,7 @@
 <a href="#explorer" id="nav-explorer">Explorateur sommelier</a>
 <a href="#architecture" id="nav-architecture">Architecture 3NF</a>
 <a href="#blends-showcase" id="nav-blends">Composition variétale</a>
-<a href="#data-guarantees" id="nav-guarantees">Garanties de données</a>
+<a href="#data-guarantees" id="nav-guarantees">Contraintes du schéma</a>
 <a class="btn-nav-download" href="#downloads" id="nav-downloads">Télécharger le jeu de données</a>
 <!-- i18n:header --><details class="i18n-menu i18n-menu--nav" translate="no"><summary aria-label="Langue: Français" title="Langue: Français"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>FR</span></summary><ul><li><a href="/" hreflang="en" lang="en" data-i18n-lang="en">English</a></li><li><a href="/es/" hreflang="es" lang="es" data-i18n-lang="es">Español</a></li><li><a href="/de/" hreflang="de" lang="de" data-i18n-lang="de">Deutsch</a></li><li><span aria-current="true" lang="fr">Français</span></li><li><a href="/pt-br/" hreflang="pt-BR" lang="pt-BR" data-i18n-lang="pt-br">Português</a></li></ul></details><!-- /i18n:header --></nav>
 </div>
@@ -280,13 +269,13 @@
 <section class="hero-section" id="hero">
 <div class="hero-content">
 <div class="hero-badge">
-<span class="pulse-dot"></span> Standard de données ouvertes de référence pour les grands vins
+<span class="pulse-dot"></span> Jeu de données relationnel de grands vins
                 </div>
 <h1 class="hero-title">
                     La fondation relationnelle <br/> <span class="text-gradient-gold">des plus grands millésimes du monde</span>
 </h1>
 <p class="hero-subtitle">
-                    Ni estimations synthétiques ni impossibilités mathématiques. Explorez des cuvées vérifiées, des schémas stricts en troisième forme normale (<code class="inline-code">3NF</code>), des triggers de somme d’assemblage au niveau de la base de données (<code class="inline-code">SUM ≤ 100%</code>) et des valorisations du marché secondaire des enchères encadrées par notre <strong class="text-gold">règle des ≥ 3 observations</strong>.
+                    Explorez les cuvées et millésimes de l’échantillon gratuit dans un schéma strict en troisième forme normale (<code class="inline-code">3NF</code>), avec des triggers de somme d’assemblage au niveau de la base de données (<code class="inline-code">SUM ≤ 100%</code>).
                 </p>
 <div class="hero-actions">
 <a class="btn btn-primary" href="#explorer" id="btn-hero-explore">
@@ -304,7 +293,7 @@
 </div>
 <div class="stat-card">
 <span class="stat-value" id="stat-vintages">59+</span>
-<span class="stat-label">Millésimes vérifiés</span>
+<span class="stat-label">Millésimes d’exemple</span>
 </div>
 <div class="stat-card">
 <span class="stat-value" id="stat-blends">171+</span>
@@ -312,7 +301,7 @@
 </div>
 <div class="stat-card">
 <span class="stat-value" id="stat-tasting">236+</span>
-<span class="stat-label">Descripteurs sommelier</span>
+<span class="stat-label">Descripteurs de dégustation</span>
 </div>
 </div>
 </div>
@@ -321,7 +310,7 @@
 <section class="explorer-section" id="explorer">
 <div class="section-header">
 <h2 class="section-title"><span class="text-gradient-gold">Portail des millésimes</span> sommelier</h2>
-<p class="section-subtitle">Interrogez en temps réel des tables de millésimes dénormalisées, filtrez par appellation et composition variétale, ou examinez les valorisations du marché secondaire des enchères.</p>
+<p class="section-subtitle">Interrogez les tables de millésimes dénormalisées de l’échantillon gratuit et filtrez par appellation et composition variétale.</p>
 </div>
 <div class="explorer-controls glass-panel">
 <div class="search-bar">
@@ -349,7 +338,7 @@
 </div>
 <!-- Tabs -->
 <div class="tabs-container">
-<button class="tab-btn active" data-target="tab-vintages" id="tab-vintages-btn">Millésimes vérifiés (`vintages.csv`)</button>
+<button class="tab-btn active" data-target="tab-vintages" id="tab-vintages-btn">Millésimes d’exemple (`vintages.csv`)</button>
 <button class="tab-btn" data-target="tab-blends" id="tab-blends-btn">Assemblages variétaux (`blends.csv`)</button>
 <button class="tab-btn" data-target="tab-tasting" id="tab-tasting-btn">Profils de dégustation (`tasting_profiles.csv`)</button>
 </div>
@@ -366,8 +355,8 @@
 <th>Alcool (% vol.)</th>
 <th>Format (ml)</th>
 <th>Prix de sortie</th>
-<th>Indice de valorisation (3+ obs.)</th>
-<th>Provenance</th>
+<th>Indice de valorisation</th>
+<th>URL de la source</th>
 </tr>
 </thead>
 <tbody id="vintages-tbody">
@@ -417,8 +406,8 @@
 <!-- Varietal Composition Showcase -->
 <section class="showcase-section" id="blends-showcase">
 <div class="section-header">
-<h2 class="section-title"><span class="text-gradient-gold">Composition variétale</span> de précision</h2>
-<p class="section-subtitle">Visualisation des pourcentages exacts des fiches techniques et des triggers de base de données qui empêchent les erreurs mathématiques (over-100%).</p>
+<h2 class="section-title"><span class="text-gradient-gold">Composition variétale</span> de l’échantillon</h2>
+<p class="section-subtitle">Pourcentages d’assemblage de trois millésimes de l’échantillon gratuit, et le trigger de base de données qui rejette tout assemblage dont la somme dépasse 100 001%.</p>
 </div>
 <div class="blends-grid">
 <div class="blend-card glass-panel">
@@ -443,7 +432,7 @@
 </ul>
 <div class="blend-trigger-badge verified">
 <svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><path d="M22 4 12 14.01l-3-3"></path></svg>
-<span>Trigger SQLite vérifié : total = 100,0% (≤ 100 001%)</span>
+<span>Trigger de somme d’assemblage : total = 100,0% (≤ 100 001%)</span>
 </div>
 </div>
 <div class="blend-card glass-panel">
@@ -456,19 +445,21 @@
 </div>
 <div class="blend-bar-container">
 <div class="blend-bar">
-<div class="bar-segment variety-cab" style="width: 77%;" title="Cabernet Sauvignon: 77%" translate="no">77% Cab</div>
-<div class="bar-segment variety-merlot" style="width: 14%;" title="Merlot: 14%" translate="no">14% Merlot</div>
-<div class="bar-segment variety-pv" style="width: 9%;" title="Petit Verdot: 9%" translate="no">9% PV</div>
+<div class="bar-segment variety-cab" style="width: 82%;" title="Cabernet Sauvignon: 82%" translate="no">82% Cab</div>
+<div class="bar-segment variety-merlot" style="width: 9%;" title="Merlot: 9%" translate="no">9%</div>
+<div class="bar-segment variety-pv" style="width: 8%;" title="Petit Verdot: 8%" translate="no">8%</div>
+<div class="bar-segment variety-cf" style="width: 1%;" title="Cabernet Franc: 1%" translate="no"></div>
 </div>
 </div>
 <ul class="blend-legend" translate="no">
-<li><span class="legend-dot variety-cab"></span> Cabernet Sauvignon (77.0%)</li>
-<li><span class="legend-dot variety-merlot"></span> Merlot (14.0%)</li>
-<li><span class="legend-dot variety-pv"></span> Petit Verdot (9.0%)</li>
+<li><span class="legend-dot variety-cab"></span> Cabernet Sauvignon (82.0%)</li>
+<li><span class="legend-dot variety-merlot"></span> Merlot (9.0%)</li>
+<li><span class="legend-dot variety-pv"></span> Petit Verdot (8.0%)</li>
+<li><span class="legend-dot variety-cf"></span> Cabernet Franc (1.0%)</li>
 </ul>
 <div class="blend-trigger-badge verified">
 <svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><path d="M22 4 12 14.01l-3-3"></path></svg>
-<span>Trigger SQLite vérifié : total = 100,0% (≤ 100 001%)</span>
+<span>Trigger de somme d’assemblage : total = 100,0% (≤ 100 001%)</span>
 </div>
 </div>
 <div class="blend-card glass-panel">
@@ -494,7 +485,7 @@
 </ul>
 <div class="blend-trigger-badge verified">
 <svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><path d="M22 4 12 14.01l-3-3"></path></svg>
-<span>Trigger SQLite vérifié : total = 100,0% (≤ 100 001%)</span>
+<span>Trigger de somme d’assemblage : total = 100,0% (≤ 100 001%)</span>
 </div>
 </div>
 </div>
@@ -512,17 +503,17 @@
 <p>Les tableurs plats répètent des milliers de fois l’année de fondation des producteurs et les détails d’appellation. WineDB normalise les entités en <code>wineries</code>, <code>wines</code>, <code>vintages</code>, <code>blends</code> et <code>tasting_profiles</code>, reliées par des clés étrangères strictes.</p>
 </div>
 <div class="arch-card glass-panel">
-<div class="arch-icon">🏷️</div>
-<h3>Ampélographie VIVC contrôlée</h3>
-<p>Les noms de cépages sont automatiquement normalisés lors de l’ingestion à l’aide des registres ampélographiques du VIVC, qui associent les synonymes (par ex. <code>Shiraz</code> → <code>Syrah</code>, <code>Cannonau</code> → <code>Grenache</code>) à des clés canoniques.</p>
+<div class="arch-icon">🗄️</div>
+<h3>SQLite, SQL, CSV et JSON</h3>
+<p>Le snapshot complet fournit les mêmes tables sous forme de base <code>winedb.sqlite</code>, de dump SQL, de 7 fichiers CSV et de 7 fichiers JSON. L’échantillon gratuit fournit 6 fichiers CSV et un aperçu SQLite.</p>
 </div>
 </div>
 </section>
-<!-- Verified Data Guarantees -->
+<!-- Schema Constraints -->
 <section class="arch-section" id="data-guarantees" style="padding-top: 3rem;">
 <div class="section-header">
-<h2 class="section-title"><span class="text-gradient-gold">Garanties de données</span> vérifiées</h2>
-<p class="section-subtitle">Contraintes de vérification mathématiques strictes, registres d’audit primaires et règles de valorisation appliqués au niveau de la base de données.</p>
+<h2 class="section-title"><span class="text-gradient-gold">Contraintes</span> du schéma</h2>
+<p class="section-subtitle">Contraintes de vérification et triggers appliqués au niveau de la base de données.</p>
 </div>
 <div class="arch-grid">
 <div class="arch-card glass-panel">
@@ -531,19 +522,9 @@
 <p>Le trigger <code>trg_check_blend_sum_insert</code> se déclenche à chaque INSERT ou UPDATE sur <code>blends</code>. Si la somme cumulée des cépages d’un millésime dépasse <code>100.001%</code>, SQLite lève immédiatement <code>ABORT</code>.</p>
 </div>
 <div class="arch-card glass-panel">
-<div class="arch-icon">📊</div>
-<h3>Règle de valorisation (≥ 3 observations)</h3>
-<p>Les indices du marché secondaire sont calculés exclusivement à partir des prix d’adjudication des ventes aux enchères publiques. Si moins de 3 lots indépendants sont observés sur 18 mois, l’indice reste <code>NULL</code> afin d’éviter tout biais spéculatif.</p>
-</div>
-<div class="arch-card glass-panel">
-<div class="arch-icon">🛡️</div>
-<h3>Registre d’audit des sources primaires</h3>
-<p>Chaque fiche de cuvée et de millésime est directement reliée à notre table principale <code>data_sources</code>, avec des URL exactes vers les dépôts d’étiquettes TTB COLA américains, les fiches de laboratoire SAQ/LCBO et les notes techniques des domaines.</p>
-</div>
-<div class="arch-card glass-panel">
-<div class="arch-icon">🧪</div>
-<h3>Chimie de laboratoire quantitative</h3>
-<p>Au-delà des seuls descripteurs subjectifs de sommelier, WineDB enregistre une chimie de laboratoire précise : valeurs exactes de <code>residual_sugar_g_l</code>, <code>titratable_acidity_g_l</code>, <code>ph_level</code> et volume du format de bouteille (`750ml`, `1500ml`).</p>
+<div class="arch-icon">📖</div>
+<h3>Champs documentés</h3>
+<p>Chaque table et chaque colonne, y compris la façon dont leurs valeurs sont produites, sont décrites dans le <a href="/DATA_DICTIONARY.md" style="color: #d4af37; text-decoration: underline;">dictionnaire de données</a>.</p>
 </div>
 </div>
 </section>
@@ -552,7 +533,7 @@
 <span id="pricing"></span>
 <div class="section-header">
 <h2 class="section-title"><span class="text-gradient-gold">Offres de données</span> commerciales &amp; ouvertes</h2>
-<p class="section-subtitle">Commencez par notre échantillon gratuit, ou accédez à la base de données relationnelle complète de 3 675 millésimes avec la chimie complète, les références du marché secondaire et les journaux d’audit principaux.</p>
+<p class="section-subtitle">Commencez par notre échantillon gratuit, ou procurez-vous la base de données relationnelle complète de 3 675 fiches de millésimes.</p>
 </div>
 <div class="pricing-grid">
 <!-- Tier 0: Free Sample -->
@@ -566,10 +547,10 @@
 <span class="period">/ gratuit pour toujours</span>
 </div>
 <ul class="pricing-features">
-<li><span class="check">✓</span> 59 millésimes d’exemple vérifiés dans 6 tables relationnelles</li>
-<li><span class="check">✓</span> Schéma complet avec colonnes de chimie &amp; d’audit</li>
+<li><span class="check">✓</span> 59 millésimes d’exemple répartis dans 6 tables relationnelles</li>
+<li><span class="check">✓</span> Un sous-ensemble du schéma complet (sans colonnes de chimie ni de registre des sources)</li>
 <li><span class="check">✓</span> Aperçu de la base de données relationnelle <code>winedb.sqlite</code></li>
-<li><span class="check">✓</span> Taxonomies ouvertes ampélographiques VIVC &amp; d’appellations</li>
+<li><span class="check">✓</span> Table des appellations</li>
 <li><span class="check">✓</span> Licence Creative Commons Attribution 4.0</li>
 </ul>
 <a class="btn btn-secondary btn-tier" download="" href="/samples/vintages.csv">
@@ -581,20 +562,18 @@
 <span class="pricing-badge">Le plus populaire</span>
 <div class="pricing-header">
 <h3>Full Dataset Snapshot</h3>
-<p>Le jeu de données relationnel complet des grands vins, prêt pour la production, destiné aux entreprises et aux analystes.</p>
+<p>La base de données relationnelle complète des grands vins : SQLite, dump SQL, CSV et JSON.</p>
 </div>
 <div class="pricing-price">
 <span>$49</span>
 <span class="period">/ snapshot complet</span>
 </div>
 <ul class="pricing-features">
-<li><span class="check">✓</span> <strong>3 675 millésimes de grands vins vérifiés</strong> issus de 143 cuvées emblématiques</li>
+<li><span class="check">✓</span> <strong>3 675 fiches de millésimes</strong> réparties sur 143 cuvées</li>
 <li><span class="check">✓</span> <strong>106 domaines de prestige</strong> &amp; 57 appellations dans le monde</li>
-<li><span class="check">✓</span> <strong>Chimie de laboratoire SAQ/LCBO</strong> (sucre résiduel &amp; acidité)</li>
-<li><span class="check">✓</span> <strong>Références Liv-ex &amp; enchères</strong> avec règle des ≥3 observations</li>
-<li><span class="check">✓</span> Identifiants d’étiquettes vérifiés via le <strong>registre TTB COLA américain</strong> &amp; extraits OCR</li>
-<li><span class="check">✓</span> <strong>Registre de provenance principal de 3 746 lignes</strong> (<code>data_sources.csv</code>)</li>
-<li><span class="check">✓</span> 3NF <code>winedb.sqlite</code> complet + les 7 exports CSV</li>
+<li><span class="check">✓</span> <strong>Table <code>data_sources</code> de 3 746 lignes</strong></li>
+<li><span class="check">✓</span> 3NF <code>winedb.sqlite</code> complet, dump SQL, 7 exports CSV et 7 exports JSON</li>
+<li><span class="check">✓</span> Dictionnaire de données pour chaque table et colonne</li>
 <li><span class="check">✓</span> Édition actuelle (2026.09) &amp; droits commerciaux</li>
 </ul>
 <a class="btn btn-primary btn-tier" href="https://buy.stripe.com/bJe8wQf3GdrobDZ0A038407?client_reference_id=winedb_fr_home" rel="noopener" style="text-align: center; display: block;" target="_blank">
@@ -644,16 +623,12 @@
 <label>Options d’enrichissement de données souhaitées</label>
 <div class="checkbox-grid">
 <label class="checkbox-item">
-<input checked="" name="page-req-opts" type="checkbox" value="Liv-ex Auction Medians"/>
-<span>Médianes d’enchères Liv-ex</span>
+<input name="page-req-opts" type="checkbox" value="Subset of the snapshot"/>
+<span>Sous-ensemble du snapshot</span>
 </label>
 <label class="checkbox-item">
-<input checked="" name="page-req-opts" type="checkbox" value="SAQ/LCBO Chemistry Data"/>
-<span>Données de chimie SAQ/LCBO</span>
-</label>
-<label class="checkbox-item">
-<input checked="" name="page-req-opts" type="checkbox" value="TTB COLA Label Registries"/>
-<span>Registres d’étiquettes TTB COLA</span>
+<input name="page-req-opts" type="checkbox" value="Schema mapping"/>
+<span>Mapping de schéma</span>
 </label>
 <label class="checkbox-item">
 <input checked="" name="page-req-opts" type="checkbox" value="Dedicated Apify Scraping Actor"/>
@@ -696,7 +671,7 @@
 </div>
 <div class="footer-links">
 <a href="/DATA_DICTIONARY.md">Dictionnaire de données</a>
-<a href="/SOURCES.md">Registre des sources</a>
+<a href="/SOURCES.md">Sources</a>
 <a href="/SAMPLE_PREVIEW.md">Aperçu de l’échantillon</a>
 <a href="https://github.com/WhiskyyDB/wine-database" rel="noopener" target="_blank">Dépôt GitHub</a>
 </div>
@@ -719,10 +694,8 @@
 <p style="margin: 0; font-size: 0.88rem; color: var(--text-muted);">Paiement unique de <strong>$49.00 USD</strong>. Inclut une licence commerciale perpétuelle pour l’édition actuelle (2026.09).</p>
 <ul class="stripe-summary-list">
 <li><span>📦</span> <strong>3 675 millésimes</strong> complets issus de <strong>106 domaines</strong></li>
-<li><span>⚗️</span> Chimie complète (`residual_sugar`, `acidity`, `pH`) issue de la SAQ &amp; de la LCBO</li>
-<li><span>📈</span> Médianes d’enchères LIVEX (règle vérifiée de ≥3 observations)</li>
-<li><span>🏷️</span> Liens vers le registre d’étiquettes TTB COLA américain &amp; textes OCR</li>
-<li><span>🗄️</span> Base relationnelle 3NF `winedb.sqlite` + 7 exports CSV normalisés</li>
+<li><span>🗄️</span> Base relationnelle 3NF `winedb.sqlite`, dump SQL, 7 exports CSV et 7 exports JSON</li>
+<li><span>📖</span> Dictionnaire de données et licence commerciale</li>
 <li><span>⚡</span> <strong>Accès au téléchargement automatique immédiat</strong> après paiement Stripe réussi</li>
 </ul>
 </div>
@@ -774,16 +747,12 @@
 <label>Options d’enrichissement de données souhaitées</label>
 <div class="checkbox-grid">
 <label class="checkbox-item">
-<input checked="" name="req-opts" type="checkbox" value="Liv-ex Auction Medians"/>
-<span>Médianes d’enchères Liv-ex</span>
+<input name="req-opts" type="checkbox" value="Subset of the snapshot"/>
+<span>Sous-ensemble du snapshot</span>
 </label>
 <label class="checkbox-item">
-<input checked="" name="req-opts" type="checkbox" value="SAQ/LCBO Chemistry Data"/>
-<span>Données de chimie SAQ/LCBO</span>
-</label>
-<label class="checkbox-item">
-<input checked="" name="req-opts" type="checkbox" value="TTB COLA Label Registries"/>
-<span>Registres d’étiquettes TTB COLA</span>
+<input name="req-opts" type="checkbox" value="Schema mapping"/>
+<span>Mapping de schéma</span>
 </label>
 <label class="checkbox-item">
 <input checked="" name="req-opts" type="checkbox" value="Dedicated Apify Scraping Actor"/>
@@ -816,9 +785,9 @@
   "noVintages": "Aucun millésime ne correspond à vos filtres actuels.",
   "noBlends": "Aucune fiche d’assemblage variétal ne correspond.",
   "noTasting": "Aucun descripteur organoleptique ne correspond.",
-  "noObs": "NULL (< 3 obs.)",
+  "noObs": "NULL",
   "notAvailable": "N/D",
-  "techSheet": "Fiche technique ↗",
+  "techSheet": "Lien vers la source ↗",
   "blendOk": "OK (≤ 100,001%)",
   "tastingCategory": "Arômes / bouche",
   "submitting": "⏳ Envoi à l’équipe technique...",

@@ -4,8 +4,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>WineDB — Weindatenbank mit 3.675 verifizierten Jahrgängen</title>
-<meta content="Laden Sie 3.675 verifizierte Spitzenweinjahrgänge als SQLite oder 7 normalisierte CSVs herunter — exakte Rebsortenanteile, Laborchemie, Auktionsmediane. Kostenlose Beispieldaten mit 59 Jahrgängen." name="description"/>
+<title>WineDB — Spitzenwein-Datenbank mit 3.675 Jahrgangseinträgen</title>
+<meta content="Laden Sie 3.675 Jahrgangseinträge zu Spitzenweinen als SQLite oder 7 normalisierte CSVs herunter: Weingüter, Weine, Jahrgänge, Rebsortenanteile, Verkostungsprofile und Appellationen. Kostenlose Beispieldaten mit 59 Jahrgängen." name="description"/>
 <meta content="WineDB Initiative" name="author"/>
 <meta content="index, follow" name="robots"/>
 <meta content="2VE0Ll5xPaIkGjSTkvTenDhcKRLJGPFgVqekvGOIw-4" name="google-site-verification"/>
@@ -29,8 +29,8 @@
 <link href="/site.webmanifest" rel="manifest"/>
 <meta content="#1a0b12" name="theme-color"/>
 <!-- Open Graph / Social -->
-<meta content="WineDB — Weindatenbank mit 3.675 verifizierten Jahrgängen" property="og:title"/>
-<meta content="3.675 Spitzenweinjahrgänge mit exakten Rebsortenanteilen, Laborchemie und Auktionsmedianen. SQLite + 7 normalisierte CSVs. Kostenlose Beispieldaten mit 59 Jahrgängen." property="og:description"/>
+<meta content="WineDB — Spitzenwein-Datenbank mit 3.675 Jahrgangseinträgen" property="og:title"/>
+<meta content="3.675 Jahrgangseinträge zu Spitzenweinen mit Rebsortenanteilen und Verkostungsdeskriptoren. SQLite + 7 normalisierte CSVs. Kostenlose Beispieldaten mit 59 Jahrgängen." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="https://winedb.dataengineered.io/de/" property="og:url"/>
 <meta content="https://winedb.dataengineered.io/assets/winedb-cover.png" property="og:image"/>
@@ -39,8 +39,8 @@
 {
   "@context": "https://schema.org",
   "@type": "Dataset",
-  "name": "WineDB — Kanonische relationale Datenbank für Spitzenweine, Jahrgänge & Rebsortenanteile",
-  "description": "Normalisierter offener Datenstandard (3NF) auf Enterprise-Niveau zur Erfassung von Spitzenweinen, Rebsortenanteilen je Jahrgang, Flaschenformaten, Alkoholgehalt (% vol.), Restzucker aus Laboranalysen (g/L), natürlicher Säure und Medianbewertungen des sekundären Auktionsmarkts.",
+  "name": "WineDB — Relationale Datenbank für Spitzenweine, Jahrgänge & Rebsortenanteile",
+  "description": "Kostenlose Beispieldaten (CC BY 4.0) von WineDB, einer relationalen Spitzenwein-Datenbank in dritter Normalform (3NF): Weingüter, Weine, Jahrgänge (Alkoholgehalt, Flaschenvolumen, Ausbau, Einführungspreis), Rebsortenanteile, Verkostungsdeskriptoren und Appellationen.",
   "url": "https://winedb.dataengineered.io/de/",
   "creator": {
     "@type": "Organization",
@@ -52,10 +52,7 @@
   "variableMeasured": [
     "alcohol by volume percentage",
     "bottle volume in milliliters",
-    "varietal composition blend percentages",
-    "laboratory residual sugar g/L",
-    "laboratory total acidity g/L H2SO4",
-    "secondary market auction valuation index USD"
+    "varietal composition blend percentages"
   ],
   "inLanguage": "de",
   "sameAs": "https://winedb.dataengineered.io/"
@@ -77,18 +74,10 @@
     },
     {
       "@type": "Question",
-      "name": "Was ist die Bewertungsmethodik mit >= 3 Beobachtungen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Gemäß den Transparenzrichtlinien des sekundären Auktionsmarkts steht `valuation_index_usd` für den Median der Zuschlagspreise aus jüngsten öffentlichen Auktionstransaktionen. Liegen für eine Cuvée bzw. einen Jahrgang innerhalb eines Zeitraums von 12 Monaten weniger als 3 unabhängige Preisbeobachtungen vor, wird der Bewertungsindex strikt als NULL gespeichert."
-      }
-    },
-    {
-      "@type": "Question",
       "name": "Was ist in den kostenlosen Beispieldaten enthalten und was im $49 Full Dataset Snapshot?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die kostenlosen Beispieldaten (`samples/`) enthalten 59 verifizierte Beispieljahrgänge in 6 CSV-Tabellen (plus eine SQLite-Vorschau) sowie offene Taxonomien ($0 / CC BY 4.0). Der $49 Full Dataset Snapshot enthält die vollständige relationale Datenbank mit 3.675 Jahrgängen, 106 ikonische Weingüter, SAQ/LCBO-Laborchemie, Liv-ex-Benchmarks und das Master-Prüfregister mit 3.746 Zeilen."
+        "text": "Die kostenlosen Beispieldaten (`samples/`) enthalten 59 Beispieljahrgänge in 6 CSV-Tabellen (plus eine SQLite-Vorschau) ($0 / CC BY 4.0). Der $49 Full Dataset Snapshot enthält die vollständige relationale Datenbank (3.675 Jahrgangseinträge, 106 Weingut-Einträge, 143 Weine, 57 Appellationen und eine Tabelle data_sources mit 3.746 Zeilen) als SQLite, SQL-Dump, CSV und JSON, mit Datenwörterbuch und kommerzieller Lizenz."
       }
     }
   ],
@@ -140,7 +129,7 @@
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "WineDB Datenbank für Spitzenweine, Jahrgänge & Rebsortenanteile — Snapshot",
-  "description": "Normalisierter offener Datenstandard (3NF) auf Enterprise-Niveau zur Erfassung von Spitzenweinen, Rebsortenanteilen je Jahrgang, Flaschenformaten, Alkoholgehalt (% vol.), Restzucker aus Laboranalysen (g/L), natürlicher Säure und Medianbewertungen des sekundären Auktionsmarkts.",
+  "description": "Relationale Spitzenwein-Datenbank mit Erzeugern, Cuvées und Jahrgangseinträgen (Weingüter, Weine, Jahrgänge, Rebsortenanteile, Verkostungsprofile, Appellationen und eine Tabelle data_sources) als SQLite, SQL-Dump, CSV und JSON, mit Datenwörterbuch und kommerzieller Lizenz.",
   "image": "https://winedb.dataengineered.io/assets/winedb-cover.png",
   "brand": {
     "@type": "Brand",
@@ -224,7 +213,7 @@
 <a href="#explorer" id="nav-explorer">Sommelier-Explorer</a>
 <a href="#architecture" id="nav-architecture">3NF-Architektur</a>
 <a href="#blends-showcase" id="nav-blends">Rebsortenzusammensetzung</a>
-<a href="#data-guarantees" id="nav-guarantees">Datengarantien</a>
+<a href="#data-guarantees" id="nav-guarantees">Schema-Constraints</a>
 <a class="btn-nav-download" href="#downloads" id="nav-downloads">Datensatz herunterladen</a>
 <!-- i18n:header --><details class="i18n-menu i18n-menu--nav" translate="no"><summary aria-label="Sprache: Deutsch" title="Sprache: Deutsch"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>DE</span></summary><ul><li><a href="/" hreflang="en" lang="en" data-i18n-lang="en">English</a></li><li><a href="/es/" hreflang="es" lang="es" data-i18n-lang="es">Español</a></li><li><span aria-current="true" lang="de">Deutsch</span></li><li><a href="/fr/" hreflang="fr" lang="fr" data-i18n-lang="fr">Français</a></li><li><a href="/pt-br/" hreflang="pt-BR" lang="pt-BR" data-i18n-lang="pt-br">Português</a></li></ul></details><!-- /i18n:header --></nav>
 </div>
@@ -280,13 +269,13 @@
 <section class="hero-section" id="hero">
 <div class="hero-content">
 <div class="hero-badge">
-<span class="pulse-dot"></span> Maßgeblicher offener Datenstandard für Spitzenweine
+<span class="pulse-dot"></span> Relationaler Spitzenwein-Datensatz
                 </div>
 <h1 class="hero-title">
                     Das relationale Fundament <br/> <span class="text-gradient-gold">erstklassiger Spitzenjahrgänge</span>
 </h1>
 <p class="hero-subtitle">
-                    Keine synthetischen Schätzungen, keine mathematischen Unmöglichkeiten. Entdecken Sie verifizierte Cuvées, strikte Schemata in dritter Normalform (<code class="inline-code">3NF</code>), Summen-Trigger für Rebsortenanteile auf Datenbankebene (<code class="inline-code">SUM ≤ 100%</code>) und Bewertungen des sekundären Auktionsmarkts, abgesichert durch unsere <strong class="text-gold">Regel von ≥ 3 Beobachtungen</strong>.
+                    Entdecken Sie die Cuvées und Jahrgänge der kostenlosen Beispieldaten in einem strikten Schema in dritter Normalform (<code class="inline-code">3NF</code>), mit Summen-Triggern für Rebsortenanteile auf Datenbankebene (<code class="inline-code">SUM ≤ 100%</code>).
                 </p>
 <div class="hero-actions">
 <a class="btn btn-primary" href="#explorer" id="btn-hero-explore">
@@ -304,7 +293,7 @@
 </div>
 <div class="stat-card">
 <span class="stat-value" id="stat-vintages">59+</span>
-<span class="stat-label">Verifizierte Jahrgänge</span>
+<span class="stat-label">Beispieljahrgänge</span>
 </div>
 <div class="stat-card">
 <span class="stat-value" id="stat-blends">171+</span>
@@ -312,7 +301,7 @@
 </div>
 <div class="stat-card">
 <span class="stat-value" id="stat-tasting">236+</span>
-<span class="stat-label">Sommelier-Deskriptoren</span>
+<span class="stat-label">Verkostungsdeskriptoren</span>
 </div>
 </div>
 </div>
@@ -321,7 +310,7 @@
 <section class="explorer-section" id="explorer">
 <div class="section-header">
 <h2 class="section-title">Sommelier-<span class="text-gradient-gold">Jahrgangsportal</span></h2>
-<p class="section-subtitle">Durchsuchen Sie denormalisierte Jahrgangstabellen in Echtzeit, filtern Sie nach Appellation und Rebsortenzusammensetzung oder prüfen Sie Bewertungen des sekundären Auktionsmarkts.</p>
+<p class="section-subtitle">Durchsuchen Sie die denormalisierten Jahrgangstabellen der kostenlosen Beispieldaten und filtern Sie nach Appellation und Rebsortenzusammensetzung.</p>
 </div>
 <div class="explorer-controls glass-panel">
 <div class="search-bar">
@@ -349,7 +338,7 @@
 </div>
 <!-- Tabs -->
 <div class="tabs-container">
-<button class="tab-btn active" data-target="tab-vintages" id="tab-vintages-btn">Verifizierte Jahrgänge (`vintages.csv`)</button>
+<button class="tab-btn active" data-target="tab-vintages" id="tab-vintages-btn">Beispieljahrgänge (`vintages.csv`)</button>
 <button class="tab-btn" data-target="tab-blends" id="tab-blends-btn">Rebsortenanteile (`blends.csv`)</button>
 <button class="tab-btn" data-target="tab-tasting" id="tab-tasting-btn">Verkostungsprofile (`tasting_profiles.csv`)</button>
 </div>
@@ -366,8 +355,8 @@
 <th>Alkohol (% vol.)</th>
 <th>Format (ml)</th>
 <th>Einführungspreis</th>
-<th>Bewertungsindex (3+ Beob.)</th>
-<th>Herkunft</th>
+<th>Bewertungsindex</th>
+<th>Quell-URL</th>
 </tr>
 </thead>
 <tbody id="vintages-tbody">
@@ -417,8 +406,8 @@
 <!-- Varietal Composition Showcase -->
 <section class="showcase-section" id="blends-showcase">
 <div class="section-header">
-<h2 class="section-title">Präzise <span class="text-gradient-gold">Rebsortenzusammensetzung</span></h2>
-<p class="section-subtitle">Visualisierung exakter Prozentangaben aus technischen Datenblättern und der Datenbank-Trigger, die mathematische Fehler (over-100%) verhindern.</p>
+<h2 class="section-title"><span class="text-gradient-gold">Rebsortenzusammensetzung</span> der Beispieldaten</h2>
+<p class="section-subtitle">Rebsortenanteile von drei Jahrgängen aus den kostenlosen Beispieldaten und der Datenbank-Trigger, der jede Zusammensetzung mit einer Summe über 100,001% ablehnt.</p>
 </div>
 <div class="blends-grid">
 <div class="blend-card glass-panel">
@@ -443,7 +432,7 @@
 </ul>
 <div class="blend-trigger-badge verified">
 <svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><path d="M22 4 12 14.01l-3-3"></path></svg>
-<span>SQLite-Trigger verifiziert: Summe = 100,0% (≤ 100,001%)</span>
+<span>Summen-Trigger der Rebsortenanteile: Summe = 100,0% (≤ 100,001%)</span>
 </div>
 </div>
 <div class="blend-card glass-panel">
@@ -456,19 +445,21 @@
 </div>
 <div class="blend-bar-container">
 <div class="blend-bar">
-<div class="bar-segment variety-cab" style="width: 77%;" title="Cabernet Sauvignon: 77%" translate="no">77% Cab</div>
-<div class="bar-segment variety-merlot" style="width: 14%;" title="Merlot: 14%" translate="no">14% Merlot</div>
-<div class="bar-segment variety-pv" style="width: 9%;" title="Petit Verdot: 9%" translate="no">9% PV</div>
+<div class="bar-segment variety-cab" style="width: 82%;" title="Cabernet Sauvignon: 82%" translate="no">82% Cab</div>
+<div class="bar-segment variety-merlot" style="width: 9%;" title="Merlot: 9%" translate="no">9%</div>
+<div class="bar-segment variety-pv" style="width: 8%;" title="Petit Verdot: 8%" translate="no">8%</div>
+<div class="bar-segment variety-cf" style="width: 1%;" title="Cabernet Franc: 1%" translate="no"></div>
 </div>
 </div>
 <ul class="blend-legend" translate="no">
-<li><span class="legend-dot variety-cab"></span> Cabernet Sauvignon (77.0%)</li>
-<li><span class="legend-dot variety-merlot"></span> Merlot (14.0%)</li>
-<li><span class="legend-dot variety-pv"></span> Petit Verdot (9.0%)</li>
+<li><span class="legend-dot variety-cab"></span> Cabernet Sauvignon (82.0%)</li>
+<li><span class="legend-dot variety-merlot"></span> Merlot (9.0%)</li>
+<li><span class="legend-dot variety-pv"></span> Petit Verdot (8.0%)</li>
+<li><span class="legend-dot variety-cf"></span> Cabernet Franc (1.0%)</li>
 </ul>
 <div class="blend-trigger-badge verified">
 <svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><path d="M22 4 12 14.01l-3-3"></path></svg>
-<span>SQLite-Trigger verifiziert: Summe = 100,0% (≤ 100,001%)</span>
+<span>Summen-Trigger der Rebsortenanteile: Summe = 100,0% (≤ 100,001%)</span>
 </div>
 </div>
 <div class="blend-card glass-panel">
@@ -494,7 +485,7 @@
 </ul>
 <div class="blend-trigger-badge verified">
 <svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><path d="M22 4 12 14.01l-3-3"></path></svg>
-<span>SQLite-Trigger verifiziert: Summe = 100,0% (≤ 100,001%)</span>
+<span>Summen-Trigger der Rebsortenanteile: Summe = 100,0% (≤ 100,001%)</span>
 </div>
 </div>
 </div>
@@ -512,17 +503,17 @@
 <p>Flache Tabellen wiederholen Gründungsjahre der Erzeuger und Angaben zur Appellation tausendfach. WineDB normalisiert die Entitäten in <code>wineries</code>, <code>wines</code>, <code>vintages</code>, <code>blends</code> und <code>tasting_profiles</code>, verknüpft über strikte Fremdschlüssel.</p>
 </div>
 <div class="arch-card glass-panel">
-<div class="arch-icon">🏷️</div>
-<h3>Kontrollierte VIVC-Ampelografie</h3>
-<p>Rebsortennamen werden beim Import automatisch anhand der ampelografischen VIVC-Register normalisiert, wobei Synonyme (z. B. <code>Shiraz</code> → <code>Syrah</code>, <code>Cannonau</code> → <code>Grenache</code>) auf kanonische Schlüssel abgebildet werden.</p>
+<div class="arch-icon">🗄️</div>
+<h3>SQLite, SQL, CSV und JSON</h3>
+<p>Der vollständige Snapshot liefert dieselben Tabellen als Datenbank <code>winedb.sqlite</code>, als SQL-Dump, als 7 CSV-Dateien und als 7 JSON-Dateien. Die kostenlosen Beispieldaten umfassen 6 CSV-Dateien und eine SQLite-Vorschau.</p>
 </div>
 </div>
 </section>
-<!-- Verified Data Guarantees -->
+<!-- Schema Constraints -->
 <section class="arch-section" id="data-guarantees" style="padding-top: 3rem;">
 <div class="section-header">
-<h2 class="section-title">Verifizierte <span class="text-gradient-gold">Datengarantien</span></h2>
-<p class="section-subtitle">Strikte mathematische Check-Constraints, primäre Prüfregister und Bewertungsregeln, durchgesetzt auf Datenbankebene.</p>
+<h2 class="section-title">Schema-<span class="text-gradient-gold">Constraints</span></h2>
+<p class="section-subtitle">Check-Constraints und Trigger, durchgesetzt auf Datenbankebene.</p>
 </div>
 <div class="arch-grid">
 <div class="arch-card glass-panel">
@@ -531,19 +522,9 @@
 <p>Der Datenbank-Trigger <code>trg_check_blend_sum_insert</code> wird bei jedem INSERT oder UPDATE auf <code>blends</code> ausgelöst. Überschreitet die kumulierte Summe der Rebsorten eines Jahrgangs <code>100.001%</code>, löst SQLite sofort <code>ABORT</code> aus.</p>
 </div>
 <div class="arch-card glass-panel">
-<div class="arch-icon">📊</div>
-<h3>Bewertungsregel (≥ 3 Beobachtungen)</h3>
-<p>Indizes des Sekundärmarkts werden ausschließlich aus öffentlichen Zuschlagspreisen von Auktionen berechnet. Werden innerhalb von 18 Monaten weniger als 3 unabhängige Lose beobachtet, bleibt der Index <code>NULL</code>, um spekulative Verzerrungen zu vermeiden.</p>
-</div>
-<div class="arch-card glass-panel">
-<div class="arch-icon">🛡️</div>
-<h3>Prüfregister der Primärquellen</h3>
-<p>Jeder einzelne Cuvée- und Jahrgangseintrag ist direkt mit unserer Master-Tabelle <code>data_sources</code> verknüpft, mit exakten URLs zu US-TTB-COLA-Etikettenanmeldungen, SAQ/LCBO-Laborblättern und technischen Notizen der Weingüter.</p>
-</div>
-<div class="arch-card glass-panel">
-<div class="arch-icon">🧪</div>
-<h3>Quantitative Laborchemie</h3>
-<p>Statt sich allein auf subjektive Sommelier-Deskriptoren zu stützen, erfasst WineDB präzise Laborchemie: exakte Werte für <code>residual_sugar_g_l</code>, <code>titratable_acidity_g_l</code>, <code>ph_level</code> sowie das Flaschenvolumen (`750ml`, `1500ml`).</p>
+<div class="arch-icon">📖</div>
+<h3>Dokumentierte Felder</h3>
+<p>Jede Tabelle und Spalte ist im <a href="/DATA_DICTIONARY.md" style="color: #d4af37; text-decoration: underline;">Datenwörterbuch</a> beschrieben, auch wie ihre Werte entstehen.</p>
 </div>
 </div>
 </section>
@@ -552,7 +533,7 @@
 <span id="pricing"></span>
 <div class="section-header">
 <h2 class="section-title">Kommerzielle &amp; offene <span class="text-gradient-gold">Datenstufen</span></h2>
-<p class="section-subtitle">Beginnen Sie mit unseren kostenlosen Beispieldaten oder schalten Sie die vollständige relationale Datenbank mit 3.675 Jahrgängen frei, inklusive vollständiger Chemiedaten, Sekundärmarkt-Benchmarks und Master-Prüfprotokollen.</p>
+<p class="section-subtitle">Beginnen Sie mit unseren kostenlosen Beispieldaten oder erwerben Sie die vollständige relationale Datenbank mit 3.675 Jahrgangseinträgen.</p>
 </div>
 <div class="pricing-grid">
 <!-- Tier 0: Free Sample -->
@@ -566,10 +547,10 @@
 <span class="period">/ dauerhaft kostenlos</span>
 </div>
 <ul class="pricing-features">
-<li><span class="check">✓</span> 59 verifizierte Beispieljahrgänge in 6 relationalen Tabellen</li>
-<li><span class="check">✓</span> Vollständiges Schema mit Chemie- &amp; Prüfspalten</li>
+<li><span class="check">✓</span> 59 Beispieljahrgänge in 6 relationalen Tabellen</li>
+<li><span class="check">✓</span> Eine Teilmenge des vollständigen Schemas (ohne Chemie- und Quellenspalten)</li>
 <li><span class="check">✓</span> Vorschau der relationalen Datenbank <code>winedb.sqlite</code></li>
-<li><span class="check">✓</span> Offene ampelografische VIVC- &amp; Appellations-Taxonomien</li>
+<li><span class="check">✓</span> Tabelle der Appellationen</li>
 <li><span class="check">✓</span> Lizenz Creative Commons Attribution 4.0</li>
 </ul>
 <a class="btn btn-secondary btn-tier" download="" href="/samples/vintages.csv">
@@ -581,20 +562,18 @@
 <span class="pricing-badge">Am beliebtesten</span>
 <div class="pricing-header">
 <h3>Full Dataset Snapshot</h3>
-<p>Der vollständige, produktionsreife relationale Spitzenwein-Datensatz für Unternehmen und Analysten.</p>
+<p>Die vollständige relationale Spitzenwein-Datenbank: SQLite, SQL-Dump, CSV und JSON.</p>
 </div>
 <div class="pricing-price">
 <span>$49</span>
 <span class="period">/ vollständiger Snapshot</span>
 </div>
 <ul class="pricing-features">
-<li><span class="check">✓</span> <strong>3.675 verifizierte Spitzenweinjahrgänge</strong> aus 143 ikonischen Cuvées</li>
+<li><span class="check">✓</span> <strong>3.675 Jahrgangseinträge</strong> aus 143 Cuvées</li>
 <li><span class="check">✓</span> <strong>106 Prestige-Weingüter</strong> &amp; 57 Appellationen weltweit</li>
-<li><span class="check">✓</span> <strong>SAQ/LCBO-Laborchemie</strong> (Restzucker &amp; Säure)</li>
-<li><span class="check">✓</span> <strong>Liv-ex- &amp; Auktions-Benchmarks</strong> mit Regel von ≥3 Beobachtungen</li>
-<li><span class="check">✓</span> Über das <strong>US-TTB-COLA-Register</strong> verifizierte Etiketten-IDs &amp; OCR-Auszüge</li>
-<li><span class="check">✓</span> Master-<strong>Herkunftsregister mit 3.746 Zeilen</strong> (<code>data_sources.csv</code>)</li>
-<li><span class="check">✓</span> Vollständige 3NF <code>winedb.sqlite</code> + alle 7 CSV-Exporte</li>
+<li><span class="check">✓</span> <strong>Tabelle <code>data_sources</code> mit 3.746 Zeilen</strong></li>
+<li><span class="check">✓</span> Vollständige 3NF-Datenbank <code>winedb.sqlite</code>, SQL-Dump, 7 CSV- und 7 JSON-Exporte</li>
+<li><span class="check">✓</span> Datenwörterbuch für jede Tabelle und Spalte</li>
 <li><span class="check">✓</span> Aktuelle Ausgabe (2026.09) &amp; kommerzielle Nutzungsrechte</li>
 </ul>
 <a class="btn btn-primary btn-tier" href="https://buy.stripe.com/bJe8wQf3GdrobDZ0A038407?client_reference_id=winedb_de_home" rel="noopener" style="text-align: center; display: block;" target="_blank">
@@ -644,16 +623,12 @@
 <label>Gewünschte Datenanreicherung</label>
 <div class="checkbox-grid">
 <label class="checkbox-item">
-<input checked="" name="page-req-opts" type="checkbox" value="Liv-ex Auction Medians"/>
-<span>Liv-ex-Auktionsmediane</span>
+<input name="page-req-opts" type="checkbox" value="Subset of the snapshot"/>
+<span>Teilmenge des Snapshots</span>
 </label>
 <label class="checkbox-item">
-<input checked="" name="page-req-opts" type="checkbox" value="SAQ/LCBO Chemistry Data"/>
-<span>SAQ/LCBO-Chemiedaten</span>
-</label>
-<label class="checkbox-item">
-<input checked="" name="page-req-opts" type="checkbox" value="TTB COLA Label Registries"/>
-<span>TTB-COLA-Etikettenregister</span>
+<input name="page-req-opts" type="checkbox" value="Schema mapping"/>
+<span>Schema-Mapping</span>
 </label>
 <label class="checkbox-item">
 <input checked="" name="page-req-opts" type="checkbox" value="Dedicated Apify Scraping Actor"/>
@@ -696,7 +671,7 @@
 </div>
 <div class="footer-links">
 <a href="/DATA_DICTIONARY.md">Datenwörterbuch</a>
-<a href="/SOURCES.md">Quellenregister</a>
+<a href="/SOURCES.md">Quellen</a>
 <a href="/SAMPLE_PREVIEW.md">Vorschau der Beispieldaten</a>
 <a href="https://github.com/WhiskyyDB/wine-database" rel="noopener" target="_blank">GitHub-Repository</a>
 </div>
@@ -719,10 +694,8 @@
 <p style="margin: 0; font-size: 0.88rem; color: var(--text-muted);">Einmalige Zahlung von <strong>$49.00 USD</strong>. Enthält eine unbefristete kommerzielle Lizenz für die aktuelle Ausgabe (2026.09).</p>
 <ul class="stripe-summary-list">
 <li><span>📦</span> Vollständig: <strong>3.675 Jahrgänge</strong> aus <strong>106 Weingütern</strong></li>
-<li><span>⚗️</span> Vollständige Chemiedaten (`residual_sugar`, `acidity`, `pH`) von SAQ &amp; LCBO</li>
-<li><span>📈</span> LIVEX-Auktionsmediane (verifizierte Regel: ≥3 Beobachtungen)</li>
-<li><span>🏷️</span> Links zum US-TTB-COLA-Etikettenregister &amp; OCR-Textinhalte</li>
-<li><span>🗄️</span> Relationale 3NF-Datenbank `winedb.sqlite` + 7 normalisierte CSV-Exporte</li>
+<li><span>🗄️</span> Relationale 3NF-Datenbank `winedb.sqlite`, SQL-Dump, 7 CSV- und 7 JSON-Exporte</li>
+<li><span>📖</span> Datenwörterbuch und kommerzielle Lizenz</li>
 <li><span>⚡</span> <strong>Sofortiger automatischer Download-Zugang</strong> nach erfolgreicher Stripe-Zahlung</li>
 </ul>
 </div>
@@ -774,16 +747,12 @@
 <label>Gewünschte Datenanreicherung</label>
 <div class="checkbox-grid">
 <label class="checkbox-item">
-<input checked="" name="req-opts" type="checkbox" value="Liv-ex Auction Medians"/>
-<span>Liv-ex-Auktionsmediane</span>
+<input name="req-opts" type="checkbox" value="Subset of the snapshot"/>
+<span>Teilmenge des Snapshots</span>
 </label>
 <label class="checkbox-item">
-<input checked="" name="req-opts" type="checkbox" value="SAQ/LCBO Chemistry Data"/>
-<span>SAQ/LCBO-Chemiedaten</span>
-</label>
-<label class="checkbox-item">
-<input checked="" name="req-opts" type="checkbox" value="TTB COLA Label Registries"/>
-<span>TTB-COLA-Etikettenregister</span>
+<input name="req-opts" type="checkbox" value="Schema mapping"/>
+<span>Schema-Mapping</span>
 </label>
 <label class="checkbox-item">
 <input checked="" name="req-opts" type="checkbox" value="Dedicated Apify Scraping Actor"/>
@@ -816,9 +785,9 @@
   "noVintages": "Keine Jahrgänge entsprechen Ihren aktuellen Filtern.",
   "noBlends": "Keine Einträge zu Rebsortenanteilen gefunden.",
   "noTasting": "Keine organoleptischen Deskriptoren gefunden.",
-  "noObs": "NULL (< 3 Beob.)",
+  "noObs": "NULL",
   "notAvailable": "k. A.",
-  "techSheet": "Technisches Datenblatt ↗",
+  "techSheet": "Quelllink ↗",
   "blendOk": "OK (≤ 100,001%)",
   "tastingCategory": "Aroma / Gaumen",
   "submitting": "⏳ Wird an das Engineering gesendet...",
