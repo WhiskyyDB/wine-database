@@ -1,6 +1,6 @@
 {
   "title": "WineDB: Fine Wine Vintages & Blends (Sample)",
-  "subtitle": "Wineries, vintages, exact varietal blend percentages, and tasting descriptors",
+  "subtitle": "Wineries, wines, vintages, varietal blend percentages and tasting descriptors",
   "id": "dataengineered/winedb-fine-wines-and-vintages",
   "licenses": [
     {
@@ -14,7 +14,7 @@
     "data analytics",
     "beginner"
   ],
-  "description": "# 🍷 WineDB — Fine Wine & Vintages Sample Dataset\n\n> **Full dataset:** [winedb.dataengineered.io](https://winedb.dataengineered.io/) · **$49 one-time** → [Buy on Stripe](https://buy.stripe.com/bJe8wQf3GdrobDZ0A038407) · the same sample on [Hugging Face](https://huggingface.co/datasets/Ichlibitiche/winedb-fine-wines-and-vintages)\nA curated **free sample** of the WineDB dataset: highly normalized relational tables tracking fine wine producers, cuvees, exact vintage varietal blend percentages (`SUM <= 100.001`, enforced by SQLite triggers), alcohol content (ABV %), organoleptic tasting descriptors, and secondary market valuation indices. Prefer SQLite? The same sample ships as a relational `winedb.sqlite` (foreign keys + blend-sum triggers) on [the WineDB site](https://winedb.dataengineered.io/) and [GitHub](https://github.com/WhiskyyDB/wine-database/blob/main/samples/winedb.sqlite).\n\n## What's in this sample\n\n| File | Rows | What it shows |\n| :--- | ---: | :--- |\n| `wineries.csv` | 26 | Producer registry with country, region, founded year + source URL |\n| `wines.csv` | 27 | Canonical wine cuvees with type and appellation |\n| `vintages.csv` | 59 | Year-specific releases: ABV, bottle specs, aging regime, release price, valuation index |\n| `blends.csv` | 171 | Exact varietal composition percentages per vintage |\n| `tasting_profiles.csv` | 236 | Organoleptic aromatic and palate descriptors |\n| `appellations.csv` | 27 | Controlled geographical indication taxonomy |\n\n## The full dataset\n\n- **3,675 vintages** across **106 iconic wineries** and 57 appellations\n- Laboratory chemistry (`residual_sugar`, `acidity`, `pH`) from SAQ & LCBO listings\n- Liv-ex style auction valuation medians under a strict `>= 3 observations` rule\n- US TTB COLA label registry links & OCR text payloads\n- Master 3,746-row `data_sources` provenance registry — every record resolves to a source ledger entry\n- 3NF relational `winedb.sqlite` + 7 normalized CSV exports, refreshed monthly\n\n**→ Get it at [winedb.dataengineered.io](https://winedb.dataengineered.io/)** · [GitHub: WhiskyyDB/wine-database](https://github.com/WhiskyyDB/wine-database) · [Data dictionary](https://github.com/WhiskyyDB/wine-database/blob/main/DATA_DICTIONARY.md) · [Sources & licenses](https://github.com/WhiskyyDB/wine-database/blob/main/SOURCES.md)\n\n## Use cases\n\n- Wine list & hospitality software (clean producer/cuvee/vintage names, ABV, bottle specs)\n- Varietal-blend analytics and recommendation engines (exact percentages, not just labels)\n- Valuation and vintage-quality models on release price vs. secondary market index\n- Teaching relational schema design: six cleanly normalized, join-ready tables\n- ML / RAG corpora over a provenance-tracked wine knowledge base\n\n## License\n\nSample: **CC-BY-4.0** — free for any use including commercial, with attribution.\n\nQuestions, corrections, or full-dataset access: **winedb@dataengineered.io**",
+  "description": "# 🍷 WineDB — Fine Wine & Vintages Sample Dataset\n\n> **Full dataset:** [winedb.dataengineered.io](https://winedb.dataengineered.io/) · **$49 one-time** → [Buy on Stripe](https://buy.stripe.com/bJe8wQf3GdrobDZ0A038407) · the same sample on [Hugging Face](https://huggingface.co/datasets/Ichlibitiche/winedb-fine-wines-and-vintages)\nA **free sample** of the WineDB dataset: normalized relational tables of fine wine producers, cuvees, vintages, varietal blend percentages (`SUM <= 100.001`, enforced by SQLite triggers), alcohol content (ABV %) and organoleptic tasting descriptors. The sample's `vintages.csv` has 11 of the full snapshot's 17 columns; the [data dictionary](https://github.com/WhiskyyDB/wine-database/blob/main/DATA_DICTIONARY.md) explains how each field is made. Prefer SQLite? The same sample ships as a relational `winedb.sqlite` (foreign keys + blend-sum triggers) on [the WineDB site](https://winedb.dataengineered.io/) and [GitHub](https://github.com/WhiskyyDB/wine-database/blob/main/samples/winedb.sqlite).\n\n## What's in this sample\n\n| File | Rows | What it shows |\n| :--- | ---: | :--- |\n| `wineries.csv` | 26 | Producers with country, region, founded year + source URL |\n| `wines.csv` | 27 | Wine cuvees with type and appellation |\n| `vintages.csv` | 59 | Vintage rows: ABV, bottle volume, aging regime, cases produced, release price, source URL |\n| `blends.csv` | 171 | Varietal composition percentages per vintage |\n| `tasting_profiles.csv` | 236 | Organoleptic aromatic and palate descriptors |\n| `appellations.csv` | 27 | Appellations (geographical indications) |\n\n## The full dataset\n\n- **3,675 vintage records** across **106 winery records** and 57 appellations\n- `data_sources` table (3,746 rows)\n- 3NF relational `winedb.sqlite`, SQL dump, 7 CSV and 7 JSON exports, refreshed monthly\n- Data dictionary for every table and column, including how its values are made\n\n**→ Get it at [winedb.dataengineered.io](https://winedb.dataengineered.io/)** · [GitHub: WhiskyyDB/wine-database](https://github.com/WhiskyyDB/wine-database) · [Data dictionary](https://github.com/WhiskyyDB/wine-database/blob/main/DATA_DICTIONARY.md) · [Sources](https://github.com/WhiskyyDB/wine-database/blob/main/SOURCES.md)\n\n## Use cases\n\n- Wine list & hospitality software prototypes (producer/cuvee/vintage names, ABV, bottle specs)\n- Teaching relational schema design: six normalized, join-ready tables\n\n## License\n\nSample: **CC-BY-4.0** — free for any use including commercial, with attribution.\n\nQuestions, corrections, or full-dataset access: **winedb@dataengineered.io**",
   "resources": [
     {
       "path": "wineries.csv",
@@ -39,18 +39,18 @@
           },
           {
             "name": "founded_year",
-            "description": "Year the winery was founded; empty when not published."
+            "description": "Year the winery was founded, as entered; empty when not entered."
           },
           {
             "name": "source_url",
-            "description": "Provenance: source URL the record was derived from."
+            "description": "Source URL cited when the row was entered by hand; not re-checked."
           }
         ]
       }
     },
     {
       "path": "wines.csv",
-      "description": "27 canonical cuvees: wine_id, winery_name, name, wine_type, appellation_name.",
+      "description": "27 cuvees: wine_id, winery_name, name, wine_type, appellation_name.",
       "schema": {
         "fields": [
           {
@@ -63,7 +63,7 @@
           },
           {
             "name": "name",
-            "description": "Canonical cuvee name (e.g. Insignia, Monte Bello)."
+            "description": "Cuvee name (e.g. Insignia, Monte Bello)."
           },
           {
             "name": "wine_type",
@@ -71,7 +71,7 @@
           },
           {
             "name": "appellation_name",
-            "description": "Controlled geographical indication the wine belongs to."
+            "description": "Appellation (geographical indication), as entered."
           }
         ]
       }
@@ -107,7 +107,7 @@
           },
           {
             "name": "aging_regime",
-            "description": "Oak/aging program as published by the producer; empty when unstated."
+            "description": "Oak/aging program, as entered; empty when unstated."
           },
           {
             "name": "production_cases",
@@ -119,18 +119,18 @@
           },
           {
             "name": "valuation_index_usd",
-            "description": "Median secondary-market valuation (USD); NULL unless >= 3 independent observations in a 12-month window."
+            "description": "Valuation index (USD); empty on every row of this sample."
           },
           {
             "name": "source_url",
-            "description": "Provenance: source URL the record was derived from."
+            "description": "Source URL cited when the row was entered by hand; not re-checked."
           }
         ]
       }
     },
     {
       "path": "blends.csv",
-      "description": "171 varietal blend rows: exact percent per variety per vintage (sums to <= 100.001 per vintage).",
+      "description": "171 varietal blend rows: percent per variety per vintage (sums to <= 100.001 per vintage).",
       "schema": {
         "fields": [
           {
@@ -155,7 +155,7 @@
           },
           {
             "name": "percent",
-            "description": "Exact share of the variety in the blend; per-vintage sum <= 100.001 (trigger-enforced)."
+            "description": "Share of the variety in the blend (%); per-vintage sum <= 100.001 (trigger-enforced)."
           }
         ]
       }
@@ -183,7 +183,7 @@
           },
           {
             "name": "descriptor",
-            "description": "Controlled organoleptic descriptor (aroma/palate), e.g. Black currant, Graphite."
+            "description": "Organoleptic descriptor (aroma/palate), e.g. Black currant, Graphite."
           }
         ]
       }
@@ -211,11 +211,11 @@
           },
           {
             "name": "parent_region",
-            "description": "Parent region in the GI hierarchy; empty for top-level."
+            "description": "Parent region, as entered; empty for top-level."
           }
         ]
       }
     }
   ],
-  "userSpecifiedSources": "https://winedb.dataengineered.io/, https://github.com/WhiskyyDB/wine-database (SOURCES.md: SAQ/LCBO listings, Liv-ex style auction observations, US TTB COLA registry)"
+  "userSpecifiedSources": "https://winedb.dataengineered.io/, https://github.com/WhiskyyDB/wine-database (see SOURCES.md)"
 }

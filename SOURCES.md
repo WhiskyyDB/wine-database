@@ -1,55 +1,36 @@
-# WineDB Primary Provenance & Sources Registry
+# WineDB Sources
 
-To maintain absolute data integrity and prevent synthetic or unverified hallucinated records, every entry in WineDB is traced back to primary source documentation.
-
----
-
-## 1. Primary Technical Sheets (`TECHNICAL_SHEET`)
-Producers' official technical release notes, PDF spec sheets, and winemaker commentaries.
-- **Used For:** Exact varietal blend percentages (`blends.csv`), alcohol by volume (`ABV %`), bottle formats, barrel aging durations, and official organoleptic tasting descriptors (`tasting_profiles.csv`).
-- **Examples:**
-  - Joseph Phelps Vineyards Technical Sheets (`https://josephphelps.com/wines/insignia/`)
-  - Ridge Vineyards Vintage Tech Sheets (`https://www.ridgewine.com/wines/monte-bello/`)
-  - Opus One Vintage Releases (`https://www.opusonewinery.com/the-wines/`)
+This file says where WineDB's values come from, for the full snapshot (edition 2026.09) and the free sample in `samples/`. Field-by-field detail is in [`DATA_DICTIONARY.md`](DATA_DICTIONARY.md).
 
 ---
 
-## 2. Regulatory & Label Filings (`TTB_COLA`)
-US Alcohol and Tobacco Tax and Trade Bureau (TTB) Certificates of Label Approval (COLA) public registry.
-- **Used For:** Verification of exact appellation designation (`appellations.csv`), legal producer trade name (`wineries.csv`), and mandatory alcohol label declarations (`ABV %`).
-- **Endpoint:** `https://www.ttb.gov/cola-public-registry`
+## 1. What the data is built from
+
+No value is fetched from an external source when WineDB is built. Every input is a file in the build repository.
+
+| Input | What it holds | Rows it produces |
+| :--- | :--- | :--- |
+| Hand-entered wine records | 113 wines, each with a producer, country, region, founding year, wine type, appellation, base ABV, base blend, aging, base price, tasting keywords and a URL pattern. No source is recorded for these values | through the formula below |
+| A formula | Expands each of the 113 records over a fixed grid of 32 years (1989–2023, without 1991–1993), whether or not the wine was made that year. ABV, blend, valuation index and source URL change with the year by fixed rules; aging, release price and tasting keywords are copied to every year | 3,611 of the 3,675 vintage rows |
+| Hand-entered vintage rows | 59 rows typed by hand, each citing a producer URL | 59 vintage rows (the rows of the free sample) |
+| Hand-typed lists | Residual sugar, acidity and organic certification for 40 wines, copied to every vintage of those wines; 10 producers saved as if they were Wikidata results; 7 products saved as if they were Open Food Facts results; grape varieties; appellations | 5 vintage rows, plus values on other rows |
 
 ---
 
-## 3. Appellation & VIVC Ampelographic Registries (`APPELLATION_REGISTRY`)
-Vitis International Variety Catalogue (VIVC) and French INAO / US TTB AVA registries.
-- **Used For:** Standardizing grape variety synonyms (`Syrah` vs. `Shiraz`, `Primitivo` vs. `Zinfandel`) and geographical indication boundaries.
-- **Endpoint:** `https://www.vivc.de/`
+## 2. Source links in the data
+
+- On generated rows, `source_url` is built from a URL pattern plus the year. These URLs were never fetched; the ones tested return "not found".
+- On the 59 hand-entered rows, `source_url` is the producer URL cited when the row was typed. These URLs were not re-checked.
+- The 10 Wikidata IDs on winery rows point to unrelated Wikidata items or to none, and the 7 Open Food Facts barcodes do not exist in Open Food Facts.
 
 ---
 
-## 4. Secondary Auction Market & Benchmark Indices (`AUCTION_RESULT` & `LIVEX_BENCHMARK`)
-Public fine wine auction hammer prices from major international auction houses (Sotheby's, Christie's, Zachys, Acker) alongside macroeconomic benchmark index series (`Liv-ex Fine Wine 100`, `Bordeaux 500`, `Burgundy 150`).
-- **Used For:** 
-  - `AUCTION_RESULT`: Computing `valuation_index_usd` strictly from verified transaction hammer prices under the **Median of `>= 3` Observations Rule**.
-  - `LIVEX_BENCHMARK`: Macroeconomic index trajectory calibration. Note that Liv-ex benchmark series are calculated from merchant mid-prices and are strictly governed by Liv-ex member licensing agreements (no raw member-only data is redistributed; indices feed separate calibration models outside `valuation_index_usd`).
-- **Endpoints:** Public auction house catalogs and `https://www.liv-ex.com/membership/` (for licensed macro appreciation trends).
+## 3. Sources not used
 
----
-
-## 5. State Liquor Monopoly Laboratory Analyses (`SAQ_LCBO_MONOPOLY`)
-Official ISO 17025 laboratory testing archives published by the *Société des alcools du Québec (SAQ)* and *Liquor Control Board of Ontario (LCBO)*.
-- **Used For:** Verified chemical laboratory measurements (`residual_sugar_g_l` in `g/L` and `acidity_g_l` in `g/L H₂SO₄` equivalent).
-- **Endpoints:** `https://www.saq.com/` and `https://www.lcbo.com/`
-
----
-
-## 6. Organic & Biodynamic Certification Registries (`CERTIFICATION_BODY`)
-Official certification archives from international organic and biodynamic inspection bodies (*Ecocert*, *Demeter International*, *Biodyvin*, and *Agriculture Biologique / AB*).
-- **Used For:** Verifying the `organic_certification` tier assigned to each winery and cuvee expression (kept distinct from laboratory sugar/acidity testing).
-- **Endpoints:** `https://www.ecocert.com/`, `https://www.demeter.net/`, and `https://www.biodyvin.com/`
-
----
-
-## 7. Master Traceability Audit Registry (`data_sources.csv`)
-Every row across `wineries.csv` and `vintages.csv` explicitly includes source foreign keys (`source_id`, `source_type`, `source_name`, `source_url`), allowing full bidirectional auditing against our master `data_sources.csv` registry table.
+Earlier versions of this file, the website and the dataset listings named the sources below. No WineDB value was fetched from any of them.
+- **US TTB COLA label filings.** The 6 `ttb_cola` entries in `data_sources` are hand-typed, and no row references them.
+- **SAQ and LCBO laboratory analyses.** The 40 `saq_lcbo_monopoly` entries are hand-typed, and no row references them. The sugar and acidity values are hand-typed too.
+- **Liv-ex indices and auction-house results.** The 8 `livex_benchmark` entries are hand-typed and no row references them; one of their values sits on one hand-entered row. No valuation comes from an observed sale.
+- **VIVC, INAO, TTB AVA and other grape or appellation registries.**
+- **Organic and biodynamic certification bodies.**
+- **Producer technical sheets.** The 59 hand-entered rows each cite a producer URL. No source is recorded for the values on generated rows, and their per-year URLs were never fetched.

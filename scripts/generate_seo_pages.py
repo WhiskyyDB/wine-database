@@ -174,7 +174,7 @@ def vintage_profile(winery, wine, year, abv, vol, aging, cases, rel_price, val,
     p2 = ("<span>This vintage carries " + _oxford(bits) + ".</span>") if bits else ""
     try:
         if val and val not in ('None', 'NULL', ''):
-            p2 += f" <span>Its secondary-market valuation index stands at ${float(val):,.2f} USD, aggregated from a minimum of three auction observations.</span>"
+            p2 += f" <span>Its valuation index is recorded as ${float(val):,.2f} USD.</span>"
     except (TypeError, ValueError):
         pass
     blend_block = (f'<div style="margin-top:1.4rem;"><div class="metric-label">Varietal Blend</div>'
@@ -424,14 +424,13 @@ def main():
         abv = (v.get('abv_percent') or '').strip()
         vol = (v.get('bottle_volume_ml') or '').strip()
         val = v.get('valuation_index_usd', '').strip()
-        source = v.get('source_name', 'WineDB Verified Ledger').strip()
 
         slug = rec['slug']
         page_url = f"{BASE}/vintages/{slug}"
         out_path = os.path.join(vintages_dir, f"{slug}.html")
         sitemap_entries.append((page_url, out_path, "monthly", "0.8"))
 
-        val_display = f"${float(val):,.2f} USD" if (val and val != 'None' and val != 'NULL') else "Requires >= 3 Auction Observations"
+        has_val = bool(val) and val not in ('None', 'NULL')
 
         vid = rec['vid']
         aging = (v.get('aging_regime') or '').strip()
@@ -445,7 +444,7 @@ def main():
         w_region = (winery_meta.get('region') or '').strip()
         blend_rows = blends_by_vid.get(vid, [])
         tasting_rows = tasting_by_vid.get(vid, [])
-        gold_badge = _esc(appellation or (wine_type.title() if wine_type else 'Provenance-Tracked'))
+        gold_badge = _esc(appellation or (wine_type.title() if wine_type else 'Vintage Record'))
         gold_nt = ' translate="no"' if appellation else ''
         appellation_nt = ' translate="no"' if (appellation or w_region) else ''
         appellation_disp = _esc(appellation or w_region or '—')
@@ -468,8 +467,8 @@ def main():
             desc_bits.append(f"Aged {aging}.")
         if tasting_rows:
             desc_bits.append(f"{len(tasting_rows)} tasting descriptors on record.")
-        if val and val not in ('None', 'NULL', ''):
-            desc_bits.append("Secondary-market valuation tracked.")
+        if has_val:
+            desc_bits.append("Valuation index recorded.")
         if desc_bits:
             desc_raw += " " + " ".join(desc_bits)
         description = seo.fit_desc(desc_raw)
@@ -480,20 +479,22 @@ def main():
             related_html = related_html.replace(f'— same {v_esc} varietal</span>',
                                                 f'— same {_nt(v_esc)} varietal</span>')
 
-        og_parts = [x for x in [f"Exact ABV ({abv}%)" if abv else None,
+        og_parts = [x for x in [f"ABV ({abv}%)" if abv else None,
                                  f"bottle format ({vol} mL)" if vol else None] if x]
-        og_parts += ["varietal blend", "tasting descriptors", "secondary auction market index"]
+        og_parts += ["varietal blend", "tasting descriptors"]
         og_desc = _oxford(og_parts) + "."
 
         ld_parts = [x for x in [f"{abv}% ABV" if abv else None,
                                  f"{vol}ml format" if vol else None] if x]
-        ld_parts += ["varietal blend composition", "tasting descriptors", "aging regime", "secondary auction index"]
+        ld_parts += ["varietal blend composition", "tasting descriptors", "aging regime"]
         ld_desc = f"Normalized vintage metrics for {winery} {wine} {year}: " + _oxford(ld_parts) + "."
 
         abv_card = (f'<div class="metric-card"><div class="metric-label">Alcohol by Volume</div>'
                     f'<div class="metric-val">{abv}%</div></div>') if abv else ''
         vol_card = (f'<div class="metric-card"><div class="metric-label">Bottle Format</div>'
                     f'<div class="metric-val">{vol} mL</div></div>') if vol else ''
+        val_card = (f'<div class="metric-card"><div class="metric-label">Valuation Index</div>'
+                    f'<div class="metric-val" style="font-size: 1rem;">${float(val):,.2f} USD</div></div>') if has_val else ''
 
         html_content = f"""<!DOCTYPE html>
 <html lang="en" class="dark">
@@ -521,7 +522,7 @@ def main():
     "creator": {{"@type": "Organization", "name": "WineDB Initiative", "url": "https://winedb.dataengineered.io"}},
     "license": "https://creativecommons.org/licenses/by/4.0/",
     "isAccessibleForFree": true,
-    "variableMeasured": ["alcohol by volume percentage", "bottle format in ml", "varietal blend percentage", "tasting descriptors", "aging regime", "production cases", "secondary auction index USD"]
+    "variableMeasured": ["alcohol by volume percentage", "bottle format in ml", "varietal blend percentage", "tasting descriptors", "aging regime", "production cases"]
   }}
   </script>
   <script type="application/ld+json">
@@ -561,19 +562,18 @@ def main():
       <span class="badge">3NF Relational Record</span>
       <span class="badge badge-gold"{gold_nt}>{gold_badge}</span>
       <h1>{_nt(winery)} {_nt(wine)} — {year} Vintage</h1>
-      <p style="color: #a8929b;">Verified primary producer specification and secondary auction market indices.</p>
+      <p style="color: #a8929b;">Vintage record from the free WineDB sample.</p>
     </div>
     <div class="grid-metrics">
       <div class="metric-card"><div class="metric-label">Harvest Vintage</div><div class="metric-val">{year}</div></div>
       {abv_card}
       {vol_card}
       <div class="metric-card"><div class="metric-label">Appellation</div><div class="metric-val"{appellation_nt} style="font-size: 1rem;">{appellation_disp}</div></div>
-      <div class="metric-card"><div class="metric-label">Production</div><div class="metric-val" style="font-size: 1rem;">{production_disp}</div></div>
-      <div class="metric-card"><div class="metric-label">Valuation Index</div><div class="metric-val" style="font-size: 1rem;">{val_display}</div></div>
+      <div class="metric-card"><div class="metric-label">Production</div><div class="metric-val" style="font-size: 1rem;">{production_disp}</div></div>{val_card}
     </div>
 {profile_html}
     <div style="background: rgba(212, 175, 55, 0.08); padding: 1.2rem; border-left: 3px solid #d4af37; border-radius: 4px; font-size: 0.9rem;">
-      <strong>Provenance Audit:</strong> This record is linked to primary authority <em translate="no">{source}</em>. All varietal composition percentages satisfy the database-level constraint <span translate="no">`(0.0, 100.0]`</span> with <span translate="no">`SUM <= 100.001%`</span>.
+      <strong>Blend constraint:</strong> All varietal composition percentages satisfy the database-level constraint <span translate="no">`(0.0, 100.0]`</span> with <span translate="no">`SUM <= 100.001%`</span>.
     </div>
     {related_html}
     <a href="/#explorer" class="btn-back">← Back to Sommelier Explorer</a>

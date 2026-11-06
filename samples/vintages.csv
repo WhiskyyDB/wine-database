@@ -3,7 +3,7 @@ vintage_id,winery_name,wine_name,vintage_year,abv_percent,bottle_volume_ml,aging
 4,Joseph Phelps Vineyards,Insignia,2016,14.5,750,"24 months, 100% new French oak",16500,295.0,,https://josephphelps.com/wines/insignia/2016
 3,Joseph Phelps Vineyards,Insignia,2017,14.5,750,"24 months, 100% new French oak",15000,300.0,,https://josephphelps.com/wines/insignia/2017
 2,Joseph Phelps Vineyards,Insignia,2018,14.5,750,"24 months, 100% new French oak",17000,300.0,,https://josephphelps.com/wines/insignia/2018
-1,Joseph Phelps Vineyards,Insignia,2019,14.5,750,"24 months, 100% new French oak",14500,315.0,315.0,https://auction1.com/lot101
+1,Joseph Phelps Vineyards,Insignia,2019,14.5,750,"24 months, 100% new French oak",14500,315.0,,https://josephphelps.com/wines/insignia/2019
 10,Ridge Vineyards,Monte Bello,2015,13.5,750,"18 months, 100% new American oak",3800,220.0,,https://www.ridgewine.com/wines/2015-monte-bello/
 9,Ridge Vineyards,Monte Bello,2016,13.7,750,"18 months, 100% new American oak",4500,225.0,,https://www.ridgewine.com/wines/2016-monte-bello/
 8,Ridge Vineyards,Monte Bello,2017,13.5,750,"18 months, 100% new American oak",4000,230.0,,https://www.ridgewine.com/wines/2017-monte-bello/

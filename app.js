@@ -3,7 +3,7 @@
  */
 
 const FALLBACK_VINTAGES = [
-    { vintage_id: 1, winery_name: "Joseph Phelps Vineyards", wine_name: "Insignia", vintage_year: 2019, abv_percent: 14.5, bottle_volume_ml: 750, release_price_usd: 315, valuation_index_usd: 315, source_url: "https://josephphelps.com/wines/insignia/2019" },
+    { vintage_id: 1, winery_name: "Joseph Phelps Vineyards", wine_name: "Insignia", vintage_year: 2019, abv_percent: 14.5, bottle_volume_ml: 750, release_price_usd: 315, valuation_index_usd: null, source_url: "https://josephphelps.com/wines/insignia/2019" },
     { vintage_id: 2, winery_name: "Joseph Phelps Vineyards", wine_name: "Insignia", vintage_year: 2018, abv_percent: 14.5, bottle_volume_ml: 750, release_price_usd: 300, valuation_index_usd: null, source_url: "https://josephphelps.com/wines/insignia/2018" },
     { vintage_id: 3, winery_name: "Joseph Phelps Vineyards", wine_name: "Insignia", vintage_year: 2017, abv_percent: 14.2, bottle_volume_ml: 750, release_price_usd: 285, valuation_index_usd: null, source_url: "https://josephphelps.com/wines/insignia/2017" },
     { vintage_id: 4, winery_name: "Opus One Winery", wine_name: "Opus One", vintage_year: 2019, abv_percent: 14.0, bottle_volume_ml: 750, release_price_usd: 385, valuation_index_usd: null, source_url: "https://www.opusonewinery.com/" },
